@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Boardtschek.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2014e6fde364dceea8785a1134ef4d5dbb9647d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Boardtschek.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Boardtschek.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4671,23 +4671,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Салиан\\.nuget\\packages\\": {},
+    "C:\\Users\\Martin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Салиан\\source\\repos\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Martin\\Documents\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
       "projectName": "Boardtschek.WebAPI",
-      "projectPath": "C:\\Users\\Салиан\\source\\repos\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\Салиан\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Салиан\\source\\repos\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\Martin\\Documents\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Martin\\Documents\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Салиан\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4702,8 +4702,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Салиан\\source\\repos\\Boardtschek.WebAPI\\Boardtschek.Data\\Boardtschek.Data.csproj": {
-              "projectPath": "C:\\Users\\Салиан\\source\\repos\\Boardtschek.WebAPI\\Boardtschek.Data\\Boardtschek.Data.csproj"
+            "C:\\Users\\Martin\\Documents\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Boardtschek.Data.csproj": {
+              "projectPath": "C:\\Users\\Martin\\Documents\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Boardtschek.Data.csproj"
             }
           }
         }
@@ -4716,8 +4716,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
-      }
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -4761,7 +4762,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
