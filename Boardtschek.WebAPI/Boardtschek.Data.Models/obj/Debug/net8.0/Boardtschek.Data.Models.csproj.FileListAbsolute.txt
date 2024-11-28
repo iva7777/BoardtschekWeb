@@ -1,0 +1,15 @@
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\bin\Debug\net8.0\Boardtschek.Data.Models.deps.json
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\bin\Debug\net8.0\Boardtschek.Data.Models.dll
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\bin\Debug\net8.0\Boardtschek.Data.Models.pdb
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\bin\Debug\net8.0\Boardtschek.Common.dll
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\bin\Debug\net8.0\Boardtschek.Common.pdb
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\Boardtschek.Data.Models.csproj.AssemblyReference.cache
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\Boardtschek.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\Boardtschek.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\Boardtschek.Data.Models.AssemblyInfo.cs
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\Boardtschek.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\Boardtsc.8B07948E.Up2Date
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\Boardtschek.Data.Models.dll
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\refint\Boardtschek.Data.Models.dll
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\Boardtschek.Data.Models.pdb
+C:\Users\Салиан\source\repos\Boardtschek.WebAPI\Boardtschek.Data.Models\obj\Debug\net8.0\ref\Boardtschek.Data.Models.dll
