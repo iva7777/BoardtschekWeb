@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Boardtschek.Data.Migrations
 {
     [DbContext(typeof(BoardtschekDbContext))]
-    [Migration("20241128132528_Initial-Migration")]
+    [Migration("20241129135723_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -195,10 +195,8 @@ namespace Boardtschek.Data.Migrations
 
             modelBuilder.Entity("Boardtschek.Data.Models.Rental", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("GameId")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ActualReturnDate")
@@ -207,15 +205,20 @@ namespace Boardtschek.Data.Migrations
                     b.Property<DateTime>("ExpectedReturnDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("GameId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("RentalDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("UserId", "GameId");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("GameId");
+
+                    b.HasIndex("UserId", "GameId");
 
                     b.ToTable("Rentals");
                 });

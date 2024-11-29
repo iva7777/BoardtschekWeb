@@ -3,44 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241129135723_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Boardtschek.Data\\Migrations\\20241129135723_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\rentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\rentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\ratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\ratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\interfaces\\irentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\interfaces\\irentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\interfaces\\iratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\interfaces\\iratingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data\\boardtschekdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|solutionrelative:boardtschek.data\\boardtschekdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\boardtschek.services.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\boardtschek.services.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{19286527-B8AB-4714-8200-088ED0185C65}|Boardtschek.WebAPI.ViewModels\\Boardtschek.WebAPI.ViewModels.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi.viewmodels\\game\\homepagegamesoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19286527-B8AB-4714-8200-088ED0185C65}|Boardtschek.WebAPI.ViewModels\\Boardtschek.WebAPI.ViewModels.csproj|solutionrelative:boardtschek.webapi.viewmodels\\game\\homepagegamesoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data\\boardtschekdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|solutionrelative:boardtschek.data\\boardtschekdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E50551F-0BCE-4DBF-BF6B-A231176513EE}|Boardtschek.Data.Models\\Boardtschek.Data.Models.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data.models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E50551F-0BCE-4DBF-BF6B-A231176513EE}|Boardtschek.Data.Models\\Boardtschek.Data.Models.csproj|solutionrelative:boardtschek.data.models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,140 +46,127 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RentalService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\RentalService.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\RentalService.cs",
-              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\RentalService.cs",
-              "RelativeToolTip": "Boardtschek.Services.Data\\RentalService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T11:13:04.335Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RatingService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\RatingService.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\RatingService.cs",
-              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\RatingService.cs",
-              "RelativeToolTip": "Boardtschek.Services.Data\\RatingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T11:12:18.424Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IRentalService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IRentalService.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\Interfaces\\IRentalService.cs",
-              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IRentalService.cs",
-              "RelativeToolTip": "Boardtschek.Services.Data\\Interfaces\\IRentalService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T11:09:17.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IRatingService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IRatingService.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\Interfaces\\IRatingService.cs",
-              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IRatingService.cs",
-              "RelativeToolTip": "Boardtschek.Services.Data\\Interfaces\\IRatingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T11:08:44.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IGameService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
-              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
-              "RelativeToolTip": "Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T11:08:21.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Boardtschek.Services.Data",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj",
-              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj",
-              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj",
-              "RelativeToolTip": "Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-29T11:07:50.777Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GameService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\GameService.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\GameService.cs",
-              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\GameService.cs",
-              "RelativeToolTip": "Boardtschek.Services.Data\\GameService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "20241129135723_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241129135723_InitialMigration.cs",
+              "RelativeDocumentMoniker": "Boardtschek.Data\\Migrations\\20241129135723_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241129135723_InitialMigration.cs",
+              "RelativeToolTip": "Boardtschek.Data\\Migrations\\20241129135723_InitialMigration.cs",
+              "ViewState": "AgIAAEIBAAAAAAAAAAAQwE8BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T11:07:42.219Z",
+              "WhenOpened": "2024-11-29T13:57:23.519Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Boardtschek.WebAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T09:42:00.258Z",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.json",
+              "RelativeToolTip": "Boardtschek.WebAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-29T13:55:36.89Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "BoardtschekDbContext.cs",
               "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\BoardtschekDbContext.cs",
               "RelativeDocumentMoniker": "Boardtschek.Data\\BoardtschekDbContext.cs",
               "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\BoardtschekDbContext.cs",
               "RelativeToolTip": "Boardtschek.Data\\BoardtschekDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAswEAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T09:31:09.247Z",
+              "WhenOpened": "2024-11-29T13:38:47.431Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Program.cs",
               "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
               "RelativeToolTip": "Boardtschek.WebAPI\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAQwC4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwDIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T09:04:54.704Z",
+              "WhenOpened": "2024-11-29T13:17:53.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomePageGamesOverview.cs",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.ViewModels\\Game\\HomePageGamesOverview.cs",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI.ViewModels\\Game\\HomePageGamesOverview.cs",
+              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.ViewModels\\Game\\HomePageGamesOverview.cs",
+              "RelativeToolTip": "Boardtschek.WebAPI.ViewModels\\Game\\HomePageGamesOverview.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T12:42:50.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Boardtschek.WebAPI\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T12:34:53.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IGameService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
+              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
+              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
+              "RelativeToolTip": "Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T12:18:40.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data.Models\\Game.cs",
+              "RelativeDocumentMoniker": "Boardtschek.Data.Models\\Game.cs",
+              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data.Models\\Game.cs",
+              "RelativeToolTip": "Boardtschek.Data.Models\\Game.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwB4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T12:08:51.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GameService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\GameService.cs",
+              "RelativeDocumentMoniker": "Boardtschek.Services.Data\\GameService.cs",
+              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\GameService.cs",
+              "RelativeToolTip": "Boardtschek.Services.Data\\GameService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T12:04:23.717Z",
               "EditorCaption": ""
             }
           ]

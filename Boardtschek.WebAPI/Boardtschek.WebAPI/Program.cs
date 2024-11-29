@@ -2,7 +2,6 @@ using Boardtschek.Data;
 using Boardtschek.Data.Models;
 using Boardtschek.Services.Data;
 using Boardtschek.Services.Data.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Boardtschek.WebAPI
