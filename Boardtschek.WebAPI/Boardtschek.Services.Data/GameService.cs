@@ -34,5 +34,27 @@ namespace Boardtschek.Services.Data
 
             return topRatedGames;
         }
+
+        public async Task<IEnumerable<GameListViewModel>> GetTheThreeMostBorrowedGames()
+        {
+            IEnumerable<GameListViewModel> topBorrowedGames = await dbContext.Rentals
+                .GroupBy(r => r.Game)
+                .Select(g => new
+                {
+                    Game = g.Key,
+                    BorrowCount = g.Count()
+                })
+                .OrderByDescending(g => g.BorrowCount) // Order by borrow count descending
+                .Take(3) // Take the top N games
+                .Select(g => new GameListViewModel
+                {
+                    Id = g.Game.Id.ToString(),
+                    Title = g.Game.Title,
+                    ImageUrl = g.Game.ImageUrl
+                })
+                .ToListAsync();
+
+            return topBorrowedGames;
+        }
     }
 }
