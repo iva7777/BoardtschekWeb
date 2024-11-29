@@ -14,6 +14,7 @@ namespace Boardtschek.WebAPI.Controllers
             this.gameService = gameService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             HomePageGamesOverview model = await gameService.GetGamesForHomePage();

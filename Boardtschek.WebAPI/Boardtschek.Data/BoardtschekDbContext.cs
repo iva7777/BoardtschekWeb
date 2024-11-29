@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace Boardtschek.Data
 {
@@ -49,7 +50,7 @@ namespace Boardtschek.Data
 
             //Mapping table
             builder.Entity<Rental>()
-                .HasKey(fg => new { fg.UserId, fg.GameId });
+        .HasKey(r => r.Id);
 
             builder.Entity<Rental>()
                 .HasOne(fg => fg.User)
@@ -60,6 +61,10 @@ namespace Boardtschek.Data
                 .HasOne(fg => fg.Game)
                 .WithMany(g => g.Rentals)
                 .HasForeignKey(fg => fg.GameId);
+
+            builder.Entity<Rental>()
+        .HasIndex(r => new { r.UserId, r.GameId })
+        .IsUnique(false);
 
 
             //Delete

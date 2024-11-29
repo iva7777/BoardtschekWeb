@@ -235,16 +235,16 @@ namespace Boardtschek.Data.Migrations
                 name: "Rentals",
                 columns: table => new
                 {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     GameId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     RentalDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ExpectedReturnDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ActualReturnDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Rentals", x => new { x.UserId, x.GameId });
+                    table.PrimaryKey("PK_Rentals", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Rentals_AspNetUsers_UserId",
                         column: x => x.UserId,
@@ -312,6 +312,11 @@ namespace Boardtschek.Data.Migrations
                 name: "IX_Rentals_GameId",
                 table: "Rentals",
                 column: "GameId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rentals_UserId_GameId",
+                table: "Rentals",
+                columns: new[] { "UserId", "GameId" });
         }
 
         /// <inheritdoc />
