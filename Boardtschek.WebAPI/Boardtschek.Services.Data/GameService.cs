@@ -14,6 +14,14 @@ namespace Boardtschek.Services.Data
             this.dbContext = dbContext;
         }
 
+        public async Task<HomePageGamesOverview> GetGamesForHomePage()
+        {
+            HomePageGamesOverview gamesOverview = new HomePageGamesOverview();
+            gamesOverview.HighestRatedGames = await GetTheThreeHighestRatedGames();
+            gamesOverview.MostBorrowedGames = await GetTheThreeMostBorrowedGames();
+            return gamesOverview;
+        }
+
         public async Task<IEnumerable<GameListViewModel>> GetTheThreeHighestRatedGames()
         {
             IEnumerable<GameListViewModel> topRatedGames = await dbContext.Games
@@ -44,8 +52,8 @@ namespace Boardtschek.Services.Data
                     Game = g.Key,
                     BorrowCount = g.Count()
                 })
-                .OrderByDescending(g => g.BorrowCount) // Order by borrow count descending
-                .Take(3) // Take the top N games
+                .OrderByDescending(g => g.BorrowCount)
+                .Take(3)
                 .Select(g => new GameListViewModel
                 {
                     Id = g.Game.Id.ToString(),

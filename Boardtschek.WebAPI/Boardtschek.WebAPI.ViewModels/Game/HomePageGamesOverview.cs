@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Boardtschek.WebAPI.ViewModels.Game
+﻿namespace Boardtschek.WebAPI.ViewModels.Game
 {
-    internal class HomePageGamesOverview
+    public class HomePageGamesOverview
     {
+        public IEnumerable<GameListViewModel> HighestRatedGames { get; set; } = new List<GameListViewModel>();
+        public IEnumerable<GameListViewModel> MostBorrowedGames { get; set; } = new List<GameListViewModel>();
     }
 }
