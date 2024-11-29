@@ -1,4 +1,5 @@
 ﻿using Boardtschek.Services.Data.Interfaces;
+using Boardtschek.WebAPI.ViewModels.Game;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Boardtschek.WebAPI.Controllers
@@ -11,6 +12,12 @@ namespace Boardtschek.WebAPI.Controllers
         public HomeController(IGameService gameService)
         {
             this.gameService = gameService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            HomePageGamesOverview model = await gameService.GetGamesForHomePage();
+            return Ok(model);
         }
     }
 }
