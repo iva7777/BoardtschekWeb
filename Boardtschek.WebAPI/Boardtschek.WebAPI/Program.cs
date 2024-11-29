@@ -1,5 +1,7 @@
 using Boardtschek.Data;
 using Boardtschek.Data.Models;
+using Boardtschek.Services.Data;
+using Boardtschek.Services.Data.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,6 +37,10 @@ namespace Boardtschek.WebAPI
                 options.Password.RequireLowercase = false;
             })
                 .AddEntityFrameworkStores<BoardtschekDbContext>();
+
+            builder.Services.AddScoped<IGameService, GameService>();
+            builder.Services.AddScoped<IRatingService, RatingService>();
+            builder.Services.AddScoped<IRentalService, RentalService>();
 
             var app = builder.Build();
 
