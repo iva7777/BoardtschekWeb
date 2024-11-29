@@ -27,17 +27,14 @@ namespace Boardtschek.WebAPI
 
             builder.Services.AddAuthorization();
 
-            builder.Services.AddIdentity<AppUser, IdentityRole<Guid>>(options =>
+
+            builder.Services.AddIdentityApiEndpoints<AppUser>(options =>
             {
                 options.Password.RequiredLength = 5;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
             })
-            .AddEntityFrameworkStores<BoardtschekDbContext>()
-            .AddDefaultTokenProviders();
-
-            builder.Services.AddIdentityApiEndpoints<AppUser>()
                 .AddEntityFrameworkStores<BoardtschekDbContext>();
 
             var app = builder.Build();
