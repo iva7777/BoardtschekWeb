@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Boardtschek.Data\Boardtschek.Data.csproj" />
+    <ProjectReference Include="..\Boardtschek.WebAPI.ViewModels\Boardtschek.WebAPI.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

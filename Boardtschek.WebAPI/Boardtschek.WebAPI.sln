@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boardtschek.WebAPI", "Boardtschek.WebAPI\Boardtschek.WebAPI.csproj", "{073C3901-F353-4DA7-9A66-00AA9887D4BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boardtschek.WebAPI", "Boardtschek.WebAPI\Boardtschek.WebAPI.csproj", "{073C3901-F353-4DA7-9A66-00AA9887D4BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6E4ED113-9A2C-46EB-861E-89E5E264D214}"
 EndProject
@@ -11,11 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{75CCB690-29E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C97703CC-7291-43BE-BC23-95AB3C145812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boardtschek.Data", "Boardtschek.Data\Boardtschek.Data.csproj", "{BF6A248A-31EC-4988-AB9D-1772C86A0084}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boardtschek.Data", "Boardtschek.Data\Boardtschek.Data.csproj", "{BF6A248A-31EC-4988-AB9D-1772C86A0084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boardtschek.Data.Models", "Boardtschek.Data.Models\Boardtschek.Data.Models.csproj", "{3E50551F-0BCE-4DBF-BF6B-A231176513EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boardtschek.Data.Models", "Boardtschek.Data.Models\Boardtschek.Data.Models.csproj", "{3E50551F-0BCE-4DBF-BF6B-A231176513EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boardtschek.Common", "Boardtschek.Common\Boardtschek.Common.csproj", "{D8D479BB-F7E5-4420-B71E-B7D7968B046A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boardtschek.Common", "Boardtschek.Common\Boardtschek.Common.csproj", "{D8D479BB-F7E5-4420-B71E-B7D7968B046A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boardtschek.WebAPI.ViewModels", "Boardtschek.WebAPI.ViewModels\Boardtschek.WebAPI.ViewModels.csproj", "{19286527-B8AB-4714-8200-088ED0185C65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{D8D479BB-F7E5-4420-B71E-B7D7968B046A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8D479BB-F7E5-4420-B71E-B7D7968B046A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8D479BB-F7E5-4420-B71E-B7D7968B046A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19286527-B8AB-4714-8200-088ED0185C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19286527-B8AB-4714-8200-088ED0185C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19286527-B8AB-4714-8200-088ED0185C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19286527-B8AB-4714-8200-088ED0185C65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{073C3901-F353-4DA7-9A66-00AA9887D4BE} = {75CCB690-29E8-4A30-A8E0-5637E8E4FDD4}
 		{BF6A248A-31EC-4988-AB9D-1772C86A0084} = {6E4ED113-9A2C-46EB-861E-89E5E264D214}
 		{3E50551F-0BCE-4DBF-BF6B-A231176513EE} = {6E4ED113-9A2C-46EB-861E-89E5E264D214}
+		{19286527-B8AB-4714-8200-088ED0185C65} = {75CCB690-29E8-4A30-A8E0-5637E8E4FDD4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C4854FC-6D7A-4F98-94AA-B66381C0E375}
