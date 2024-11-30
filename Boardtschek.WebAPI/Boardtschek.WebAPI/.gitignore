@@ -60,3 +60,13 @@ publish/
 Secrets
 secrets.json
 .env
+
+# VS backup and cache files
+*.vsidx
+*.vspx
+*.vspscc
+
+
+/.vs
+/vs
+/v2

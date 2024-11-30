@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using static Boardtschek.Common.EntityValidations.AppUser;
 
-namespace Boardtschek.WebAPI.ViewModels
+namespace Boardtschek.WebAPI.ViewModels.User
 {
     public class RegisterModel
     {
