@@ -41,6 +41,15 @@ namespace Boardtschek.WebAPI
             builder.Services.AddScoped<IRatingService, RatingService>();
             builder.Services.AddScoped<IRentalService, RentalService>();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend",
+                    policy => policy.WithOrigins("http://localhost:5174") // Replace with your frontend URL
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod());
+            });
+
+
             var app = builder.Build();
 
 
@@ -55,6 +64,7 @@ namespace Boardtschek.WebAPI
             app.MapIdentityApi<AppUser>();
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowFrontend");
 
             app.UseAuthorization();
 

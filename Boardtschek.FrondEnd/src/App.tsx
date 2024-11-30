@@ -1,16 +1,29 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
-import { CreateAccount } from './components/CreateAccount'
-import { LoginForm } from './components/LoginForm'
+import { CreateAccount } from './components/Auth/CreateAccount.tsx'
+import { LoginForm } from './components/Auth/LoginForm.tsx'
+import AuthGuard from './guards/AuthGuard';
+import Header from "./components/Shared/Header.tsx";
+import Homepage from "@/components/Homepage/Homepage.tsx";
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
+        <BrowserRouter>
+            <Header />
             <Routes>
-            <Route path="/create-account" element={<CreateAccount />} />
-            <Route path="/login" element={<LoginForm />} />
+                <Route path="/create-account" element={<CreateAccount />} />
+                <Route path="/login" element={<LoginForm />} />
+                <Route
+                    path="/homepage"
+                    element={
+                        <AuthGuard>
+                            <Homepage />
+                        </AuthGuard>
+                    }
+                />
+                <Route path="/" element={<Navigate to="/create-account" replace />} />
             </Routes>
         </BrowserRouter>
     </>
