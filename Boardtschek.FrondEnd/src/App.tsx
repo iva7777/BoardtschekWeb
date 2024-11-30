@@ -4,6 +4,7 @@ import { CreateAccount } from "./components/Auth/CreateAccount";
 import Homepage from "./components/Homepage/Homepage";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
+import Footer from "./components/Shared/Footer";
 
 function App() {
     return (
@@ -35,6 +36,8 @@ function App() {
                 />
                 <Route path="/" element={<Navigate to="/login" replace />} />
             </Routes>
+            {/* Footer */}
+            <Footer />
         </BrowserRouter>
     );
 }
