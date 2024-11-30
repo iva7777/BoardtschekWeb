@@ -22,6 +22,7 @@ namespace Boardtschek.Data.Configurations
                 Id = Guid.Parse("30F0662A-29C5-48DF-8B57-9C61C671E0FB"),
                 FirstName = "Admin",
                 LastName = "Admin",
+                ImageUrl = "https://cdn.pixabay.com/photo/2016/02/09/08/05/administrator-1188494_960_720.jpg",
                 UserName = "admin@boardtschek.com",
                 NormalizedUserName = "ADMIN@BOARDTSCHEK.COM",
                 Email = "admin@boardtschek.com",
