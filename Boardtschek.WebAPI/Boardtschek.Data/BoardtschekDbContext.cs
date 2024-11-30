@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
+using System.Reflection;
 
 namespace Boardtschek.Data
 {
@@ -20,6 +20,11 @@ namespace Boardtschek.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            Assembly configAssembly = Assembly.GetAssembly(typeof(BoardtschekDbContext)) ??
+                Assembly.GetExecutingAssembly();
+
+            builder.ApplyConfigurationsFromAssembly(configAssembly);
+
             //Mapping table
             builder.Entity<LikedGame>()
                 .HasKey(fg => new { fg.UserId, fg.GameId });
