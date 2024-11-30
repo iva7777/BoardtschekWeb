@@ -1,11 +1,13 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useNavigate } from "react-router-dom";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form.tsx";
 import { Input } from "../ui/input.tsx";
 import { Button } from "../ui/button.tsx";
 import apiClient from "@/api/axios.ts";
 import {setToken} from "@/lib/utils.ts";
+import {AxiosError} from "axios";
 
 
 const formSchema = z.object({
@@ -20,6 +22,8 @@ const formSchema = z.object({
 })
 
 export function LoginForm() {
+    const navigate = useNavigate();
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -32,9 +36,13 @@ export function LoginForm() {
         try {
             const response = await apiClient.post('/login', values);
             setToken(response.data.token); // Store token
-            window.location.href = '/dashboard'; // Redirect to dashboard
-        } catch (error: any) {
-            alert(error.response?.data?.message || "Login failed.");
+            window.location.href = '/homepage';
+        } catch (error: unknown) {
+            if (error instanceof AxiosError && error.response) {
+                alert(error.response.data?.message || "Login failed.");
+            } else {
+                alert("An unexpected error occurred.");
+            }
         }
     }
 
@@ -78,6 +86,13 @@ export function LoginForm() {
                             />
                             <Button type="submit" className="w-full">
                                 Start Exploring
+                            </Button>
+                            <Button
+                                type="button"
+                                onClick={() => navigate("/create-account")}
+                                className="w-full border border-[#457B9D] text-[#457B9D] bg-transparent"
+                            >
+                                Register
                             </Button>
                         </form>
                     </div>

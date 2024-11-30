@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form.tsx";
@@ -36,7 +37,9 @@ const formSchema = z.object({
         }),
 })
 
+
 export function CreateAccount() {
+    const navigate = useNavigate();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -51,7 +54,7 @@ export function CreateAccount() {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
-            const response = await apiClient.post('/api/Auth/api/register', values);
+            const response = await apiClient.post('/api/Auth/register', values);
             console.log(response.data);
             alert(`Account created successfully: ${response.data}`);
             window.location.href = '/login';
@@ -141,7 +144,15 @@ export function CreateAccount() {
                             <Button type="submit" className="w-full">
                                 Get Started
                             </Button>
-                            
+                            <Button
+                                type="button"
+                                onClick={() => navigate("/login")}
+                                className="w-full border border-[#FF6F59] text-[#FF6F59] bg-transparent"
+                            >
+                                Login
+                            </Button>
+
+
                         </form>
                     </div>
 

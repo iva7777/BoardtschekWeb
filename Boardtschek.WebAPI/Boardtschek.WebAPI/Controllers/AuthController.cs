@@ -17,7 +17,7 @@ namespace Boardtschek.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("api/register")]
+        [Route("register")]
         public async Task<IActionResult> Register(RegisterModel model)
         {
             var user = new AppUser
