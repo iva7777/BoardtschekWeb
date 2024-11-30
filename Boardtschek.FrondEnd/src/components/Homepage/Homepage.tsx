@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
                         {(games ? games.highestRatedGames : Array(3).fill(null)).map((game, index) => (
                             <div
                                 key={game?.id || index}
-                                className="bg-white shadow rounded overflow-hidden animate-pulse"
+                                className="bg-white shadow rounded overflow-hidden"
                             >
                                 <img
                                     src={game?.imageUrl || "https://via.placeholder.com/150"}
@@ -100,7 +100,7 @@ const HomePage: React.FC = () => {
                         {(games ? games.mostBorrowedGames : Array(3).fill(null)).map((game, index) => (
                             <div
                                 key={game?.id || index}
-                                className="bg-white shadow rounded overflow-hidden animate-pulse"
+                                className="bg-white shadow rounded overflow-hidden"
                             >
                                 <img
                                     src={game?.imageUrl || "https://via.placeholder.com/150"}
