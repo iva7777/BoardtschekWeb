@@ -5,8 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form.tsx";
 import { Input } from "../ui/input.tsx";
 import { Button } from "../ui/button.tsx";
-import apiClient from "@/api/axios.ts";
-import axios from "axios";
+import {registerUser} from "@/api/auth.ts";
 
 const formSchema = z.object({
     firstName: z.string()
@@ -54,16 +53,11 @@ export function CreateAccount() {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
-            const response = await apiClient.post('/api/Auth/register', values);
-            console.log(response.data);
-            alert(`Account created successfully: ${response.data}`);
-            window.location.href = '/login';
+            const successMessage = await registerUser(values);
+            alert(successMessage);
+            window.location.href = "/login";
         } catch (error: unknown) {
-            if (axios.isAxiosError(error)) {
-                alert(error.response?.data || error.message);
-            } else {
-                alert('An unexpected error occurred.');
-            }
+            alert(error);
         }
     }
 

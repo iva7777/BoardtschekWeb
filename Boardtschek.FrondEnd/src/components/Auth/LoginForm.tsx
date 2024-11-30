@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form.tsx";
 import { Input } from "../ui/input.tsx";
 import { Button } from "../ui/button.tsx";
-import apiClient from "@/api/axios.ts";
 import {setToken} from "@/lib/utils.ts";
-import {AxiosError} from "axios";
+import {loginUser} from "@/api/auth.ts";
+
 
 
 const formSchema = z.object({
@@ -34,15 +34,11 @@ export function LoginForm() {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
-            const response = await apiClient.post('/login', values);
-            setToken(response.data.token); // Store token
-            window.location.href = '/homepage';
+            const token = await loginUser(values);
+            setToken(token);
+            window.location.href = "/homepage";
         } catch (error: unknown) {
-            if (error instanceof AxiosError && error.response) {
-                alert(error.response.data?.message || "Login failed.");
-            } else {
-                alert("An unexpected error occurred.");
-            }
+            alert(error);
         }
     }
 
