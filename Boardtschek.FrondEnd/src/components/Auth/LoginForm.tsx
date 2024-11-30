@@ -1,9 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form.tsx";
+import { Input } from "../ui/input.tsx";
+import { Button } from "../ui/button.tsx";
+import apiClient from "@/api/axios.ts";
+import {setToken} from "@/lib/utils.ts";
+
 
 const formSchema = z.object({
     email: z.string()
@@ -25,8 +28,14 @@ export function LoginForm() {
         },
     })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values);
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            const response = await apiClient.post('/login', values);
+            setToken(response.data.token); // Store token
+            window.location.href = '/dashboard'; // Redirect to dashboard
+        } catch (error: any) {
+            alert(error.response?.data?.message || "Login failed.");
+        }
     }
 
     return (
@@ -76,7 +85,7 @@ export function LoginForm() {
                     {/* Right Section: Image */}
                     <div className="w-1/2 flex items-center justify-center bg-gray-200">
                         <img
-                            src="src/assets/images/register-pic-preview.png"
+                            src="../../assets/images/register-pic-preview.png"
                             alt="Example"
                             className="max-w-full h-auto rounded-lg shadow-lg"
                         />

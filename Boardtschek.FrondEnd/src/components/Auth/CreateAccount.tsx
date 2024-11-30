@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form.tsx";
+import { Input } from "../ui/input.tsx";
+import { Button } from "../ui/button.tsx";
+import apiClient from "@/api/axios.ts";
+import axios from "axios";
 
 const formSchema = z.object({
     firstName: z.string()
@@ -24,6 +26,14 @@ const formSchema = z.object({
         .email({
             message: "Enter a valid email address.",
         }),
+    password: z.string()
+        .min(5, {
+            message: "Password must be at least 5 characters long.",
+        }),
+    imageUrl: z.string()
+        .url({
+            message: "Enter a valid image URL.",
+        }),
 })
 
 export function CreateAccount() {
@@ -32,11 +42,26 @@ export function CreateAccount() {
         defaultValues: {
             firstName: "",
             lastName: "",
-        },
+            email: "",
+            password: "",
+            imageUrl: "",
+
+    },
     })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values);
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            const response = await apiClient.post('/api/Auth/api/register', values);
+            console.log(response.data);
+            alert(`Account created successfully: ${response.data}`);
+            window.location.href = '/login';
+        } catch (error: unknown) {
+            if (axios.isAxiosError(error)) {
+                alert(error.response?.data || error.message);
+            } else {
+                alert('An unexpected error occurred.');
+            }
+        }
     }
 
     return (
@@ -89,6 +114,30 @@ export function CreateAccount() {
                                     </FormItem>
                                 )}
                             />
+                            <FormField
+                                control={form.control}
+                                name="password"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Password</FormLabel>
+                                        <FormControl>
+                                            <Input type="password" placeholder="******" {...field} />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="imageUrl"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Image URL</FormLabel>
+                                        <FormControl>
+                                             <Input placeholder="https://example.com/profile.jpg" {...field} />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
                             <Button type="submit" className="w-full">
                                 Get Started
                             </Button>
@@ -99,7 +148,7 @@ export function CreateAccount() {
                     {/* Right Section: Image */}
                     <div className="w-1/2 flex items-center justify-center bg-gray-200">
                         <img
-                            src="src/assets/images/register-pic-preview.png"
+                            src="../../assets/images/register-pic-preview.png"
                             alt="Example"
                             className="max-w-full h-auto rounded-lg shadow-lg"
                         />
