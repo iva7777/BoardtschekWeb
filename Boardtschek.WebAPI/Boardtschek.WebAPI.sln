@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boardtschek.WebAPI.ViewMode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boardtschek.Services.Data", "Boardtschek.Services.Data\Boardtschek.Services.Data.csproj", "{6A33E353-BAEF-4884-858C-1E523C57A150}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boardtschek.WebAPI.Infrastructure", "Boardtschek.WebAPI.Infrastructure\Boardtschek.WebAPI.Infrastructure.csproj", "{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{6A33E353-BAEF-4884-858C-1E523C57A150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A33E353-BAEF-4884-858C-1E523C57A150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A33E353-BAEF-4884-858C-1E523C57A150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{3E50551F-0BCE-4DBF-BF6B-A231176513EE} = {6E4ED113-9A2C-46EB-861E-89E5E264D214}
 		{19286527-B8AB-4714-8200-088ED0185C65} = {75CCB690-29E8-4A30-A8E0-5637E8E4FDD4}
 		{6A33E353-BAEF-4884-858C-1E523C57A150} = {C97703CC-7291-43BE-BC23-95AB3C145812}
+		{B0CCABE7-C23F-4C18-8088-3CFFD142DB04} = {75CCB690-29E8-4A30-A8E0-5637E8E4FDD4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C4854FC-6D7A-4F98-94AA-B66381C0E375}

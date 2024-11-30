@@ -28,6 +28,8 @@ namespace Boardtschek.Data.Configurations
                 Email = "admin@boardtschek.com",
                 NormalizedEmail = "ADMIN@BOARDTSCHEK.COM",
                 PasswordHash = "AQAAAAEAACcQAAAAEP6HBNREH9Mkpk1HC/mZSdZ4K2+7X5A1FgfPtxgeuBkfuSp+GRhfwkc35x+TDUfOcg==",
+                SecurityStamp = "a5d43b6b-18d4-4c6d-96f4-15891acf56cd",
+                ConcurrencyStamp = "7f61ebd4-3074-4302-a364-d2320260a045"
             };
 
             users.Add(user);

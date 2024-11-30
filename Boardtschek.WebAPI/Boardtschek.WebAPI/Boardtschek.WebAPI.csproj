@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Boardtschek.Data\Boardtschek.Data.csproj" />
     <ProjectReference Include="..\Boardtschek.Services.Data\Boardtschek.Services.Data.csproj" />
+    <ProjectReference Include="..\Boardtschek.WebAPI.Infrastructure\Boardtschek.WebAPI.Infrastructure.csproj" />
     <ProjectReference Include="..\Boardtschek.WebAPI.ViewModels\Boardtschek.WebAPI.ViewModels.csproj" />
   </ItemGroup>
 

@@ -3,12 +3,16 @@ using Boardtschek.Data.Models;
 using Boardtschek.Services.Data;
 using Boardtschek.Services.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Boardtschek.WebAPI.Infrastructure.Extensions;
+using static Boardtschek.Common.EntityValidations.GeneralApplicationConstants;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace Boardtschek.WebAPI
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +39,7 @@ namespace Boardtschek.WebAPI
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
             })
+                .AddRoles<IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<BoardtschekDbContext>();
 
             builder.Services.AddScoped<IGameService, GameService>();
@@ -56,8 +61,10 @@ namespace Boardtschek.WebAPI
 
             app.UseHttpsRedirection();
 
+
             app.UseAuthorization();
 
+            await app.SeedAdministrator(DevelopmentAdminEmail);
 
             app.MapControllers();
 
