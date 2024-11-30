@@ -1,12 +1,154 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}|Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi.infrastructure\\extensions\\webapplicationbuilderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}|Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj|solutionrelative:boardtschek.webapi.infrastructure\\extensions\\webapplicationbuilderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data\\configurations\\userentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|solutionrelative:boardtschek.data\\configurations\\userentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\boardtschek.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\boardtschek.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}|Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi.infrastructure\\boardtschek.webapi.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}|Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj|solutionrelative:boardtschek.webapi.infrastructure\\boardtschek.webapi.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20241130204944_addSecutiryAndConcurencyStampToUser.cs",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs",
+              "RelativeDocumentMoniker": "Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs",
+              "RelativeToolTip": "Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T20:49:44.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.json",
+              "RelativeToolTip": "Boardtschek.WebAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-30T20:44:35.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20241130202710_SeedAdminRole.cs",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs",
+              "RelativeDocumentMoniker": "Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs",
+              "RelativeToolTip": "Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T20:27:10.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
+              "RelativeToolTip": "Boardtschek.WebAPI\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA1wBkAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T20:10:20.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebApplicationBuilderExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.Infrastructure\\Extensions\\WebApplicationBuilderExtensions.cs",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI.Infrastructure\\Extensions\\WebApplicationBuilderExtensions.cs",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.Infrastructure\\Extensions\\WebApplicationBuilderExtensions.cs*",
+              "RelativeToolTip": "Boardtschek.WebAPI.Infrastructure\\Extensions\\WebApplicationBuilderExtensions.cs*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T20:12:02.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserEntityConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
+              "RelativeDocumentMoniker": "Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
+              "RelativeToolTip": "Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T20:11:40.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Boardtschek.WebAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
+              "RelativeToolTip": "Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-30T17:05:13.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Boardtschek.WebAPI.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj",
+              "RelativeToolTip": "Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-30T17:05:08.656Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

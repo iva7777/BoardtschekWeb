@@ -35,5 +35,13 @@
             public const int ImageUrlMaxLength = 2048;
 
         }
+
+        public static class GeneralApplicationConstants
+        {
+            public const string AdminRoleName = "Administrator";
+            public const string DevelopmentAdminEmail = "admin@boardtschek.com";
+
+            public const string AdminAreaName = "Admin";
+        }
     }
 }

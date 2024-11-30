@@ -1,16 +1,18 @@
-using System.Text;
 using Boardtschek.Data;
 using Boardtschek.Data.Models;
 using Boardtschek.Services.Data;
 using Boardtschek.Services.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+using Boardtschek.WebAPI.Infrastructure.Extensions;
+using static Boardtschek.Common.EntityValidations.GeneralApplicationConstants;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace Boardtschek.WebAPI
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -36,22 +38,14 @@ namespace Boardtschek.WebAPI
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
-                options.SignIn.RequireConfirmedEmail = false;
             })
+                .AddRoles<IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<BoardtschekDbContext>();
 
             builder.Services.AddScoped<IGameService, GameService>();
             builder.Services.AddScoped<IRatingService, RatingService>();
             builder.Services.AddScoped<IRentalService, RentalService>();
 
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("AllowFrontend",
-                    policy => policy.WithOrigins("http://localhost:5173") // Replace with your frontend URL
-                                    .AllowAnyHeader()
-                                    .AllowAnyMethod());
-            });
-    
             var app = builder.Build();
 
 
@@ -66,10 +60,11 @@ namespace Boardtschek.WebAPI
             app.MapIdentityApi<AppUser>();
 
             app.UseHttpsRedirection();
-            app.UseCors("AllowFrontend");
+
 
             app.UseAuthorization();
 
+            await app.SeedAdministrator(DevelopmentAdminEmail);
 
             app.MapControllers();
 
