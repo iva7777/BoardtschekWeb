@@ -34,6 +34,7 @@ namespace Boardtschek.WebAPI
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
+                options.SignIn.RequireConfirmedEmail = false;
             })
                 .AddEntityFrameworkStores<BoardtschekDbContext>();
 
