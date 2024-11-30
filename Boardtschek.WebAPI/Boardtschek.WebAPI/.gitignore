@@ -67,3 +67,4 @@ secrets.json
 *.vspscc
 
 /vs
+/v2
