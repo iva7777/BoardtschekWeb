@@ -1,4 +1,4 @@
-﻿using System.Security.Claims;
+using System.Security.Claims;
 using Boardtschek.Data.Models;
 using Boardtschek.WebAPI.ViewModels;
 using Boardtschek.WebAPI.ViewModels.User;

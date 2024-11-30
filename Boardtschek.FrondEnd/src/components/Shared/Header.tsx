@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
 import { logout } from "@/lib/utils.ts";
+
 
 const Header: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -11,29 +13,27 @@ const Header: React.FC = () => {
   };
 
   return (
-      <header className="text-#343A40 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-8">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <img src={logo} alt="Logo" className="h-8 w-auto" />
-            <span className="text-xl font-bold text-[#FFC857]">Boardtschek</span>
-          </div>
 
-          {/* Navigation Links */}
-          <nav className="space-x-8 text-sm font-medium">
-            <Link to="/link1" className="hover:text-[#FFC857]">
-              Link 1
-            </Link>
-            <Link to="/link2" className="hover:text-[#FFC857]">
-              Link 2
-            </Link>
-            <Link to="/link3" className="hover:text-[#FFC857]">
-              Link 3
-            </Link>
-            <Link to="/link4" className="hover:text-[#FFC857]">
-              Link 4
-            </Link>
-          </nav>
+      <header className="text-#343A40 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8">
+        {/* Logo */}
+        <div className="flex items-center space-x-3">
+          <Link to="/">
+            <img src={logo} alt="Logo" className="h-8 w-auto" />
+          </Link>
+          <Link to="/">
+            <span className="text-xl font-bold text-[#FFC857]">Boardtschek</span>
+          </Link>
+        </div>
+        {/* Navigation Links */}
+        <nav className="space-x-8 text-sm font-medium">
+          <a href="#" className="hover:text-[#333]">
+            All Games
+          </a>
+          <a href="#" className="hover:text-[#333]">
+            My Rented Games
+          </a>
+        </nav>
 
           {/* Profile Icon and Dropdown */}
           <div className="relative">
@@ -69,7 +69,8 @@ const Header: React.FC = () => {
             )}
           </div>
         </div>
-      </header>
+      </div>
+    </header>
   );
 };
 
