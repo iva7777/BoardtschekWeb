@@ -1,7 +1,6 @@
 using System.Data;
 using System.Security.Claims;
 using Boardtschek.Data.Models;
-using Boardtschek.WebAPI.Helpers;
 using Boardtschek.WebAPI.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -15,12 +14,12 @@ namespace Boardtschek.WebAPI.Controllers
     public class AuthController : ControllerBase
     {
         private readonly UserManager<AppUser> _userManager;
-        private readonly JwtHelper _jwtHelper;
 
-        public AuthController(UserManager<AppUser> userManager, JwtHelper jwtHelper)
+
+        public AuthController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
-            _jwtHelper = jwtHelper;
+ 
         }
 
         [HttpPost]
@@ -45,36 +44,36 @@ namespace Boardtschek.WebAPI.Controllers
 
             return BadRequest(result.Errors);
         }
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody]LoginViewModel model)
-        {
-            var user = await _userManager.FindByEmailAsync(model.Email);
-            if (user == null)
-            {
-                return Unauthorized("Invalid login credentials.");
-            }
+    //    [HttpPost("login")]
+    //    public async Task<IActionResult> Login([FromBody]LoginViewModel model)
+    //    {
+    //        var user = await _userManager.FindByEmailAsync(model.Email);
+    //        if (user == null)
+    //        {
+    //            return Unauthorized("Invalid login credentials.");
+    //        }
 
-            var isPasswordCorrect = await _userManager.CheckPasswordAsync(user, model.Password);
-            if (!isPasswordCorrect)
-            {
-                return Unauthorized("Invalid login credentials.");
-            }
+    //        var isPasswordCorrect = await _userManager.CheckPasswordAsync(user, model.Password);
+    //        if (!isPasswordCorrect)
+    //        {
+    //            return Unauthorized("Invalid login credentials.");
+    //        }
 
-            // Generate JWT Token
+    //        // Generate JWT Token
            
-            var token = _jwtHelper.GenerateJwtToken(
-            user.Id,
-            user.Email,
-            user.FirstName,
-            user.LastName
-    );
-            if (string.IsNullOrEmpty(token))
-            {
-                return StatusCode(500, "Error generating token.");
-            }
-
-            return Ok(new { token });
-        }
+    //        var token = _jwtHelper.GenerateJwtToken(
+    //        user.Id,
+    //        user.Email,
+    //        user.FirstName,
+    //        user.LastName
+    //);
+    //        if (string.IsNullOrEmpty(token))
+    //        {
+    //            return StatusCode(500, "Error generating token.");
+    //        }
+    //        Console.WriteLine($"Generated Token: {token}");
+    //        return Ok(new { token });
+    //    }
         [HttpPost("change-password")]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
