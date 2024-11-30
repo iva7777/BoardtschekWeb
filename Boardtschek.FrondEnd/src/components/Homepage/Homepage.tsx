@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from '@/api/axios';
+import React, { useEffect, useState } from "react";
+import axios from "@/api/axios";
 
 interface Game {
     id: string;
@@ -14,30 +14,19 @@ interface HomePageGamesOverview {
 
 const HomePage: React.FC = () => {
     const [games, setGames] = useState<HomePageGamesOverview | null>(null);
-    const [error, setError] = useState<string | null>(null); // For error handling
 
     useEffect(() => {
         const fetchGames = async () => {
             try {
-                const response = await axios.get('/api/Home');
-                console.log('Fetched games:', response.data); // Debugging: Log response
+                const response = await axios.get("/api/Home");
                 setGames(response.data);
             } catch (error) {
-                console.error('Error fetching games:', error);
-                setError('Failed to fetch games. Please try again later.');
+                console.error("Error fetching games:", error);
             }
         };
 
         fetchGames();
     }, []);
-
-    if (error) {
-        return <div className="text-red-500 text-center mt-8">{error}</div>;
-    }
-
-    if (!games) {
-        return <div className="text-center mt-8">Loading...</div>;
-    }
 
     return (
         <div className="min-h-screen bg-gray-100">
@@ -76,54 +65,56 @@ const HomePage: React.FC = () => {
                 </div>
             </div>
 
-            {/* Top Games by Category */}
-            <div className="py-8 px-4">
-                <h2 className="text-2xl font-bold mb-6 text-center">Top Games by Category</h2>
+            {/* Top Games Section */}
+            <div className="py-8 px-4 max-w-7xl mx-auto">
+                <h2 className="text-2xl font-bold mb-6 text-center text-[#457B9D]">Top Games</h2>
 
                 {/* Highest Rated Games */}
                 <div className="mb-12">
                     <h3 className="text-xl font-semibold mb-4">Highest Rated Games</h3>
-                    {games.highestRatedGames.length > 0 ? (
-                        <div className="grid grid-cols-3 gap-6">
-                            {games.highestRatedGames.map((game) => (
-                                <div key={game.id} className="bg-white shadow rounded overflow-hidden">
-                                    <img
-                                        src={game.imageUrl || 'https://via.placeholder.com/150'}
-                                        alt={game.title}
-                                        className="w-full h-40 object-cover"
-                                    />
-                                    <div className="p-4">
-                                        <h4 className="text-lg font-bold">{game.title}</h4>
-                                    </div>
+                    <div className="grid grid-cols-3 gap-6">
+                        {(games ? games.highestRatedGames : Array(3).fill(null)).map((game, index) => (
+                            <div
+                                key={game?.id || index}
+                                className="bg-white shadow rounded overflow-hidden animate-pulse"
+                            >
+                                <img
+                                    src={game?.imageUrl || "https://via.placeholder.com/150"}
+                                    alt={game?.title || "Loading..."}
+                                    className={`w-full h-40 object-cover ${!game && "bg-gray-300"}`}
+                                />
+                                <div className="p-4">
+                                    <h4 className="text-lg font-bold">
+                                        {game?.title || "Loading..."}
+                                    </h4>
                                 </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="text-gray-500 text-center">No highest-rated games found.</div>
-                    )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Most Borrowed Games */}
-                <div>
+                <div className="mb-12">
                     <h3 className="text-xl font-semibold mb-4">Most Borrowed Games</h3>
-                    {games.mostBorrowedGames.length > 0 ? (
-                        <div className="grid grid-cols-3 gap-6">
-                            {games.mostBorrowedGames.map((game) => (
-                                <div key={game.id} className="bg-white shadow rounded overflow-hidden">
-                                    <img
-                                        src={game.imageUrl || 'https://via.placeholder.com/150'}
-                                        alt={game.title}
-                                        className="w-full h-40 object-cover"
-                                    />
-                                    <div className="p-4">
-                                        <h4 className="text-lg font-bold">{game.title}</h4>
-                                    </div>
+                    <div className="grid grid-cols-3 gap-6">
+                        {(games ? games.mostBorrowedGames : Array(3).fill(null)).map((game, index) => (
+                            <div
+                                key={game?.id || index}
+                                className="bg-white shadow rounded overflow-hidden animate-pulse"
+                            >
+                                <img
+                                    src={game?.imageUrl || "https://via.placeholder.com/150"}
+                                    alt={game?.title || "Loading..."}
+                                    className={`w-full h-40 object-cover ${!game && "bg-gray-300"}`}
+                                />
+                                <div className="p-4">
+                                    <h4 className="text-lg font-bold">
+                                        {game?.title || "Loading..."}
+                                    </h4>
                                 </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="text-gray-500 text-center">No most-borrowed games found.</div>
-                    )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
