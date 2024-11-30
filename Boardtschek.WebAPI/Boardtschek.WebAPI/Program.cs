@@ -1,8 +1,10 @@
+using System.Text;
 using Boardtschek.Data;
 using Boardtschek.Data.Models;
 using Boardtschek.Services.Data;
 using Boardtschek.Services.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Boardtschek.WebAPI
 {
@@ -49,8 +51,7 @@ namespace Boardtschek.WebAPI
                                     .AllowAnyHeader()
                                     .AllowAnyMethod());
             });
-
-
+    
             var app = builder.Build();
 
 
