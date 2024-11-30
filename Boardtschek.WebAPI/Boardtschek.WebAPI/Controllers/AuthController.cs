@@ -1,5 +1,5 @@
 ﻿using Boardtschek.Data.Models;
-using Boardtschek.WebAPI.ViewModels;
+using Boardtschek.WebAPI.ViewModels.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

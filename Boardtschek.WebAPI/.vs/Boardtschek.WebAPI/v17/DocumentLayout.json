@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data\\configurations\\userentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|solutionrelative:boardtschek.data\\configurations\\userentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.json*",
-              "RelativeToolTip": "Boardtschek.WebAPI\\appsettings.json*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-30T13:08:09.722Z",
+              "Title": "UserEntityConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
+              "RelativeDocumentMoniker": "Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
+              "RelativeToolTip": "Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T15:18:06.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
+              "RelativeToolTip": "Boardtschek.WebAPI\\Program.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T15:10:53.253Z",
               "EditorCaption": ""
             }
           ]
