@@ -33,7 +33,7 @@ interface LoginPayload {
 export async function loginUser(data: LoginPayload): Promise<string> {
     try {
         const response = await apiClient.post("/login", data);
-        return response.data.token; // Return the token
+        return response.data.token;
     } catch (error: unknown) {
         if (axios.isAxiosError(error) && error.response) {
             throw error.response.data?.message || "Login failed.";
