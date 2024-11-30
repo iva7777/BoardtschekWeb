@@ -6,6 +6,9 @@ import Profile from "./components/Shared/Profile";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 import Footer from "./components/Shared/Footer";
+import AddGame from "./components/admin/AddGame"; 
+import EditGame from "./components/admin/EditGame"; 
+import EditGameById from "./components/admin/EditGameById";
 
 function App() {
     return (
@@ -43,6 +46,31 @@ function App() {
                         </AuthGuard>
                     }
                 />
+                <Route
+                    path="/add-game"
+                    element={
+                        <AuthGuard>
+                            <AddGame />
+                        </AuthGuard>
+                    }
+                />
+                 <Route
+                    path="/edit-game"
+                    element={
+                        <AuthGuard>
+                            <EditGame />
+                        </AuthGuard>
+                    }
+                />
+                <Route
+                    path="/edit-game/:id"
+                    element={
+                        <AuthGuard>
+                            <EditGameById />
+                        </AuthGuard>
+                    }
+                />
+                <Route path="/" element={<Navigate to="/create-account" replace />} />
                 <Route path="/" element={<Navigate to="/create-account" replace />} />
             </Routes>
             {/* Footer */}

@@ -1,13 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\",
+  "WorkspaceRootPath": "C:\\Users\\Martin\\Documents\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data\\configurations\\userentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|solutionrelative:boardtschek.data\\configurations\\userentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\salia\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\martin\\documents\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserEntityConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
-              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
-              "RelativeToolTip": "Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T15:18:06.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\salia\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
               "RelativeToolTip": "Boardtschek.WebAPI\\Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T15:10:53.253Z",
+              "WhenOpened": "2024-11-30T18:50:54.097Z",
               "EditorCaption": ""
             }
           ]
