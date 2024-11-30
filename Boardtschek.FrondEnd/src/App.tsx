@@ -1,20 +1,30 @@
-import { BrowserRouter, Route, Routes, Navigate  } from 'react-router-dom'
-import './App.css'
-import { CreateAccount } from './components/Auth/CreateAccount.tsx'
-import { LoginForm } from './components/Auth/LoginForm.tsx'
-import AuthGuard from './guards/AuthGuard';
-// import Header from "./components/Shared/Header.tsx";
-import Homepage from "@/components/Homepage/Homepage.tsx";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { LoginForm } from "./components/Auth/LoginForm";
+import { CreateAccount } from "./components/Auth/CreateAccount";
+import Homepage from "./components/Homepage/Homepage";
+import AuthGuard from "./guards/AuthGuard";
+import GuestGuard from "./guards/GuestGuard";
 
 function App() {
-
-  return (
-    <>
+    return (
         <BrowserRouter>
-            {/*<Header />*/}
             <Routes>
-                <Route path="/create-account" element={<CreateAccount />} />
-                <Route path="/login" element={<LoginForm />} />
+                <Route
+                    path="/login"
+                    element={
+                        <GuestGuard>
+                            <LoginForm />
+                        </GuestGuard>
+                    }
+                />
+                <Route
+                    path="/create-account"
+                    element={
+                        <GuestGuard>
+                            <CreateAccount />
+                        </GuestGuard>
+                    }
+                />
                 <Route
                     path="/homepage"
                     element={
@@ -23,11 +33,10 @@ function App() {
                         </AuthGuard>
                     }
                 />
-                <Route path="/" element={<Navigate to="/create-account" replace />} />
+                <Route path="/" element={<Navigate to="/login" replace />} />
             </Routes>
         </BrowserRouter>
-    </>
-  )
+    );
 }
 
-export default App
+export default App;

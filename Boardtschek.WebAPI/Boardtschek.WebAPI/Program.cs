@@ -45,7 +45,7 @@ namespace Boardtschek.WebAPI
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowFrontend",
-                    policy => policy.WithOrigins("http://localhost:5174") // Replace with your frontend URL
+                    policy => policy.WithOrigins("http://localhost:5173") // Replace with your frontend URL
                                     .AllowAnyHeader()
                                     .AllowAnyMethod());
             });

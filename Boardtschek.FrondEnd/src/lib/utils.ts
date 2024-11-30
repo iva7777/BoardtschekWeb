@@ -15,3 +15,9 @@ export function getToken(): string | null {
 export function removeToken() {
   localStorage.removeItem('token');
 }
+
+// Logout function
+export function logout() {
+  removeToken();
+  window.location.href = "/login"; // Redirect to login page
+}
