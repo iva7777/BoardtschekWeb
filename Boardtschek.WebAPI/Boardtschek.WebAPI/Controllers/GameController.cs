@@ -18,6 +18,27 @@ namespace Boardtschek.WebAPI.Controllers
             this.gameService = gameService;
         }
 
+        [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
+        [Route("Add")]
+        public async Task<IActionResult> Add()
+        {
+            if (!User.isAdmin())
+            {
+                return Unauthorized();
+            }
+
+            try
+            {
+                GameFormViewModel model = new();
+                return Ok(model);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred while adding the game." });
+            }
+        }
+
 
         [HttpPost]
         [Authorize(Roles = AdminRoleName)]
