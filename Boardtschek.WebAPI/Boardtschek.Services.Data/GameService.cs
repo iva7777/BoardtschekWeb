@@ -34,6 +34,13 @@ namespace Boardtschek.Services.Data
             await dbContext.SaveChangesAsync();
         }
 
+        public async Task DeleteGameAsync(string id)
+        {
+            Game game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == id);
+            dbContext.Games.Remove(game);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<bool> DoesGameExistAsync(string id)
         {
             return await dbContext.Games.AnyAsync(g => g.Id.ToString() == id);

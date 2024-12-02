@@ -11,5 +11,6 @@ namespace Boardtschek.Services.Data.Interfaces
         Task<bool> DoesGameExistAsync(string id);
         Task<GameEditViewModel> GetGameEditViewModelAsync(string id);
         Task EditGameAsync(GameEditViewModel model, string id);
+        Task DeleteGameAsync(string id);
     }
 }

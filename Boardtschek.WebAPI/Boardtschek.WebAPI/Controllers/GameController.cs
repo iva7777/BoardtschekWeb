@@ -141,5 +141,33 @@ namespace Boardtschek.WebAPI.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred while adding the game." });
             }
         }
+
+        [HttpDelete]
+        [Authorize(Roles = AdminRoleName)]
+        [Route("Delete/{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (!User.isAdmin())
+            {
+                return Unauthorized();
+            }
+
+            try
+            {
+                bool isGameValid = await gameService.DoesGameExistAsync(id);
+
+                if (!isGameValid)
+                {
+                    return NotFound(new { message = "The game you are trying to delete does not exist." });
+                }
+
+                await gameService.DeleteGameAsync(id);
+                return Ok(new { message = $"You have successfully deleted the game!" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred while deleting the game.", details = ex.Message });
+            }
+        }
     }
 }
