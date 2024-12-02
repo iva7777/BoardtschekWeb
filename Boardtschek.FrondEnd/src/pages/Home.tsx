@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "@/api/axios";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { GameCard } from "@/components/GameCard";
 
 interface Game {
   id: string;
@@ -61,7 +62,6 @@ export default function HomePage() {
           />
         </div>
       </section>
-
       {/* Search Section */}
       <section
         className="bg-gray-200 py-4 px-6"
@@ -80,10 +80,9 @@ export default function HomePage() {
           <Button>Search</Button>
         </div>
       </section>
-
       {/* Top Games Section */}
       <section
-        className="section-ranks py-8 px-4 max-w-7xl mx-auto"
+        className="bg-white section-ranks py-8 px-4 max-w-7xl mx-auto"
         aria-labelledby="top-games-heading"
       >
         <h2
@@ -96,35 +95,17 @@ export default function HomePage() {
         {/* Highest Rated Games */}
         <div className="mb-12">
           <h3 className="text-xl font-semibold mb-4">Highest Rated Games</h3>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {(games ? games.highestRatedGames : Array(3).fill(null)).map(
               (game, index) => (
-                <article
+                <GameCard
                   key={game?.id || index}
-                  className="bg-white shadow rounded-lg overflow-hidden"
-                  aria-labelledby={`game-${game?.id || index}`}
-                >
-                  <img
-                    src={game?.imageUrl || "https://via.placeholder.com/150"}
-                    alt={game?.title || "Loading..."}
-                    className={`w-full h-40 object-cover ${
-                      !game && "bg-gray-300"
-                    }`}
-                  />
-                  <div className="p-4">
-                    <h4
-                      id={`game-${game?.id || index}`}
-                      className="text-lg font-bold"
-                    >
-                      {game?.title || "Loading..."}
-                    </h4>
-                    <Link to={`/game/${game?.id}`}>
-                      <Button className="mt-2" variant="default" size="sm">
-                        View Details
-                      </Button>
-                    </Link>
-                  </div>
-                </article>
+                  title={game?.title || "Loading..."}
+                  image={game?.imageUrl || "https://via.placeholder.com/150"}
+                  rating={game?.rating || 0}
+                  quantity={game?.quantity || 0}
+                  nextAvailable={game?.nextAvailable || ""}
+                />
               )
             )}
           </div>
@@ -133,40 +114,23 @@ export default function HomePage() {
         {/* Most Borrowed Games */}
         <div className="mb-12">
           <h3 className="text-xl font-semibold mb-4">Most Borrowed Games</h3>
-          <div className="grid grid-cols-3 gap-6 text-ac">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {(games ? games.mostBorrowedGames : Array(3).fill(null)).map(
               (game, index) => (
-                <article
+                <GameCard
                   key={game?.id || index}
-                  className="bg-white shadow rounded-lg overflow-hidden"
-                  aria-labelledby={`game-${game?.id || index}`}
-                >
-                  <img
-                    src={game?.imageUrl || "https://via.placeholder.com/150"}
-                    alt={game?.title || "Loading..."}
-                    className={`w-full h-40 object-cover ${
-                      !game && "bg-gray-300"
-                    }`}
-                  />
-                  <div className="p-4">
-                    <h4
-                      id={`game-${game?.id || index}`}
-                      className="text-lg font-bold"
-                    >
-                      {game?.title || "Loading..."}
-                    </h4>
-                    <Link to={`/game/${game?.id}`}>
-                      <Button className="mt-2" variant="default" size="sm">
-                        View Details
-                      </Button>
-                    </Link>
-                  </div>
-                </article>
+                  title={game?.title || "Loading..."}
+                  image={game?.imageUrl || "https://via.placeholder.com/150"}
+                  rating={game?.rating || 0}
+                  quantity={game?.quantity || 0}
+                  nextAvailable={game?.nextAvailable || ""}
+                />
               )
             )}
           </div>
         </div>
       </section>
+      ;
     </main>
   );
 }
