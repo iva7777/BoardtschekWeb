@@ -64,6 +64,16 @@ export async function changePassword(data: ChangePasswordPayload): Promise<strin
     }
 }
 export async function fetchUserProfile() {
-    const response = await apiClient.get("/api/Auth/user");
-    return response.data;
+    // const response = await apiClient.get("/api/Auth/user");
+    // return response.data;
+    try {
+        const response = await axios.get('/api/Auth/user', { withCredentials: true });
+        return response.data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            throw new Error(error.response?.data || "Failed to fetch user profile");
+        } else {
+            throw new Error("Unexpected error occurred");
+        }
+    }
 }
