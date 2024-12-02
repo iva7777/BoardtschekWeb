@@ -1,4 +1,6 @@
 ﻿using Boardtschek.Data;
+using Boardtschek.Data.Models;
+using Boardtschek.Data.Models.Enums;
 using Boardtschek.Services.Data.Interfaces;
 using Boardtschek.WebAPI.ViewModels.Game;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +14,24 @@ namespace Boardtschek.Services.Data
         public GameService(BoardtschekDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        public async Task AddGameAsync(GameFormViewModel model)
+        {
+            Game game = new()
+            { 
+                Title = model.Title,
+                Description = model.Description,
+                ImageUrl = model.ImageUrl,
+                MinPlayers = model.MinPlayers,
+                MaxPlayers = model.MaxPlayers,
+                DifficultyLevel = (Difficulty) model.DifficultyLevel,
+                TotalQuantity = model.TotalQuantity,
+                AvailableQuantity = model.TotalQuantity
+            };
+
+            await dbContext.Games.AddAsync(game);
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task<HomePageGamesOverview> GetGamesForHomePage()

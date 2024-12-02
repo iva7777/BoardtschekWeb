@@ -30,8 +30,8 @@ namespace Boardtschek.WebAPI.Controllers
             }
 
             if (!ModelState.IsValid)
-            { 
-                //Error
+            {
+                return BadRequest(ModelState);
             }
 
             if (model.MaxPlayers < model.MinPlayers || model.MinPlayers > model.MaxPlayers)
@@ -41,7 +41,8 @@ namespace Boardtschek.WebAPI.Controllers
 
             try
             {
-                return Ok(model);
+                await gameService.AddGameAsync(model);
+                return Ok($"You have successfully added {model.Title}!");
             }
             catch (Exception)
             {
