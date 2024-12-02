@@ -7,5 +7,10 @@ namespace Boardtschek.Services.Data.Interfaces
         Task<IEnumerable<GameListViewModel>> GetTheThreeHighestRatedGames();
         Task<IEnumerable<GameListViewModel>> GetTheThreeMostBorrowedGames();
         Task<HomePageGamesOverview> GetGamesForHomePage();
+        Task AddGameAsync(GameFormViewModel model);
+        Task<bool> DoesGameExistAsync(string id);
+        Task<GameEditViewModel> GetGameEditViewModelAsync(string id);
+        Task EditGameAsync(GameEditViewModel model, string id);
+        Task DeleteGameAsync(string id);
     }
 }

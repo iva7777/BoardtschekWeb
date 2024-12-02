@@ -1,4 +1,6 @@
 ﻿using Boardtschek.Data;
+using Boardtschek.Data.Models;
+using Boardtschek.Data.Models.Enums;
 using Boardtschek.Services.Data.Interfaces;
 using Boardtschek.WebAPI.ViewModels.Game;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +14,75 @@ namespace Boardtschek.Services.Data
         public GameService(BoardtschekDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        public async Task AddGameAsync(GameFormViewModel model)
+        {
+            Game game = new()
+            { 
+                Title = model.Title,
+                Description = model.Description,
+                ImageUrl = model.ImageUrl,
+                MinPlayers = model.MinPlayers,
+                MaxPlayers = model.MaxPlayers,
+                DifficultyLevel = (Difficulty) model.DifficultyLevel,
+                TotalQuantity = model.TotalQuantity,
+                AvailableQuantity = model.TotalQuantity
+            };
+
+            await dbContext.Games.AddAsync(game);
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteGameAsync(string id)
+        {
+            Game game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == id);
+            dbContext.Games.Remove(game);
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<bool> DoesGameExistAsync(string id)
+        {
+            return await dbContext.Games.AnyAsync(g => g.Id.ToString() == id);
+        }
+
+        public async Task EditGameAsync(GameEditViewModel model, string id)
+        {
+            Game game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == id);
+            game.Title = model.Title;
+            game.Description = model.Description;
+            game.ImageUrl = model.ImageUrl;
+            game.MinPlayers = model.MinPlayers;
+            game.MaxPlayers = model.MaxPlayers;
+            game.DifficultyLevel = (Difficulty) model.DifficultyLevel;
+            game.TotalQuantity = model.TotalQuantity;
+            game.AvailableQuantity = model.AvailableQuantity;
+
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<GameEditViewModel?> GetGameEditViewModelAsync(string id)
+        {
+            Game? game = await dbContext.Games.FirstOrDefaultAsync(g => g.Id.ToString() == id);
+
+            if (game == null)
+            {
+                return null;
+            }
+
+            GameEditViewModel model = new()
+            { 
+                Title = game.Title,
+                Description = game.Description,
+                ImageUrl = game.ImageUrl,
+                MinPlayers = game.MinPlayers,
+                MaxPlayers = game.MaxPlayers,
+                DifficultyLevel = (int) game.DifficultyLevel,
+                TotalQuantity = game.TotalQuantity,
+                AvailableQuantity = game.AvailableQuantity
+            };
+
+            return model;
         }
 
         public async Task<HomePageGamesOverview> GetGamesForHomePage()
