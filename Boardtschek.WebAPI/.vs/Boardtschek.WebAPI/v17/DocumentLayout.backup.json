@@ -1,44 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}|Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi.infrastructure\\extensions\\webapplicationbuilderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}|Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj|solutionrelative:boardtschek.webapi.infrastructure\\extensions\\webapplicationbuilderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data\\configurations\\userentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|solutionrelative:boardtschek.data\\configurations\\userentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi\\boardtschek.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\boardtschek.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}|Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi.infrastructure\\boardtschek.webapi.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B0CCABE7-C23F-4C18-8088-3CFFD142DB04}|Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj|solutionrelative:boardtschek.webapi.infrastructure\\boardtschek.webapi.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data\\migrations\\20241130204944_addsecutiryandconcurencystamptouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|solutionrelative:boardtschek.data\\migrations\\20241130204944_addsecutiryandconcurencystamptouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|c:\\users\\acer\\desktop\\speeditup\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.data\\migrations\\20241130202710_seedadminrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF6A248A-31EC-4988-AB9D-1772C86A0084}|Boardtschek.Data\\Boardtschek.Data.csproj|solutionrelative:boardtschek.data\\migrations\\20241130202710_seedadminrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -46,124 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.Development.json",
-              "RelativeToolTip": "Boardtschek.WebAPI\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-02T09:27:08.805Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "20241130204944_addSecutiryAndConcurencyStampToUser.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs",
-              "RelativeToolTip": "Boardtschek.Data\\Migrations\\20241130204944_addSecutiryAndConcurencyStampToUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T20:49:44.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\appsettings.json",
-              "RelativeToolTip": "Boardtschek.WebAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-30T20:44:35.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "20241130202710_SeedAdminRole.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs",
-              "RelativeToolTip": "Boardtschek.Data\\Migrations\\20241130202710_SeedAdminRole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T20:27:10.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Program.cs",
-              "RelativeToolTip": "Boardtschek.WebAPI\\Program.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAQwGwAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T20:10:20.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WebApplicationBuilderExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.Infrastructure\\Extensions\\WebApplicationBuilderExtensions.cs",
-              "RelativeDocumentMoniker": "Boardtschek.WebAPI.Infrastructure\\Extensions\\WebApplicationBuilderExtensions.cs",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.Infrastructure\\Extensions\\WebApplicationBuilderExtensions.cs",
-              "RelativeToolTip": "Boardtschek.WebAPI.Infrastructure\\Extensions\\WebApplicationBuilderExtensions.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T20:12:02.005Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserEntityConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
-              "RelativeDocumentMoniker": "Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
-              "RelativeToolTip": "Boardtschek.Data\\Configurations\\UserEntityConfiguration.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAzwB4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T20:11:40.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Boardtschek.WebAPI.csproj",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
-              "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
-              "RelativeToolTip": "Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-30T17:05:13.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Boardtschek.WebAPI.Infrastructure.csproj",
-              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\acer\\Desktop\\SpeedItUP\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj",
-              "RelativeToolTip": "Boardtschek.WebAPI.Infrastructure\\Boardtschek.WebAPI.Infrastructure.csproj",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-30T17:05:08.656Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

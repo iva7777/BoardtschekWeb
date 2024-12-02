@@ -13,6 +13,7 @@
             public const int MaxPlayersMinValue = 2;
             public const int MaxPlayersMaxValue = 69;
 
+            public const int DescriptionMinLength = 5;
             public const int DescriptionMaxLength = 1000;
 
             public const int ImageUrlMaxLength = 2048;

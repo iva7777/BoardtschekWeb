@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Boardtschek.WebAPI.Infrastructure.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static Boardtschek.Common.EntityValidations.GeneralApplicationConstants;
 
 namespace Boardtschek.WebAPI.Controllers
 {
@@ -7,5 +9,16 @@ namespace Boardtschek.WebAPI.Controllers
     [ApiController]
     public class GameController : ControllerBase
     {
+        [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
+        public async Task<IActionResult> Add()
+        {
+            if (!User.isAdmin())
+            { 
+                return Unauthorized();
+            }
+
+
+        }
     }
 }
