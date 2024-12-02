@@ -1,10 +1,11 @@
+using System.Data;
 using System.Security.Claims;
 using Boardtschek.Data.Models;
-using Boardtschek.WebAPI.ViewModels;
 using Boardtschek.WebAPI.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace Boardtschek.WebAPI.Controllers
 {
@@ -14,9 +15,11 @@ namespace Boardtschek.WebAPI.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
 
+
         public AuthController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
+ 
         }
 
         [HttpPost]
@@ -41,30 +44,36 @@ namespace Boardtschek.WebAPI.Controllers
 
             return BadRequest(result.Errors);
         }
-        //[HttpPost("login")]
-        //public async Task<IActionResult> Login(LoginModel model)
-        //{
-        //    var user = await _userManager.FindByEmailAsync(model.Email);
-        //    if (user == null)
-        //    {
-        //        return Unauthorized("Invalid login credentials.");
-        //    }
+    //    [HttpPost("login")]
+    //    public async Task<IActionResult> Login([FromBody]LoginViewModel model)
+    //    {
+    //        var user = await _userManager.FindByEmailAsync(model.Email);
+    //        if (user == null)
+    //        {
+    //            return Unauthorized("Invalid login credentials.");
+    //        }
 
-        //    var isPasswordCorrect = await _userManager.CheckPasswordAsync(user, model.Password);
-        //    if (!isPasswordCorrect)
-        //    {
-        //        return Unauthorized("Invalid login credentials.");
-        //    }
+    //        var isPasswordCorrect = await _userManager.CheckPasswordAsync(user, model.Password);
+    //        if (!isPasswordCorrect)
+    //        {
+    //            return Unauthorized("Invalid login credentials.");
+    //        }
 
-        //    // Generate JWT Token
-        //    var token = GenerateJwtToken(user);
-        //    if (string.IsNullOrEmpty(token))
-        //    {
-        //        return StatusCode(500, "Error generating token.");
-        //    }
-
-        //    return Ok(new { token });
-        //}
+    //        // Generate JWT Token
+           
+    //        var token = _jwtHelper.GenerateJwtToken(
+    //        user.Id,
+    //        user.Email,
+    //        user.FirstName,
+    //        user.LastName
+    //);
+    //        if (string.IsNullOrEmpty(token))
+    //        {
+    //            return StatusCode(500, "Error generating token.");
+    //        }
+    //        Console.WriteLine($"Generated Token: {token}");
+    //        return Ok(new { token });
+    //    }
         [HttpPost("change-password")]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {

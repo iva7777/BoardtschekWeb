@@ -3,12 +3,17 @@ using Boardtschek.Data.Models;
 using Boardtschek.Services.Data;
 using Boardtschek.Services.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Boardtschek.WebAPI.Infrastructure.Extensions;
+using static Boardtschek.Common.EntityValidations.GeneralApplicationConstants;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.OpenApi.Models;
+
 
 namespace Boardtschek.WebAPI
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -34,8 +39,8 @@ namespace Boardtschek.WebAPI
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
-                options.SignIn.RequireConfirmedEmail = false;
             })
+                .AddRoles<IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<BoardtschekDbContext>();
 
             builder.Services.AddScoped<IGameService, GameService>();
@@ -50,6 +55,37 @@ namespace Boardtschek.WebAPI
                                     .AllowAnyMethod());
             });
 
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+
+                // Add security definition
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter your token in the text input below.\n\nExample: `abc123`"
+                });
+
+                // Add security requirement
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+            });
 
             var app = builder.Build();
 
@@ -59,16 +95,20 @@ namespace Boardtschek.WebAPI
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
+                });
             }
 
             app.MapIdentityApi<AppUser>();
 
             app.UseHttpsRedirection();
             app.UseCors("AllowFrontend");
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
+            await app.SeedAdministrator(DevelopmentAdminEmail);
 
             app.MapControllers();
 

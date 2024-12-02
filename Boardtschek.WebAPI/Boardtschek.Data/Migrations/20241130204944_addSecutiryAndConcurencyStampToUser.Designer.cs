@@ -4,6 +4,7 @@ using Boardtschek.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Boardtschek.Data.Migrations
 {
     [DbContext(typeof(BoardtschekDbContext))]
-    partial class BoardtschekDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241130204944_addSecutiryAndConcurencyStampToUser")]
+    partial class addSecutiryAndConcurencyStampToUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

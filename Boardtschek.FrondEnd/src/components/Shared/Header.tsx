@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
+
 import logo from "@/assets/logo.svg";
 import { logout } from "@/lib/utils.ts";
 
 const Header: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
@@ -20,7 +22,9 @@ const Header: React.FC = () => {
             <img src={logo} alt="Logo" className="h-8 w-auto" />
           </Link>
           <Link to="/">
-            <span className="text-xl font-bold text-[#FFC857]">Boardtschek</span>
+            <span className="text-xl font-bold text-[#FFC857]">
+              Boardtschek
+            </span>
           </Link>
         </div>
         {/* Navigation Links */}

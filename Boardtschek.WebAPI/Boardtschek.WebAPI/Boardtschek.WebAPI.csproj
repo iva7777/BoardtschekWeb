@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
@@ -20,11 +22,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Boardtschek.Data\Boardtschek.Data.csproj" />
     <ProjectReference Include="..\Boardtschek.Services.Data\Boardtschek.Services.Data.csproj" />
+    <ProjectReference Include="..\Boardtschek.WebAPI.Infrastructure\Boardtschek.WebAPI.Infrastructure.csproj" />
     <ProjectReference Include="..\Boardtschek.WebAPI.ViewModels\Boardtschek.WebAPI.ViewModels.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>

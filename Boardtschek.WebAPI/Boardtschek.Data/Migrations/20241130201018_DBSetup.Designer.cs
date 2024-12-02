@@ -4,6 +4,7 @@ using Boardtschek.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Boardtschek.Data.Migrations
 {
     [DbContext(typeof(BoardtschekDbContext))]
-    partial class BoardtschekDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241130201018_DBSetup")]
+    partial class DBSetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,27 +104,6 @@ namespace Boardtschek.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("30f0662a-29c5-48df-8b57-9c61c671e0fb"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "7f61ebd4-3074-4302-a364-d2320260a045",
-                            Email = "admin@boardtschek.com",
-                            EmailConfirmed = false,
-                            FirstName = "Admin",
-                            ImageUrl = "https://cdn.pixabay.com/photo/2016/02/09/08/05/administrator-1188494_960_720.jpg",
-                            LastName = "Admin",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@BOARDTSCHEK.COM",
-                            NormalizedUserName = "ADMIN@BOARDTSCHEK.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEP6HBNREH9Mkpk1HC/mZSdZ4K2+7X5A1FgfPtxgeuBkfuSp+GRhfwkc35x+TDUfOcg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5d43b6b-18d4-4c6d-96f4-15891acf56cd",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@boardtschek.com"
-                        });
                 });
 
             modelBuilder.Entity("Boardtschek.Data.Models.Game", b =>
