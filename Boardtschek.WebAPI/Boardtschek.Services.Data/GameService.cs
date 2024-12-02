@@ -34,6 +34,35 @@ namespace Boardtschek.Services.Data
             await dbContext.SaveChangesAsync();
         }
 
+        public async Task<bool> DoesGameExistAsync(string id)
+        {
+            return await dbContext.Games.AnyAsync(g => g.Id.ToString() == id);
+        }
+
+        public async Task<GameEditViewModel?> GetGameEditViewModelAsync(string id)
+        {
+            Game? game = await dbContext.Games.FirstOrDefaultAsync(g => g.Id.ToString() == id);
+
+            if (game == null)
+            {
+                return null;
+            }
+
+            GameEditViewModel model = new()
+            { 
+                Title = game.Title,
+                Description = game.Description,
+                ImageUrl = game.ImageUrl,
+                MinPlayers = game.MinPlayers,
+                MaxPlayers = game.MaxPlayers,
+                DifficultyLevel = (int) game.DifficultyLevel,
+                TotalQuantity = game.TotalQuantity,
+                AvailableQuantity = game.AvailableQuantity
+            };
+
+            return model;
+        }
+
         public async Task<HomePageGamesOverview> GetGamesForHomePage()
         {
             HomePageGamesOverview gamesOverview = new HomePageGamesOverview();

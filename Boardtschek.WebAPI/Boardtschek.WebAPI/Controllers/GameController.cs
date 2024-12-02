@@ -49,5 +49,63 @@ namespace Boardtschek.WebAPI.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred while adding the game." });
             }
         }
+
+        [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
+        [Route("Edit/{id}")]
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (!User.isAdmin())
+            {
+                return Unauthorized();
+            }
+
+            var game = await gameService.GetGameEditViewModelAsync(id);
+
+            if (game == null)
+            {
+                return NotFound(new { message = "The game you are trying to edit does not exist." });
+            }
+
+            return Ok(game);
+        }
+
+        //[HttpPost]
+        //[Authorize(Roles = AdminRoleName)]
+        //[Route("Edit")]
+        //public async Task<IActionResult> Edit(GameEditViewModel model, string id)
+        //{
+        //    if (!User.isAdmin())
+        //    {
+        //        return Unauthorized();
+        //    }
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    if (model.MaxPlayers < model.MinPlayers || model.MinPlayers > model.MaxPlayers)
+        //    {
+        //        return BadRequest(new { message = "MaxPlayers cannot be less than MinPlayers. Please provide valid input." });
+        //    }
+
+        //    try
+        //    {
+        //        bool isGameValid = await gameService.DoesGameExistAsync(id);
+
+        //        if (!isGameValid)
+        //        {
+        //            return NotFound(new { message = "The game you are trying to edit does not exist." });
+        //        }
+
+        //        await gameService.AddGameAsync(model);
+        //        return Ok($"You have successfully added {model.Title}!");
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(500, new { message = "An unexpected error occurred while adding the game." });
+        //    }
+        //}
     }
 }

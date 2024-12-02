@@ -7,20 +7,24 @@
       "RelativeMoniker": "D:0:0:{073C3901-F353-4DA7-9A66-00AA9887D4BE}|Boardtschek.WebAPI\\Boardtschek.WebAPI.csproj|solutionrelative:boardtschek.webapi\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19286527-B8AB-4714-8200-088ED0185C65}|Boardtschek.WebAPI.ViewModels\\Boardtschek.WebAPI.ViewModels.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi.viewmodels\\game\\gameformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19286527-B8AB-4714-8200-088ED0185C65}|Boardtschek.WebAPI.ViewModels\\Boardtschek.WebAPI.ViewModels.csproj|solutionrelative:boardtschek.webapi.viewmodels\\game\\gameformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19286527-B8AB-4714-8200-088ED0185C65}|Boardtschek.WebAPI.ViewModels\\Boardtschek.WebAPI.ViewModels.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi.viewmodels\\game\\gameeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19286527-B8AB-4714-8200-088ED0185C65}|Boardtschek.WebAPI.ViewModels\\Boardtschek.WebAPI.ViewModels.csproj|solutionrelative:boardtschek.webapi.viewmodels\\game\\gameeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8D479BB-F7E5-4420-B71E-B7D7968B046A}|Boardtschek.Common\\Boardtschek.Common.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.common\\entityvalidations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8D479BB-F7E5-4420-B71E-B7D7968B046A}|Boardtschek.Common\\Boardtschek.Common.csproj|solutionrelative:boardtschek.common\\entityvalidations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.services.data\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A33E353-BAEF-4884-858C-1E523C57A150}|Boardtschek.Services.Data\\Boardtschek.Services.Data.csproj|solutionrelative:boardtschek.services.data\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19286527-B8AB-4714-8200-088ED0185C65}|Boardtschek.WebAPI.ViewModels\\Boardtschek.WebAPI.ViewModels.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.webapi.viewmodels\\game\\gameformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19286527-B8AB-4714-8200-088ED0185C65}|Boardtschek.WebAPI.ViewModels\\Boardtschek.WebAPI.ViewModels.csproj|solutionrelative:boardtschek.webapi.viewmodels\\game\\gameformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8D479BB-F7E5-4420-B71E-B7D7968B046A}|Boardtschek.Common\\Boardtschek.Common.csproj|c:\\users\\\u0441\u0430\u043B\u0438\u0430\u043D\\documents\\github\\speed-it-up-uni-2024\\boardtschek.webapi\\boardtschek.common\\entityvalidations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8D479BB-F7E5-4420-B71E-B7D7968B046A}|Boardtschek.Common\\Boardtschek.Common.csproj|solutionrelative:boardtschek.common\\entityvalidations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +34,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "GameEditViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.ViewModels\\Game\\GameEditViewModel.cs",
+              "RelativeDocumentMoniker": "Boardtschek.WebAPI.ViewModels\\Game\\GameEditViewModel.cs",
+              "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.ViewModels\\Game\\GameEditViewModel.cs",
+              "RelativeToolTip": "Boardtschek.WebAPI.ViewModels\\Game\\GameEditViewModel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T14:04:08.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "GameService.cs",
               "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\GameService.cs",
               "RelativeDocumentMoniker": "Boardtschek.Services.Data\\GameService.cs",
               "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\GameService.cs",
               "RelativeToolTip": "Boardtschek.Services.Data\\GameService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwCEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAA1wCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T13:46:12.879Z",
               "EditorCaption": ""
@@ -53,14 +70,14 @@
               "RelativeDocumentMoniker": "Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
               "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
               "RelativeToolTip": "Boardtschek.Services.Data\\Interfaces\\IGameService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T13:45:33.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "EntityValidations.cs",
               "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.Common\\EntityValidations.cs",
               "RelativeDocumentMoniker": "Boardtschek.Common\\EntityValidations.cs",
@@ -77,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "GameFormViewModel.cs",
               "DocumentMoniker": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI.ViewModels\\Game\\GameFormViewModel.cs",
               "RelativeDocumentMoniker": "Boardtschek.WebAPI.ViewModels\\Game\\GameFormViewModel.cs",
@@ -96,7 +113,7 @@
               "RelativeDocumentMoniker": "Boardtschek.WebAPI\\Controllers\\GameController.cs",
               "ToolTip": "C:\\Users\\\u0421\u0430\u043B\u0438\u0430\u043D\\Documents\\GitHub\\speed-it-up-uni-2024\\Boardtschek.WebAPI\\Boardtschek.WebAPI\\Controllers\\GameController.cs",
               "RelativeToolTip": "Boardtschek.WebAPI\\Controllers\\GameController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAcwDUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAADoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T12:20:53.341Z",
               "EditorCaption": ""
