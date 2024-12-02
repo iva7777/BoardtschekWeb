@@ -11,6 +11,8 @@ import GuestGuard from "./guards/GuestGuard";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 
+import "./App.css";
+
 function App() {
   const location = useLocation();
   const hideLayout = ["/login", "/create-account"].includes(location.pathname);
