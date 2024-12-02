@@ -24,6 +24,8 @@ apiClient.interceptors.request.use((config) => {
 apiClient.interceptors.response.use(
     (response) => response,
     (error) => {
+        console.log("Full error", error);
+        console.error('Axios Response Error:', error.response); //undefined
         if (error.response?.status === 401) {
             // Unauthorized: Redirect to login
             window.location.href = '/login';
