@@ -39,6 +39,21 @@ namespace Boardtschek.Services.Data
             return await dbContext.Games.AnyAsync(g => g.Id.ToString() == id);
         }
 
+        public async Task EditGameAsync(GameEditViewModel model, string id)
+        {
+            Game game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == id);
+            game.Title = model.Title;
+            game.Description = model.Description;
+            game.ImageUrl = model.ImageUrl;
+            game.MinPlayers = model.MinPlayers;
+            game.MaxPlayers = model.MaxPlayers;
+            game.DifficultyLevel = (Difficulty) model.DifficultyLevel;
+            game.TotalQuantity = model.TotalQuantity;
+            game.AvailableQuantity = model.AvailableQuantity;
+
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<GameEditViewModel?> GetGameEditViewModelAsync(string id)
         {
             Game? game = await dbContext.Games.FirstOrDefaultAsync(g => g.Id.ToString() == id);
