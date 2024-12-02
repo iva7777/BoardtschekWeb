@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Button } from "../ui/button.tsx";
+import { Button } from "@/components/ui/button.tsx";
 
 // Sample list of games (you might get this from an API)
 const games = [
@@ -9,7 +9,7 @@ const games = [
   // Add more games here...
 ];
 
-export default function EditGame() {
+export default function EditGamePage() {
   const navigate = useNavigate();
 
   const handleEdit = (gameId: string) => {
@@ -19,7 +19,9 @@ export default function EditGame() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8">
       <h1 className="text-2xl font-bold text-center">Edit a Game</h1>
-      <p className="text-base text-gray-600 mt-4 text-center">Select a game to edit</p>
+      <p className="text-base text-gray-600 mt-4 text-center">
+        Select a game to edit
+      </p>
 
       {/* List of games */}
       <div className="space-y-4 mt-6">

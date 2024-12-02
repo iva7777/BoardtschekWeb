@@ -14,7 +14,7 @@ interface RegisterPayload {
 export async function registerUser(data: RegisterPayload): Promise<string> {
     try {
         const response = await apiClient.post("/api/Auth/register", data);
-        return response.data; // Return success message
+        return response.data; 
     } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
             throw error.response?.data || error.message;
@@ -64,8 +64,6 @@ export async function changePassword(data: ChangePasswordPayload): Promise<strin
     }
 }
 export async function fetchUserProfile() {
-    // const response = await apiClient.get("/api/Auth/user");
-    // return response.data;
     try {
         const response = await axios.get('/api/Auth/user', { withCredentials: true });
         return response.data;

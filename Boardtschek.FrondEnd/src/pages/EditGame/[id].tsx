@@ -2,9 +2,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form.tsx";
-import { Input } from "../ui/input.tsx";
-import { Button } from "../ui/button.tsx";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form.tsx";
+import { Input } from "@/components/ui/input.tsx";
+import { Button } from "@/components/ui/button.tsx";
 
 // Define validation schema using Zod
 const gameSchema = z.object({
@@ -13,19 +19,27 @@ const gameSchema = z.object({
   imageUrl: z.string().url("Image URL is required."),
   minPlayers: z.number().min(1, "Minimum players must be at least 1."),
   maxPlayers: z.number().min(1, "Maximum players must be at least 1."),
-  difficultyLevel: z.number().min(1, "Difficulty level must be between 1 and 5.").max(5, "Difficulty level must be between 1 and 5."),
-  availableQuantity: z.number().min(1, "Available quantity must be at least 1."),
+  difficultyLevel: z
+    .number()
+    .min(1, "Difficulty level must be between 1 and 5.")
+    .max(5, "Difficulty level must be between 1 and 5."),
+  availableQuantity: z
+    .number()
+    .min(1, "Available quantity must be at least 1."),
   totalQuantity: z.number().min(1, "Total quantity must be at least 1."),
 });
 
 type GameFormValues = z.infer<typeof gameSchema>;
 
-export default function EditGameById() {
-  const { id } = useParams(); 
+export default function EditGameByIdPage() {
+  const { id } = useParams();
   const navigate = useNavigate();
 
   // Placeholder data for the 3 specific games
-  const gamePlaceholders: Record<number, { title: string; description: string; imageUrl: string }> = {
+  const gamePlaceholders: Record<
+    number,
+    { title: string; description: string; imageUrl: string }
+  > = {
     1: {
       title: "Chess",
       description: "A strategy board game.",
@@ -60,7 +74,7 @@ export default function EditGameById() {
 
   const form = useForm<GameFormValues>({
     resolver: zodResolver(gameSchema),
-    defaultValues: fetchedGameData, 
+    defaultValues: fetchedGameData,
   });
 
   const onSubmit = (data: GameFormValues) => {
@@ -70,7 +84,7 @@ export default function EditGameById() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 ">
       <Form {...form}>
         <div className="w-full max-w-md">
           {/* Headings */}
@@ -80,7 +94,10 @@ export default function EditGameById() {
           </div>
 
           {/* Form */}
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 w-full"
+          >
             <FormField
               control={form.control}
               name="title"

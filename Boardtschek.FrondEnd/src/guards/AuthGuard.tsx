@@ -11,35 +11,27 @@
 //
 // export default AuthGuard;
 
-
-
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import Header from "@/components/Shared/Header";
 
 interface Props {
-    children: JSX.Element;
+  children: JSX.Element;
 }
 
 const AuthGuard: React.FC<Props> = ({ children }) => {
-    const location = useLocation();
-    const isAuthenticated = !!localStorage.getItem("token");
+  const location = useLocation();
+  const isAuthenticated = !!localStorage.getItem("token");
 
+  if (!isAuthenticated && location.pathname !== "/create-account") {
+    return <Navigate to="/login" replace />;
+  }
 
-    const hideHeaderRoutes = ["/create-account", "/login"];
-    const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
-
-    if (!isAuthenticated && location.pathname !== "/create-account") {
-        return <Navigate to="/login" replace />;
-    }
-
-    return (
-        <>
-            {}
-            {!shouldHideHeader && <Header />}
-            {children}
-        </>
-    );
+  return (
+    <>
+      {}
+      {children}
+    </>
+  );
 };
 
 export default AuthGuard;

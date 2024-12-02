@@ -2,25 +2,35 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form.tsx";
-import { Input } from "../ui/input.tsx";
-import { Button } from "../ui/button.tsx";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form.tsx";
+import { Input } from "@/components/ui/input.tsx";
+import { Button } from "@/components/ui/button.tsx";
 
 const gameSchema = z.object({
   title: z.string().min(1, "Game title is required."),
   description: z.string().min(1, "Description is required."),
-  imageUrl: z.string()
-  .url("Image URL is required."),
+  imageUrl: z.string().url("Image URL is required."),
   minPlayers: z.number().min(1, "Minimum players must be at least 1."),
   maxPlayers: z.number().min(1, "Maximum players must be at least 1."),
-  difficultyLevel: z.number().min(1, "Difficulty level must be between 1 and 5.").max(5, "Difficulty level must be between 1 and 5."),
-  availableQuantity: z.number().min(1, "Available quantity must be at least 1."),
+  difficultyLevel: z
+    .number()
+    .min(1, "Difficulty level must be between 1 and 5.")
+    .max(5, "Difficulty level must be between 1 and 5."),
+  availableQuantity: z
+    .number()
+    .min(1, "Available quantity must be at least 1."),
   totalQuantity: z.number().min(1, "Total quantity must be at least 1."),
 });
 
 type GameFormValues = z.infer<typeof gameSchema>;
 
-export default function AddGame() {
+export default function AddGamePage() {
   const navigate = useNavigate();
   const form = useForm<GameFormValues>({
     resolver: zodResolver(gameSchema),
@@ -49,11 +59,16 @@ export default function AddGame() {
           {/* Headings */}
           <div className="text-center">
             <h1 className="text-2xl font-bold">Add a New Game</h1>
-            <p className="text-base text-gray-600 mt-4">Add a new game to the system</p>
+            <p className="text-base text-gray-600 mt-4">
+              Add a new game to the system
+            </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 w-full"
+          >
             <FormField
               control={form.control}
               name="title"
