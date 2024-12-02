@@ -69,7 +69,7 @@ export default function CreateAccountPage() {
       <Form {...form}>
         <div className="flex h-screen">
           {/* Left Section: Headings and Form */}
-          <div className="w-1/2 flex flex-col items-center justify-center bg-gray-100 p-8">
+          <div className="flex w-full lg:w-1/2 flex-col items-center justify-center bg-gray-100 p-8">
             {/* Headings */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold">Create Account</h1>
@@ -208,7 +208,7 @@ export default function CreateAccountPage() {
           </div>
 
           {/* Right Section: Image */}
-          <div className="w-1/2 flex items-center justify-center bg-gray-200"></div>
+          <div className="hidden mb:flex w-1/2 items-center justify-center bg-[#E3E3E3]"></div>
         </div>
       </Form>
     </>

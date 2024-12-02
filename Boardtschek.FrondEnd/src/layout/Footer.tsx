@@ -1,5 +1,5 @@
 import React from "react";
-import { Icons } from "@/components/ui/icons";
+// import { Icons } from "@/components/ui/icons";
 
 const Footer: React.FC = () => {
   return (
@@ -34,6 +34,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Social Media Section */}
+        {/* TODO: Fix icons */}
         <div>
           <h2 className="text-lg font-bold mb-3">Follow Us</h2>
           <ul className="flex space-x-4">
@@ -43,7 +44,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icons.facebook className="w-12 h-12 text-white hover:text-primary transition-colors duration-200" />
+                {/* <Icons.facebook className="w-12 h-12 text-white hover:text-primary transition-colors duration-200" /> */}
               </a>
             </li>
             <li className="text-2xl">
@@ -52,7 +53,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icons.facebook className="w-12 h-12 hover:text-primary transition-colors duration-200" />
+                {/* <Icons.facebook className="w-12 h-12 hover:text-primary transition-colors duration-200" /> */}
               </a>
             </li>
             <li className="text-2xl">
@@ -61,7 +62,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Icons.facebook className="w-12 h-12 hover:text-primary transition-colors duration-200" />
+                {/* <Icons.facebook className="w-12 h-12 hover:text-primary transition-colors duration-200" /> */}
               </a>
             </li>
           </ul>
