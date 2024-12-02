@@ -18,6 +18,9 @@
 
             public const int ImageUrlMaxLength = 2048;
 
+            public const int DifficultyLevelMinValue = 0;
+            public const int DifficultyLevelMaxValue = 2;
+
         }
 
         public static class Rating

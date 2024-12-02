@@ -18,12 +18,15 @@ namespace Boardtschek.WebAPI.ViewModels.Game
         public string ImageUrl { get; set; } = null!;
 
         [Required]
+        [Range(MinPlayersMinValue, MinPlayersMaxValue)]
         public int MinPlayers { get; set; }
 
         [Required]
+        [Range(MaxPlayersMinValue, MaxPlayersMaxValue)]
         public int MaxPlayers { get; set; }
 
         [Required]
+        [Range(DifficultyLevelMinValue, DifficultyLevelMaxValue)]
         public int DifficultyLevel { get; set; }
 
         [Required]
