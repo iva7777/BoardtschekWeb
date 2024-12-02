@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
 	darkMode: ["class"],
 	content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
@@ -54,7 +55,10 @@ export default {
 			'5': 'var(--chart-5)',
 		  }
 		}
-	  }
+	  },
+	  fontFamily: {
+        sans: ['Recursive', ...defaultTheme.fontFamily.sans],
+      }
 	},
 	plugins: [require("tailwindcss-animate")],
   }
