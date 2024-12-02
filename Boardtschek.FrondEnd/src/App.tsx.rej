@@ -1,0 +1,10 @@
+diff a/Boardtschek.FrondEnd/src/App.tsx b/Boardtschek.FrondEnd/src/App.tsx	(rejected hunks)
+@@ -36,6 +36,8 @@
+                 />
+                 <Route path="/" element={<Navigate to="/login" replace />} />
+             </Routes>
++            {/* Footer */}
++            <Footer />
+         </BrowserRouter>
+     );
+ }
