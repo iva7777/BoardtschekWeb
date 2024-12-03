@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "../components/ui/button";
 import { Star, Clock } from "lucide-react";
 import { Card, CardContent, CardFooter } from "../components/ui/card";
@@ -18,21 +17,14 @@ export function GameCard({
   quantity,
   nextAvailable,
 }: GameCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <Card
-      className="flex flex-col h-full transition-shadow duration-300 hover:shadow-lg"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <Card className="flex flex-col h-full transition-shadow duration-300 hover:shadow-lg">
       {/* Image */}
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-lg">
         <img
           src={image}
           alt={title}
           className="object-cover w-full h-full transition-transform duration-300 ease-in-out"
-          style={{ transform: isHovered ? "scale(1.05)" : "scale(1)" }}
         />
       </div>
 

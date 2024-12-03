@@ -1,38 +1,69 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button.tsx";
+import axios from "axios";
+import apiClient from "@/api/axios";
 
-// Sample list of games (you might get this from an API)
-const games = [
-  { id: "1", title: "Chess" },
-  { id: "2", title: "Monopoly" },
-  { id: "3", title: "Scrabble" },
-  // Add more games here...
-];
+interface Game {
+  id: string;
+  title: string;
+}
 
-export default function EditGamePage() {
+export default function EditGameSelectionPage() {
   const navigate = useNavigate();
+  const [games, setGames] = useState<Game[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string>("");
 
-  const handleEdit = (gameId: string) => {
-    navigate(`/edit-game/${gameId}`); // Navigate to the EditGameById page with the selected game's ID
+  useEffect(() => {
+    const fetchGames = async () => {
+      setError("");
+      try {
+        const response = await apiClient.get("/Game/List", {
+          withCredentials: true,
+        });
+        setGames(response.data);
+        setLoading(false);
+      } catch (error: unknown) {
+        if (axios.isAxiosError(error)) {
+          setError(error.message || "Failed to load games.");
+        } else {
+          setError("An unexpected error occurred.");
+        }
+        setLoading(false);
+      }
+    };
+
+    fetchGames();
+  }, []);
+
+  const handleEditClick = (id: string) => {
+    navigate(`/edit/${id}`);
   };
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8">
-      <h1 className="text-2xl font-bold text-center">Edit a Game</h1>
-      <p className="text-base text-gray-600 mt-4 text-center">
-        Select a game to edit
-      </p>
+  if (loading) return <p>Loading games...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
 
-      {/* List of games */}
-      <div className="space-y-4 mt-6">
-        {games.map((game) => (
-          <div key={game.id} className="flex items-center space-x-4">
-            <p className="text-lg">{game.title}</p>
-            <Button onClick={() => handleEdit(game.id)} className="w-24">
-              Edit
-            </Button>
-          </div>
-        ))}
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8">
+      <div className="w-full max-w-md">
+        <h1 className="text-2xl font-bold text-center">
+          Select a Game to Edit
+        </h1>
+        <ul className="space-y-4 mt-6">
+          {games.map((game) => (
+            <li key={game.id}>
+              <div className="flex justify-between items-center">
+                <span>{game.title}</span>
+                <button
+                  onClick={() => handleEditClick(game.id)}
+                  className="text-blue-500 hover:underline"
+                >
+                  Edit
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
