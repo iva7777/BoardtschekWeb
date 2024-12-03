@@ -31,7 +31,7 @@ export function GameCard({
       {/* Card Content */}
       <CardContent className="flex-grow p-4">
         {/* Title */}
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
+        <h3 className="text-lg font-semibold text-subtext mb-2">{title}</h3>
 
         {/* Rating */}
         <div className="flex items-center mb-2">
@@ -41,11 +41,11 @@ export function GameCard({
               className={`w-4 h-4 ${
                 i < Math.round(rating)
                   ? "text-yellow-400 fill-current"
-                  : "text-gray-300"
+                  : "text-subtext"
               }`}
             />
           ))}
-          <span className="ml-2 text-sm text-gray-600">
+          <span className="ml-2 text-sm text-subtext">
             ({rating.toFixed(1)})
           </span>
         </div>
@@ -71,8 +71,8 @@ export function GameCard({
           {/* Add to Cart Button */}
           <Button
             variant="default"
-            className="bg-accent hover:bg-accent-hover text-white"
             aria-label="Add to cart"
+            className="text-white"
           >
             Add to Cart
           </Button>

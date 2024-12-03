@@ -13,6 +13,12 @@ export default {
 		colors: {
 		  background: 'var(--background)',
 		  foreground: 'var(--foreground)',
+		  text: 'var(--text)',
+		  subtext: 'var(--subtext)',
+		  context: 'var(--context)',
+		  foregroundText: 'var(--foreground-text)',
+		  foregroundSubtext: 'var(--foreground-subtext)',
+		  foregroundContext: 'var(--foreground-context)',
 		  card: {
 			DEFAULT: 'var(--card)',
 			foreground: 'var(--card-foreground)',

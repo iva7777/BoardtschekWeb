@@ -17,7 +17,7 @@ const AccountMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="flex items-center px-6 py-3 bg-transparent hover:bg-backgorund space-x-2">
+        <Button className="flex items-center px-6 py-3 bg-transparent hover:bg-backgorund space-x-1">
           <Avatar className="w-9 h-9">
             <AvatarImage
               src="https://careers.nemetschek.bg/storage/Images/SpeedItUp/mentors/Teodora-Zdravcheva.png"
@@ -25,8 +25,10 @@ const AccountMenu = () => {
             />
             <AvatarFallback>J</AvatarFallback>
           </Avatar>
-          <span className="text-black font-medium text-lg">Teodora</span>
-          <ChevronDown className="text-black w-5 h-5 ml-2" />
+          <div className="flex h-16 items-center justify-between">
+            <span className="text-text font-medium text-lg">Teodora</span>
+            <ChevronDown className="text-text w-5 h-5" />
+          </div>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-60">
@@ -39,7 +41,7 @@ const AccountMenu = () => {
             <AvatarFallback>J</AvatarFallback>
           </Avatar>
           <div>
-            <p className="m-0 font-bold text-gray-800">Teodora</p>
+            <p className="m-0 font-bold text-subtext">Teodora</p>
           </div>
         </div>
         <DropdownMenuSeparator />

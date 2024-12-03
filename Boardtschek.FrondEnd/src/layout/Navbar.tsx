@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
 import AccountMenu from "@/components/AccountMenu";
+import { ModeToggle } from "@/components/ModeToggle";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-border/40 bg-background supports-[backdrop-filter]:bg-background/60">
       <div className="inner">
         <div className="flex h-16 items-center justify-between">
           <Logo size="large" showText={true} />
@@ -22,7 +23,10 @@ export default function Navbar() {
               </li>
             </ul>
           </nav>
-          <AccountMenu />
+          <div className="flex h-16 items-center justify-between">
+            <AccountMenu />
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </header>

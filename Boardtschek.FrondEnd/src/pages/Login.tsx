@@ -50,11 +50,11 @@ export default function LoginFormPage() {
       <Form {...form}>
         <div className="flex h-screen">
           {/* Left Section: Headings and Form */}
-          <div className="flex w-full lg:w-1/2 flex-col items-center justify-center bg-gray-100 p-8">
+          <div className="flex w-full lg:w-1/2 flex-col items-center justify-center bg-subtext p-8">
             {/* Headings */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold">Welcome Back</h1>
-              <p className="text-lg text-gray-600 mt-4">
+              <p className="text-lg text-subtext mt-4">
                 Enter Your Credentials to Continue
               </p>
             </div>
@@ -114,7 +114,7 @@ export default function LoginFormPage() {
               </Button>
               <div className="mt-2 text-center text-sm text-neutral-700">
                 Don't have an account?{" "}
-                <Link to="/create-account" className="underline text-black">
+                <Link to="/create-account" className="underline text-text">
                   Sign up
                 </Link>
               </div>
