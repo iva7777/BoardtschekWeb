@@ -14,6 +14,7 @@ interface HomePageGamesOverview {
   highestRatedGames: Game[];
   mostBorrowedGames: Game[];
 }
+
 export default function HomePage() {
   const [games, setGames] = useState<HomePageGamesOverview | null>(null);
 
@@ -31,40 +32,42 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
-      <section
-        className="flex items-center justify-between px-8 py-12 max-w-7xl mx-auto"
-        data-sublocation="Hero"
-        aria-labelledby="hero-heading"
-      >
-        <div className="w-1/2">
-          <h1 id="hero-heading" className="text-4xl font-bold">
+    <main id="content" className="min-h-[100dvh]" tabIndex={-1}>
+      <section className="" data-sublocation="Hero" aria-hidden="false">
+        <div
+          className="inner pb-24"
+          style={{
+            marginTop: "calc(200 / 2000 * 100vw)",
+            marginBottom: "calc(200 / 2000 * 100vw)",
+          }}
+        >
+          <h1 className="mb-5 text-6xl font-semibold uppercase text-center">
             Welcome to Boardtschek
           </h1>
-          <p className="text-lg mt-4">
-            Discover a world of fun and strategy with our exclusive collection
-            of board games, available for all Nemetschek employees.
-          </p>
-          <Link to="/rent">
-            {" "}
-            {/* Use Link for navigation */}
-            <Button className="mt-4" variant={"default"} size={"lg"}>
-              Rent
-            </Button>
-          </Link>
-        </div>
-        <div className="w-1/2 flex justify-center">
-          <img
-            src="https://via.placeholder.com/400x300"
-            alt="Board games preview"
-            className="rounded-lg shadow-lg"
-          />
+          <div className="">
+            <p className="mb-3 text-lg text-neutral-700 text-center">
+              Discover a world of fun and strategy with our exclusive collection
+              of board games, available for all Nemetschek employees.
+            </p>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <Link to="/rent">
+                <Button className="mt-4" variant={"default"} size={"lg"}>
+                  Start Renting Now
+                </Button>
+              </Link>
+              <Link to="/rent">
+                <Button className="mt-4" variant={"outline"} size={"lg"}>
+                  Browse Rentals
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
+
       {/* Search Section */}
       <section
-        className="bg-gray-200 py-4 px-6"
+        className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full max-w-4xl p-4 bg-white shadow-lg rounded-lg"
         aria-labelledby="search-heading"
       >
         <h2 id="search-heading" className="sr-only">
@@ -74,63 +77,81 @@ export default function HomePage() {
           <input
             type="text"
             placeholder="Search..."
-            className="w-1/2 p-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-2/3 h-12 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
             aria-label="Search for board games"
           />
-          <Button>Search</Button>
+          <Button
+            variant={"secondary"}
+            size={"lg"}
+            className="w-1/4 h-12 rounded-lg hover:bg-orange-500 transition-all duration-300"
+          >
+            Search
+          </Button>
         </div>
       </section>
+
       {/* Top Games Section */}
       <section
-        className="bg-white section-ranks py-8 px-4 max-w-7xl mx-auto"
+        className="bg-gray-200 section-ranks"
         aria-labelledby="top-games-heading"
       >
-        <h2
-          id="top-games-heading"
-          className="text-2xl font-bold mb-6 text-center text-primary"
+        <div
+          className="inner"
+          style={{
+            paddingTop: "calc(200 / 2000 * 100vw)",
+            paddingBottom: "calc(150 / 2000 * 100vw)",
+          }}
         >
-          Top Games
-        </h2>
+          <h2
+            id="top-games-heading"
+            className="text-4xl font-bold mb-6 text-center text-black"
+          >
+            Top Games
+          </h2>
 
-        {/* Highest Rated Games */}
-        <div className="mb-12">
-          <h3 className="text-xl font-semibold mb-4">Highest Rated Games</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(games ? games.highestRatedGames : Array(3).fill(null)).map(
-              (game, index) => (
-                <GameCard
-                  key={game?.id || index}
-                  title={game?.title || "Loading..."}
-                  image={game?.imageUrl || "https://via.placeholder.com/150"}
-                  rating={game?.rating || 0}
-                  quantity={game?.quantity || 0}
-                  nextAvailable={game?.nextAvailable || ""}
-                />
-              )
-            )}
+          {/* Highest Rated Games */}
+          <div className="mb-12">
+            <h3 className="text-xl font-medium mb-4 text-gray-900">
+              Highest Rated Games
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {(games ? games.highestRatedGames : Array(3).fill(null)).map(
+                (game, index) => (
+                  <GameCard
+                    key={game?.id || index}
+                    title={game?.title || "Loading..."}
+                    image={game?.imageUrl || "https://via.placeholder.com/150"}
+                    rating={game?.rating || 0}
+                    quantity={game?.quantity || 0}
+                    nextAvailable={game?.nextAvailable || ""}
+                  />
+                )
+              )}
+            </div>
           </div>
-        </div>
 
-        {/* Most Borrowed Games */}
-        <div className="mb-12">
-          <h3 className="text-xl font-semibold mb-4">Most Borrowed Games</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(games ? games.mostBorrowedGames : Array(3).fill(null)).map(
-              (game, index) => (
-                <GameCard
-                  key={game?.id || index}
-                  title={game?.title || "Loading..."}
-                  image={game?.imageUrl || "https://via.placeholder.com/150"}
-                  rating={game?.rating || 0}
-                  quantity={game?.quantity || 0}
-                  nextAvailable={game?.nextAvailable || ""}
-                />
-              )
-            )}
+          {/* Most Borrowed Games */}
+          <div className="">
+            <h3 className="text-xl font-medium mb-4 text-gray-900">
+              Most Borrowed Games
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {(games ? games.mostBorrowedGames : Array(3).fill(null)).map(
+                (game, index) => (
+                  <GameCard
+                    key={game?.id || index}
+                    title={game?.title || "Loading..."}
+                    image={game?.imageUrl || "https://via.placeholder.com/150"}
+                    rating={game?.rating || 0}
+                    quantity={game?.quantity || 0}
+                    nextAvailable={game?.nextAvailable || ""}
+                  />
+                )
+              )}
+            </div>
           </div>
         </div>
       </section>
-      ;
     </main>
   );
 }

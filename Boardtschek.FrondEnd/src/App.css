@@ -16,9 +16,9 @@
     --secondary: #fcb94d;
     --secondary-foreground: #ffffff;
     --secondary-hover: #f8b400;
-    --accent: #2851a2;
-    --accent-foreground: #ffffff;
-    --accent-hover: #336b9a;
+    --accent: #3361b3;
+    --accent-foreground: #dde6f7;
+    --accent-hover: #2851a2;
     --muted: #6c757d;
     --muted-foreground: #212529;
     --destructive: #dc3545;
@@ -66,93 +66,52 @@
 }
 
 @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-      font-family: 'Recursive', sans-serif;
-    }
+  * {
+    @apply border-border;
   }
-  
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Recursive", sans-serif;
+  }
+}
+
 @layer utilities {
+  .inner {
+    @apply mx-[6.4%] block;
+  }
+  @media (min-width: 480px) {
     .inner {
-      @apply mx-[6.4%] block;
-    }
-    @media (min-width: 480px) {
-      .inner {
-        @apply mx-[5%];
-      }
-    }
-  
-    @media (min-width: 768px) {
-      .inner {
-        @apply mx-[6.25%];
-      }
-    }
-  
-    @media (min-width: 960px) {
-      .inner {
-        @apply mx-[5%];
-      }
-    }
-  
-    @media (min-width: 1120px) {
-      .inner {
-        @apply mx-[5.715%];
-      }
-    }
-  
-    @media (min-width: 1440px) {
-      .inner {
-        @apply mx-[5.278%];
-      }
-    }
-  
-    @media (min-width: 1680px) {
-      .inner {
-        @apply mx-auto max-w-screen-xl;
-      }
-    }
-    @supports (display: grid) {
-      .grid-layout {
-        --columns: 4;
-        --gutter: 16px;
-        display: grid;
-        grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-        column-gap: var(--gutter);
-        grid-auto-flow: dense;
-        width: 100%;
-      }
-    }
-  
-    @supports (display: grid) {
-      @media (min-width: 600px) and (max-width: 1023px) {
-        .grid-layout {
-          --columns: 8;
-          --gutter: 24px;
-        }
-      }
-    }
-  
-    @supports (display: grid) {
-      @media (min-width: 1024px) and (max-width: 1439px) {
-        .grid-layout {
-          --columns: 12;
-          --gutter: 24px;
-        }
-      }
-    }
-  
-    @supports (display: grid) {
-      @media (min-width: 1440px) {
-        .grid-layout {
-          --columns: 12;
-          --gutter: 24px;
-          margin: 0 auto;
-          max-width: 1432px;
-        }
-      }
+      @apply mx-[5%];
     }
   }
-  
+
+  @media (min-width: 768px) {
+    .inner {
+      @apply mx-[6.25%];
+    }
+  }
+
+  @media (min-width: 960px) {
+    .inner {
+      @apply mx-[5%];
+    }
+  }
+
+  @media (min-width: 1120px) {
+    .inner {
+      @apply mx-[5.715%];
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .inner {
+      @apply mx-[5.278%];
+    }
+  }
+
+  @media (min-width: 1680px) {
+    .inner {
+      @apply mx-auto max-w-screen-xl;
+    }
+  }
+}
