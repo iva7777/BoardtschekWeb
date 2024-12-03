@@ -4,7 +4,7 @@ import CreateAccountPage from "./pages/Signup";
 import SettingsPage from "./pages/Setting";
 import HomePage from "./pages/Home";
 import AddGamePage from "./pages/AddGame";
-
+import GameDetails from "./pages/GameDetails"; 
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 
@@ -61,7 +61,15 @@ function App() {
             </AuthGuard>
           }
         />
-        <Route path="/" element={<Navigate to="/create-account" replace />} />
+        <Route
+          path="/GameDetails"
+          element={
+            <AuthGuard>
+               <Route path="/GameDetails" element={<GameDetails />} />
+            </AuthGuard>
+          }
+        />
+
         <Route path="/" element={<Navigate to="/create-account" replace />} />
       </Routes>
       {!hideLayout && <Footer />}
@@ -69,4 +77,4 @@ function App() {
   );
 }
 
-export default App;
+export default GameDetails;
