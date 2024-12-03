@@ -1,28 +1,51 @@
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "@/api/axios";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-} from "@/components/ui/form.tsx";
-import { Input } from "@/components/ui/input.tsx";
-import { Button } from "@/components/ui/button.tsx";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
-// Define validation schema using Zod
+// Define DifficultyLevel Enum
+enum DifficultyLevel {
+  Easy = "Easy",
+  Medium = "Medium",
+  Hard = "Hard",
+}
+
+// Define the Game type
+interface Game {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  minPlayers: number;
+  maxPlayers: number;
+  difficultyLevel: DifficultyLevel;
+  availableQuantity: number;
+  totalQuantity: number;
+}
+
+// Define validation schema using zod
 const gameSchema = z.object({
   title: z.string().min(1, "Game title is required."),
   description: z.string().min(1, "Description is required."),
-  imageUrl: z.string().url("Image URL is required."),
+  imageUrl: z.string().url("Valid Image URL is required."),
   minPlayers: z.number().min(1, "Minimum players must be at least 1."),
   maxPlayers: z.number().min(1, "Maximum players must be at least 1."),
-  difficultyLevel: z
-    .number()
-    .min(1, "Difficulty level must be between 1 and 5.")
-    .max(5, "Difficulty level must be between 1 and 5."),
+  difficultyLevel: z.enum([
+    DifficultyLevel.Easy,
+    DifficultyLevel.Medium,
+    DifficultyLevel.Hard,
+  ]),
   availableQuantity: z
     .number()
     .min(1, "Available quantity must be at least 1."),
@@ -31,69 +54,88 @@ const gameSchema = z.object({
 
 type GameFormValues = z.infer<typeof gameSchema>;
 
-export default function EditGameByIdPage() {
-  const { id } = useParams();
+export default function EditGamePage() {
+  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-
-  // Placeholder data for the 3 specific games
-  const gamePlaceholders: Record<
-    number,
-    { title: string; description: string; imageUrl: string }
-  > = {
-    1: {
-      title: "Chess",
-      description: "A strategy board game.",
-      imageUrl: "https://example.com/chess.jpg",
-    },
-    2: {
-      title: "Monopoly",
-      description: "A property trading game.",
-      imageUrl: "https://example.com/monopoly.jpg",
-    },
-    3: {
-      title: "Scrabble",
-      description: "A word game.",
-      imageUrl: "https://example.com/scrabble.jpg",
-    },
-  };
-
-  const parsedGameId = id ? parseInt(id, 10) : 1;
-
-  const gameData = gamePlaceholders[parsedGameId] || gamePlaceholders[1];
-
-  const fetchedGameData = {
-    title: gameData.title,
-    description: gameData.description,
-    imageUrl: gameData.imageUrl,
-    minPlayers: 2,
-    maxPlayers: 4,
-    difficultyLevel: 3,
-    availableQuantity: 10,
-    totalQuantity: 50,
-  };
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string>("");
 
   const form = useForm<GameFormValues>({
     resolver: zodResolver(gameSchema),
-    defaultValues: fetchedGameData,
+    defaultValues: {
+      title: "",
+      description: "",
+      imageUrl: "",
+      minPlayers: 1,
+      maxPlayers: 1,
+      difficultyLevel: DifficultyLevel.Easy,
+      availableQuantity: 1,
+      totalQuantity: 1,
+    },
   });
 
-  const onSubmit = (data: GameFormValues) => {
-    console.log(data);
-    alert("Game updated successfully!");
-    navigate("/edit-game");
+  // Fetch game details for the form
+  useEffect(() => {
+    const fetchGameDetails = async () => {
+      try {
+        const response = await axios.get(`/Game/Edit/${id}`, {
+          withCredentials: true,
+        });
+        const gameData: Game = {
+          ...response.data,
+          difficultyLevel:
+            DifficultyLevel[
+              response.data.difficultyLevel as keyof typeof DifficultyLevel
+            ],
+        };
+
+        form.reset(gameData); // Populate form with game data
+        setLoading(false);
+      } catch (error: unknown) {
+        const errorMessage =
+          error instanceof Error
+            ? error.message
+            : "Failed to load game details.";
+        setError(errorMessage);
+        setLoading(false);
+      }
+    };
+
+    if (id) fetchGameDetails();
+  }, [id, form]); // Add 'form' to the dependency array
+
+  // Handle form submission
+  const onSubmit = async (data: GameFormValues) => {
+    if (!id) {
+      alert("Game ID is missing.");
+      return;
+    }
+
+    try {
+      const backendData = {
+        ...data,
+        difficultyLevel:
+          DifficultyLevel[data.difficultyLevel as keyof typeof DifficultyLevel],
+      };
+
+      const message = await axios.put(`/Game/Edit/${id}`, backendData);
+      alert(message || "Game updated successfully!");
+      navigate("/games");
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to update game.";
+      alert(errorMessage);
+    }
   };
 
+  if (loading) return <p>Loading game details...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 ">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8">
       <Form {...form}>
         <div className="w-full max-w-md">
-          {/* Headings */}
-          <div className="text-center">
-            <h1 className="text-2xl font-bold">Edit Game</h1>
-            <p className="text-base text-gray-600 mt-4">Update game details</p>
-          </div>
-
-          {/* Form */}
+          <h1 className="text-2xl font-bold text-center">Edit Game</h1>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-8 w-full"
@@ -105,7 +147,7 @@ export default function EditGameByIdPage() {
                 <FormItem>
                   <FormLabel>Game Title</FormLabel>
                   <FormControl>
-                    <Input placeholder={gameData.title} {...field} />
+                    <Input placeholder="Game Title" {...field} />
                   </FormControl>
                 </FormItem>
               )}
@@ -117,7 +159,7 @@ export default function EditGameByIdPage() {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Input placeholder={gameData.description} {...field} />
+                    <Input placeholder="Description" {...field} />
                   </FormControl>
                 </FormItem>
               )}
@@ -129,13 +171,82 @@ export default function EditGameByIdPage() {
                 <FormItem>
                   <FormLabel>Image URL</FormLabel>
                   <FormControl>
-                    <Input placeholder={gameData.imageUrl} {...field} />
+                    <Input placeholder="Image URL" {...field} />
                   </FormControl>
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full">
-              Update Game
+            <FormField
+              control={form.control}
+              name="minPlayers"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Min Players</FormLabel>
+                  <FormControl>
+                    <Input type="number" min={1} {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="maxPlayers"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Max Players</FormLabel>
+                  <FormControl>
+                    <Input type="number" min={1} {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="difficultyLevel"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Difficulty Level</FormLabel>
+                  <FormControl>
+                    <select
+                      {...field}
+                      className="border border-gray-300 rounded px-2 py-1"
+                    >
+                      {Object.values(DifficultyLevel).map((difficulty) => (
+                        <option key={difficulty} value={difficulty}>
+                          {difficulty}
+                        </option>
+                      ))}
+                    </select>
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="availableQuantity"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Available Quantity</FormLabel>
+                  <FormControl>
+                    <Input type="number" min={1} {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="totalQuantity"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Total Quantity</FormLabel>
+                  <FormControl>
+                    <Input type="number" min={1} {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <Button type="submit" variant="default" size="lg">
+              Save Changes
             </Button>
           </form>
         </div>

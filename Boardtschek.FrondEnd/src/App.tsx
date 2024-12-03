@@ -4,7 +4,9 @@ import CreateAccountPage from "./pages/Signup";
 import SettingsPage from "./pages/Setting";
 import HomePage from "./pages/Home";
 import AddGamePage from "./pages/AddGame";
-import GameDetails from "./pages/GameDetails"; 
+import EditGamePage from "./pages/EditGame";
+import EditGameByIdPage from "./pages/EditGame/[id]";
+import GameDetails from "./pages/GameDetails";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 
@@ -62,14 +64,29 @@ function App() {
           }
         />
         <Route
-          path="/GameDetails"
+          path="/edit-game"
           element={
             <AuthGuard>
-               <Route path="/GameDetails" element={<GameDetails />} />
+              <EditGamePage />
             </AuthGuard>
           }
         />
-
+        <Route
+          path="/edit-game/:id"
+          element={
+            <AuthGuard>
+              <EditGameByIdPage />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="/GameDetails"
+          element={
+            <AuthGuard>
+              <Route path="/GameDetails" element={<GameDetails />} />
+            </AuthGuard>
+          }
+        />
         <Route path="/" element={<Navigate to="/create-account" replace />} />
       </Routes>
       {!hideLayout && <Footer />}
@@ -77,4 +94,4 @@ function App() {
   );
 }
 
-export default GameDetails;
+export default App;
