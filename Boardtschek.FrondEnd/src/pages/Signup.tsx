@@ -200,7 +200,7 @@ export default function CreateAccountPage() {
               </Button>
               <div className="mt-1 text-center text-sm text-neutral-700">
                 Already have an account?{" "}
-                <Link to="/login" className="text-text underline">
+                <Link to="/login" className="text-background-text underline">
                   Sign In
                 </Link>
               </div>

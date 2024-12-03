@@ -26,8 +26,10 @@ const AccountMenu = () => {
             <AvatarFallback>J</AvatarFallback>
           </Avatar>
           <div className="flex h-16 items-center justify-between">
-            <span className="text-text font-medium text-lg">Teodora</span>
-            <ChevronDown className="text-text w-5 h-5" />
+            <span className="text-background-text font-medium text-lg">
+              Teodora
+            </span>
+            <ChevronDown className="text-background-text w-5 h-5" />
           </div>
         </Button>
       </DropdownMenuTrigger>

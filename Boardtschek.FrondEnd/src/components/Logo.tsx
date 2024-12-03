@@ -23,7 +23,9 @@ const Logo: React.FC<LogoProps> = ({ size = "medium", showText = true }) => {
       </Link>
       {showText && (
         <Link to="/">
-          <span className={`font-bold ${textSize} text-text leading-none`}>
+          <span
+            className={`font-bold ${textSize} text-background-text leading-none`}
+          >
             Boardtschek
           </span>
         </Link>

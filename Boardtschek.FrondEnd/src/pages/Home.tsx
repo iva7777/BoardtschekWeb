@@ -3,6 +3,7 @@ import axios from "@/api/axios";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { GameCard } from "@/components/GameCard";
+import { Input } from "@/components/ui/input";
 
 interface Game {
   id: string;
@@ -41,11 +42,11 @@ export default function HomePage() {
             marginBottom: "calc(200 / 2000 * 100vw)",
           }}
         >
-          <h1 className="mb-5 text-6xl text-text font-semibold uppercase text-center">
+          <h1 className="mb-5 text-6xl text-background-text font-semibold uppercase text-center">
             Welcome to Boardtschek
           </h1>
           <div className="">
-            <p className="mb-3 text-lg text-text text-center">
+            <p className="mb-3 text-lg text-background-text text-center">
               Discover a world of fun and strategy with our exclusive collection
               of board games, available for all Nemetschek employees.
             </p>
@@ -67,25 +68,26 @@ export default function HomePage() {
 
       {/* Search Section */}
       <section
-        className="absolute p-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full max-w-4xl bg-background shadow-lg rounded-lg"
+        className="absolute p-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full max-w-4xl bg-foreground shadow-lg rounded-lg"
         aria-labelledby="search-heading"
       >
         <h2 id="search-heading" className="sr-only">
           Search for Games
         </h2>
-        <div className="flex justify-center items-center space-x-4 h-12">
-          <input
-            type="text"
-            placeholder="   Search..."
-            className="w-9/12 h-12 border border-subtext rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+        <div className="flex w-full  items-center space-x-2">
+          <Input
+            type="search"
+            placeholder="Search..."
+            className="w-9/12 h-12 border border-subtext rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
             aria-label="Search for board games"
           />
           <Button
             variant={"default"}
             size={"lg"}
-            className="w-1/4 h-12 rounded-lg transition-all duration-300"
+            className="w-3/12 h-12 rounded-lg transition-all duration-300"
+            type="submit"
           >
-            Search
+            Find Games
           </Button>
         </div>
       </section>
