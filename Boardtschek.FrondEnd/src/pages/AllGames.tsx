@@ -15,7 +15,7 @@ interface HomePageGamesOverview {
   mostBorrowedGames: Game[];
 }
 
-export default function HomePage() {
+export default function AllGamesPage() {
   const [games, setGames] = useState<HomePageGamesOverview | null>(null);
 
   useEffect(() => {
@@ -33,6 +33,39 @@ export default function HomePage() {
 
   return (
     <main id="content" className="min-h-[100dvh]" tabIndex={-1}>
+      {/* <header className="secondary-header sticky top-0 z-50 w-full border-border/40 bg-white supports-[backdrop-filter]:bg-background/60">
+        <div className="search-container">
+          <div className="flex flex-row justify-center items-center space-x-2">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-2/3 h-12 p-3 border border-subtext rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+              aria-label="Search for board games"
+            />
+            <Button
+              variant={"secondary"}
+              size={"lg"}
+              className="w-1/4 h-12 rounded-lg hover:bg-orange-500 transition-all duration-300"
+            >
+              Search
+            </Button>
+          </div>
+          <Button
+            variant={"secondary"}
+            size={"lg"}
+            className="w-1/4 h-12 rounded-lg hover:bg-orange-500 transition-all duration-300"
+          >
+            Search
+          </Button>
+          <Button
+            variant={"secondary"}
+            size={"lg"}
+            className="w-1/4 h-12 rounded-lg hover:bg-orange-500 transition-all duration-300"
+          >
+            Search
+          </Button>
+        </div>
+      </header> */}
       <section className="" data-sublocation="Hero" aria-hidden="false">
         <div
           className="inner pb-24"
@@ -41,11 +74,11 @@ export default function HomePage() {
             marginBottom: "calc(200 / 2000 * 100vw)",
           }}
         >
-          <h1 className="mb-5 text-6xl text-text font-semibold uppercase text-center">
+          <h1 className="mb-5 text-6xl font-semibold uppercase text-center">
             Welcome to Boardtschek
           </h1>
           <div className="">
-            <p className="mb-3 text-lg text-text text-center">
+            <p className="mb-3 text-lg text-neutral-700 text-center">
               Discover a world of fun and strategy with our exclusive collection
               of board games, available for all Nemetschek employees.
             </p>
@@ -64,35 +97,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Search Section */}
-      <section
-        className="absolute p-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full max-w-4xl bg-background shadow-lg rounded-lg"
-        aria-labelledby="search-heading"
-      >
-        <h2 id="search-heading" className="sr-only">
-          Search for Games
-        </h2>
-        <div className="flex justify-center items-center space-x-4 h-12">
-          <input
-            type="text"
-            placeholder="   Search..."
-            className="w-9/12 h-12 border border-subtext rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-            aria-label="Search for board games"
-          />
-          <Button
-            variant={"default"}
-            size={"lg"}
-            className="w-1/4 h-12 rounded-lg transition-all duration-300"
-          >
-            Search
-          </Button>
-        </div>
-      </section>
-
       {/* Top Games Section */}
       <section
-        className="section-ranks bg-foreground"
+        className="bg-gray-200 section-ranks"
         aria-labelledby="top-games-heading"
       >
         <div
@@ -102,20 +109,10 @@ export default function HomePage() {
             paddingBottom: "calc(150 / 2000 * 100vw)",
           }}
         >
-          <h2
-            id="top-games-heading"
-            className="text-4xl font-bold mb-6 text-center text-foreground-text"
-          >
-            Top Games
-          </h2>
-
           {/* Highest Rated Games */}
           <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4 text-foreground-subtext">
-              Highest Rated Games
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {(games ? games.highestRatedGames : Array(3).fill(null)).map(
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {(games ? games.highestRatedGames : Array(4).fill(null)).map(
                 (game, index) => (
                   <GameCard
                     key={game?.id || index}
@@ -129,14 +126,9 @@ export default function HomePage() {
               )}
             </div>
           </div>
-
-          {/* Most Borrowed Games */}
-          <div className="">
-            <h3 className="text-xl font-medium mb-4 text-subtext">
-              Most Borrowed Games
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {(games ? games.mostBorrowedGames : Array(3).fill(null)).map(
+          <div className="mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {(games ? games.highestRatedGames : Array(3).fill(null)).map(
                 (game, index) => (
                   <GameCard
                     key={game?.id || index}

@@ -69,11 +69,11 @@ export default function CreateAccountPage() {
       <Form {...form}>
         <div className="flex h-screen">
           {/* Left Section: Headings and Form */}
-          <div className="flex w-full lg:w-1/2 flex-col items-center justify-center bg-gray-100 p-8">
+          <div className="flex w-full lg:w-1/2 flex-col items-center justify-center bg-subtext p-8">
             {/* Headings */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold">Create Account</h1>
-              <p className="text-lg text-gray-600 mt-4">Ready to Play?</p>
+              <p className="text-lg text-subtext mt-4">Ready to Play?</p>
             </div>
 
             {/* Form */}
@@ -200,7 +200,7 @@ export default function CreateAccountPage() {
               </Button>
               <div className="mt-1 text-center text-sm text-neutral-700">
                 Already have an account?{" "}
-                <Link to="/login" className="text-black underline">
+                <Link to="/login" className="text-text underline">
                   Sign In
                 </Link>
               </div>

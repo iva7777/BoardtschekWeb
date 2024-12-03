@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-white py-8 bg-accent">
+    <footer className="text-white py-8 bg-primary">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* About Section */}
         <div>
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
-      <div className="border-t border-gray-700 mt-6 pt-4 text-center text-sm">
+      <div className=" border-subtext mt-6 pt-4 text-center text-sm">
         © {new Date().getFullYear()} Boardtschek. All rights reserved.
       </div>
     </footer>

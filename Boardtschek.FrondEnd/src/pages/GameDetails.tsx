@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
@@ -14,7 +20,7 @@ export default function GameDetails() {
           <CardHeader>
             <CardTitle>Game Preview</CardTitle>
           </CardHeader>
-          <CardContent className="flex justify-center items-center bg-gray-200 rounded-lg h-48 mt-4 mb-6">
+          <CardContent className="flex justify-center items-center bg-subtext rounded-lg h-48 mt-4 mb-6">
             <p>Game Preview</p>
           </CardContent>
           <CardFooter className="flex justify-end mt-4 mb-6">
@@ -28,7 +34,9 @@ export default function GameDetails() {
         <div className="flex-2 space-y-6 mt-4 mb-8">
           <div>
             <h1 className="text-2xl font-bold">Game Title</h1>
-            <p className="text-sm font-semibold text-gray-500">Difficulty: Level</p>
+            <p className="text-sm font-semibold text-subtext">
+              Difficulty: Level
+            </p>
             <div className="flex items-center space-x-1 mt-2">
               <span className="text-sm font-semibold">Rating:</span>
               {[...Array(4)].map((_, index) => (
@@ -63,15 +71,16 @@ export default function GameDetails() {
             </Avatar>
             <div>
               <p className="font-semibold">Goshka Goshkareva</p>
-              <p className="text-xs text-gray-500">5 min ago</p>
+              <p className="text-xs text-subtext">5 min ago</p>
               <p className="mt-2">
-                I really appreciate the insights and perspectives shared in this article. It's definitely given me something to think about.
+                I really appreciate the insights and perspectives shared in this
+                article. It's definitely given me something to think about.
               </p>
               <div className="flex space-x-2 mt-2">
-                <Button size="sm" variant="outline">
+                <Button size="sm" variant="outlinePrimary">
                   Upvote
                 </Button>
-                <Button size="sm" variant="outline">
+                <Button size="sm" variant="outlinePrimary">
                   Downvote
                 </Button>
               </div>
@@ -80,7 +89,7 @@ export default function GameDetails() {
         </CardContent>
         <Separator />
         <CardFooter>
-          <p className="text-sm text-gray-500">No more comments available.</p>
+          <p className="text-sm text-subtext">No more comments available.</p>
         </CardFooter>
       </Card>
     </div>

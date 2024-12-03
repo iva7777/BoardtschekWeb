@@ -127,7 +127,7 @@ export default function AddGamePage() {
           {/* Headings */}
           <div className="text-center">
             <h1 className="text-2xl font-bold">Add a New Game</h1>
-            <p className="text-base text-gray-600 mt-4">
+            <p className="text-base text-subtext mt-4">
               Add a new game to the system
             </p>
           </div>
@@ -159,7 +159,7 @@ export default function AddGamePage() {
                     <textarea
                       {...field}
                       placeholder="Description"
-                      className="w-full p-2 border rounded resize-y min-h-[100px] max-h-[300px] placeholder-gray-800"
+                      className="w-full p-2 border rounded resize-y min-h-[100px] max-h-[300px] placeholder-subtext"
                       style={{ fontSize: "16px" }}
                     />
                   </FormControl>
@@ -240,7 +240,7 @@ export default function AddGamePage() {
                   <FormControl>
                     <select
                       {...field}
-                      className="border border-gray-300 rounded px-2 py-1"
+                      className="border border-subtext rounded px-2 py-1"
                     >
                       <option value="Easy">Easy</option>
                       <option value="Medium">Medium</option>
