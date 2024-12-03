@@ -6,7 +6,7 @@ import HomePage from "./pages/Home";
 import AddGamePage from "./pages/AddGame";
 import EditGamePage from "./pages/EditGame";
 import EditGameByIdPage from "./pages/EditGame/[id]";
-
+import GameDetails from "./pages/GameDetails";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 
@@ -76,6 +76,14 @@ function App() {
           element={
             <AuthGuard>
               <EditGameByIdPage />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="/GameDetails"
+          element={
+            <AuthGuard>
+              <Route path="/GameDetails" element={<GameDetails />} />
             </AuthGuard>
           }
         />
