@@ -46,7 +46,7 @@
     --background-tone: #252525;
     --foreground: #f7f7f7;
     --text: #ffffff;
-    --subtext: #dfdfdf; 
+    --subtext: #dfdfdf;
     --context: #dfdfdf;
     --foreground-text: #000000;
     --foreground-subtext: #374151;
@@ -55,7 +55,7 @@
     --card-foreground: #f7f7f7;
     --popover: #343a40;
     --popover-foreground: #f7f7f7;
-    --primary: #f58220;
+    --primary: #583415;
     --primary-foreground: #212529;
     --primary-hover: #f39c12;
     --secondary: #6c757d;
@@ -128,21 +128,20 @@
       @apply mx-auto max-w-screen-xl;
     }
   }
-  .nav-inner{
+  .nav-inner {
     height: var(--nav-height);
     padding: 0 var(--nav-gutter);
   }
   :root {
     --nav-gutter: 16px;
-    --nav-height: 50px;
+    --nav-height: 40px;
     --nav-search-height: 60px;
   }
   @media (min-width: 790px) {
     :root {
-        --nav-gutter: 40px;
-        --nav-height: 80px;
-        --nav-search-height: 56px;
+      --nav-gutter: 40px;
+      --nav-height: 68px;
+      --nav-search-height: 56px;
     }
   }
-
 }
