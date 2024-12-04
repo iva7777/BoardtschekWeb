@@ -11,14 +11,18 @@ export default {
 		  sm: 'calc(var(--radius) - 4px)',
 		},
 		colors: {
-		  background: 'var(--background)',
-		  foreground: 'var(--foreground)',
-		  text: 'var(--text)',
-		  subtext: 'var(--subtext)',
-		  context: 'var(--context)',
-		  foregroundText: 'var(--foreground-text)',
-		  foregroundSubtext: 'var(--foreground-subtext)',
-		  foregroundContext: 'var(--foreground-context)',
+		  background: {
+			DEFAULT: 'var(--background)',
+			text: 'var(--text)',
+			subtext: 'var(--subtext)',
+			context: 'var(--context)',
+		  },
+		  foreground: {
+			DEFAULT: 'var(--foreground)',
+			text: 'var(--foreground-text)',
+			subtext: 'var(--foreground-subtext)',
+			context: 'var(--foreground-context)',
+		  },
 		  card: {
 			DEFAULT: 'var(--card)',
 			foreground: 'var(--card-foreground)',

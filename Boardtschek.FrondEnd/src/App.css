@@ -128,4 +128,21 @@
       @apply mx-auto max-w-screen-xl;
     }
   }
+  .nav-inner{
+    height: var(--nav-height);
+    padding: 0 var(--nav-gutter);
+  }
+  :root {
+    --nav-gutter: 16px;
+    --nav-height: 50px;
+    --nav-search-height: 60px;
+  }
+  @media (min-width: 790px) {
+    :root {
+        --nav-gutter: 40px;
+        --nav-height: 80px;
+        --nav-search-height: 56px;
+    }
+  }
+
 }

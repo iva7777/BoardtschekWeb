@@ -2,13 +2,16 @@ import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
 import AccountMenu from "@/components/AccountMenu";
 import { ModeToggle } from "@/components/ModeToggle";
+import SearchForm from "@/components/SearchForm";
+import "../App.css";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-border/40 bg-background supports-[backdrop-filter]:bg-background/60">
-      <div className="inner">
-        <div className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-border/40 bg-background">
+      <div className="nav-inner flex items-center">
+        <div className="flex items-center justify-between w-full">
           <Logo size="large" showText={true} />
+          <SearchForm size="large" />
           <nav role="navigation" aria-label="Main navigation">
             <ul className="flex gap-8">
               <li>
@@ -23,7 +26,7 @@ export default function Navbar() {
               </li>
             </ul>
           </nav>
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
             <AccountMenu />
             <ModeToggle />
           </div>

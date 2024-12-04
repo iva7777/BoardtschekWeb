@@ -114,7 +114,10 @@ export default function LoginFormPage() {
               </Button>
               <div className="mt-2 text-center text-sm text-neutral-700">
                 Don't have an account?{" "}
-                <Link to="/create-account" className="underline text-text">
+                <Link
+                  to="/create-account"
+                  className="underline text-background-text"
+                >
                   Sign up
                 </Link>
               </div>
