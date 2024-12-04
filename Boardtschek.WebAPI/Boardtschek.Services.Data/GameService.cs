@@ -16,6 +16,20 @@ namespace Boardtschek.Services.Data
             this.dbContext = dbContext;
         }
 
+        public async Task<IEnumerable<GameListViewModel>> GetAllGames()
+        {
+            IEnumerable<GameListViewModel> allGames = await dbContext.Games
+                .Select(g => new GameListViewModel
+                {
+                    Id = g.Id.ToString(),
+                    Title = g.Title,
+                    ImageUrl = g.ImageUrl
+                })
+                .ToListAsync();
+
+            return allGames;
+        }
+
         public async Task AddGameAsync(GameFormViewModel model)
         {
             Game game = new()
@@ -135,5 +149,25 @@ namespace Boardtschek.Services.Data
 
             return topBorrowedGames;
         }
+
+        public async Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException("Search term cannot be empty.", nameof(name));
+            }
+
+            var games = await dbContext.Games
+                .Where(g => (g.Title != null && EF.Functions.Like(g.Title.ToLower(), $"%{name.ToLower()}%")))
+                .ToListAsync();
+
+            return games.Select(g => new GameListViewModel
+            {
+                Id = g.Id.ToString(),
+                Title = g.Title,
+                ImageUrl = g.ImageUrl
+            });
+        }
+
     }
 }

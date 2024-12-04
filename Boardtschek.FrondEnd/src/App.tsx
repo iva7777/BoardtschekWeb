@@ -4,6 +4,7 @@ import CreateAccountPage from "./pages/Signup";
 import SettingsPage from "./pages/Setting";
 import HomePage from "./pages/Home";
 import AddGamePage from "./pages/AddGame";
+import SearchResultsPage from "./pages/SearchResultsPage";
 import EditGamePage from "./pages/EditGame";
 import EditGameByIdPage from "./pages/EditGame/[id]";
 import GameDetails from "./pages/Game/[id]";
@@ -94,6 +95,15 @@ function App() {
             element={
               <AuthGuard>
                 <AllGamesPage />
+              </AuthGuard>
+            }
+          />
+          {/* Add the Search Route */}
+          <Route
+            path="/search/:query"
+            element={
+              <AuthGuard>
+                <SearchResultsPage />
               </AuthGuard>
             }
           />
