@@ -6,7 +6,7 @@ import HomePage from "./pages/Home";
 import AddGamePage from "./pages/AddGame";
 import EditGamePage from "./pages/EditGame";
 import EditGameByIdPage from "./pages/EditGame/[id]";
-import GameDetails from "./pages/GameDetails";
+import GameDetails from "./pages/Game/[id]";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -82,10 +82,10 @@ function App() {
             }
           />
           <Route
-            path="/GameDetails"
+            path="/game/:id"
             element={
               <AuthGuard>
-                <Route path="/game-details" element={<GameDetails />} />
+                <GameDetails />
               </AuthGuard>
             }
           />
