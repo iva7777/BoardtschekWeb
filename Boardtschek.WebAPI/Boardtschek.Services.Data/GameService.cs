@@ -3,6 +3,7 @@ using Boardtschek.Data.Models;
 using Boardtschek.Data.Models.Enums;
 using Boardtschek.Services.Data.Interfaces;
 using Boardtschek.WebAPI.ViewModels.Game;
+using Boardtschek.WebAPI.ViewModels.Rental;
 using Microsoft.EntityFrameworkCore;
 
 namespace Boardtschek.Services.Data
@@ -134,6 +135,67 @@ namespace Boardtschek.Services.Data
                 .ToListAsync();
 
             return topBorrowedGames;
+        }
+
+        public async Task<bool> IsGameAvailable(RentGameFormViewModel model)
+        {
+            var game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == model.GameId);
+
+            // Check availability for each date in the rental period
+            var rentalDates = Enumerable
+                .Range(0, (model.EndTime - model.StartTime).Days + 1)
+                .Select(offset => model.StartDate.AddDays(offset))
+                .ToList();
+
+            foreach (var date in rentalDates)
+            {
+                // Calculate total reserved quantity for the same game, date, and time
+                var reservedQuantity = await dbContext.Rentals
+                .Where(r => r.GameId.ToString() == model.GameId &&
+                r.RentalDate.Date <= date.Date && // Rental started on or before the current date
+                (
+                    r.ActualReturnDate == null || // Not yet returned
+                    (
+                        r.ActualReturnDate.Value.Date > date.Date || // Returned after the current date
+                        (r.ActualReturnDate.Value.Date == date.Date && r.ActualReturnDate.Value.TimeOfDay > model.StartTime) // Returned on the same date but after the requested time
+                    )
+                ) &&
+                (
+                    // Start of requested range overlaps
+                    (model.StartTime >= r.RentalDate.TimeOfDay && model.StartTime < r.ExpectedReturnDate.TimeOfDay) ||
+                    // End of requested range overlaps
+                    (model.EndTime > r.RentalDate.TimeOfDay && model.EndTime <= r.ExpectedReturnDate.TimeOfDay) ||
+                    // Requested range fully encompasses existing range
+                    (model.StartTime <= r.RentalDate.TimeOfDay && model.EndTime >= r.ExpectedReturnDate.TimeOfDay)
+                ))
+                 .CountAsync();
+
+
+                var availableQuantity = game.TotalQuantity - reservedQuantity;
+
+                if (availableQuantity < model.Quantity)
+                {
+                    return false; // Not enough copies available for this date
+                }
+            }
+
+            return true;
+        }
+
+        public async Task RentGame(RentGameFormViewModel model, string userId)
+        {
+            var rental = new Rental
+            {
+                UserId = Guid.Parse(userId),
+                GameId = Guid.Parse(model.GameId),
+                RentalDate = model.StartDate.Add(model.StartTime), // Combine RequestedRentDate and StartTime
+                ExpectedReturnDate = model.EndDate.Add(model.EndTime),
+                ActualReturnDate = null
+            };
+
+            // Add the rental to the database
+            await dbContext.Rentals.AddAsync(rental);
+            await dbContext.SaveChangesAsync();
         }
     }
 }
