@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
@@ -14,17 +15,29 @@ const SearchForm: React.FC<SearchFormProps> = ({
   ariaLabel = "Search for board games",
   size = "medium",
 }) => {
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+
   const sizes = {
-    small: "max-w-sm",
-    medium: "max-w-lg",
-    large: "max-w-xl",
+    small: "max-w-lg",
+    medium: "max-w-xl",
+    large: "max-w-3xl",
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim()) {
+      navigate(`/search/${encodeURIComponent(query)}`);
+    }
   };
 
   return (
     <div className={`w-full ${sizes[size]}`}>
-      <form className="relative" autoComplete="off">
+      <form className="relative" autoComplete="off" onSubmit={handleSearch}>
         <Input
           type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
           className="h-12 border border-subtext rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
           aria-label={ariaLabel}

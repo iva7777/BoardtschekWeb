@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/form.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Button } from "@/components/ui/button.tsx";
+import { Textarea } from "@/components/ui/textarea.tsx";
 import axios from "axios";
 import { difficultyMap } from "@/types/difficultyMappings";
 
@@ -156,11 +157,15 @@ export default function AddGamePage() {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <textarea
-                      {...field}
+                    {/* <textarea
+
                       placeholder="Description"
                       className="w-full p-2 border rounded resize-y min-h-[100px] max-h-[300px] placeholder-subtext"
                       style={{ fontSize: "16px" }}
+                    /> */}
+                    <Textarea
+                      {...field}
+                      placeholder="Type your message here."
                     />
                   </FormControl>
                 </FormItem>

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "@/api/axios";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { GameCard } from "@/components/GameCard";
+import SearchForm from "@/components/SearchForm";
 
 interface Game {
   id: string;
@@ -33,66 +32,28 @@ export default function AllGamesPage() {
 
   return (
     <main id="content" className="min-h-[100dvh]" tabIndex={-1}>
-      {/* <header className="secondary-header sticky top-0 z-50 w-full border-border/40 bg-white supports-[backdrop-filter]:bg-background/60">
-        <div className="search-container">
-          <div className="flex flex-row justify-center items-center space-x-2">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="w-2/3 h-12 p-3 border border-subtext rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-              aria-label="Search for board games"
-            />
-            <Button
-              variant={"secondary"}
-              size={"lg"}
-              className="w-1/4 h-12 rounded-lg hover:bg-orange-500 transition-all duration-300"
-            >
-              Search
-            </Button>
-          </div>
-          <Button
-            variant={"secondary"}
-            size={"lg"}
-            className="w-1/4 h-12 rounded-lg hover:bg-orange-500 transition-all duration-300"
-          >
-            Search
-          </Button>
-          <Button
-            variant={"secondary"}
-            size={"lg"}
-            className="w-1/4 h-12 rounded-lg hover:bg-orange-500 transition-all duration-300"
-          >
-            Search
-          </Button>
-        </div>
-      </header> */}
       <section className="" data-sublocation="Hero" aria-hidden="false">
         <div
           className="inner pb-24"
           style={{
-            marginTop: "calc(200 / 2000 * 100vw)",
-            marginBottom: "calc(200 / 2000 * 100vw)",
+            marginTop: "calc(100 / 2000 * 100vw)",
+            marginBottom: "calc(100 / 2000 * 100vw)",
           }}
         >
-          <h1 className="mb-5 text-6xl font-semibold uppercase text-center">
-            Welcome to Boardtschek
+          <h1 className="mb-5 text-5xl text-background-text font-semibold uppercase text-center">
+            Explore top board games
+            <br />
+            for your downtime
           </h1>
-          <div className="">
-            <p className="mb-3 text-lg text-neutral-700 text-center">
-              Discover a world of fun and strategy with our exclusive collection
+
+          <div className="justify-center">
+            <p className="mb-10 text-lg text-background-subtext text-center ">
+              Discover a world of fun and strategy with our exclusive collection{" "}
+              <br />
               of board games, available for all Nemetschek employees.
             </p>
-            <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link to="/rent">
-                <Button className="mt-4" variant={"default"} size={"lg"}>
-                  Start Renting Now
-                </Button>
-              </Link>
-              <Link to="/rent">
-                <Button className="mt-4" variant={"outlinePrimary"} size={"lg"}>
-                  Browse Rentals
-                </Button>
-              </Link>
+            <div className="flex flex-col justify-center sm:flex-row">
+              <SearchForm size="large" />
             </div>
           </div>
         </div>
@@ -112,23 +73,7 @@ export default function AllGamesPage() {
           {/* Highest Rated Games */}
           <div className="mb-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {(games ? games.highestRatedGames : Array(4).fill(null)).map(
-                (game, index) => (
-                  <GameCard
-                    key={game?.id || index}
-                    title={game?.title || "Loading..."}
-                    image={game?.imageUrl || "https://via.placeholder.com/150"}
-                    rating={game?.rating || 0}
-                    quantity={game?.quantity || 0}
-                    nextAvailable={game?.nextAvailable || ""}
-                  />
-                )
-              )}
-            </div>
-          </div>
-          <div className="mb-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {(games ? games.highestRatedGames : Array(3).fill(null)).map(
+              {(games ? games.highestRatedGames : Array(12).fill(null)).map(
                 (game, index) => (
                   <GameCard
                     key={game?.id || index}

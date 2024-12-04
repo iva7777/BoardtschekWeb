@@ -32,9 +32,9 @@ const Logo: React.FC<LogoProps> = ({
         <img src={logo} alt="Logo" className={logoSize} />
       </Link>
       {showText && (
-        <Link to="#">
+        <Link to="/">
           <span
-            className={`font-bold ${textSize} ${textColorClass} text-background-text leading-none`}
+            className={`font-bold ${textSize} ${textColorClass} text-background-text leading-none transition-opacity duration-600 ease-in-out`}
           >
             Boardtschek
           </span>
