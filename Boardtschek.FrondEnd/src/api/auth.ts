@@ -14,7 +14,7 @@ interface RegisterPayload {
 export async function registerUser(data: RegisterPayload): Promise<string> {
     try {
         const response = await apiClient.post("/api/Auth/register", data);
-        return response.data; // Return success message
+        return response.data; 
     } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
             throw error.response?.data || error.message;
@@ -33,7 +33,9 @@ interface LoginPayload {
 export async function loginUser(data: LoginPayload): Promise<string> {
     try {
         const response = await apiClient.post("/login", data);
-        return response.data.token; // Return the token
+        // eslint-disable-next-line no-debugger
+        debugger;
+        return response.data.accessToken; // Return the token
     } catch (error: unknown) {
         if (axios.isAxiosError(error) && error.response) {
             throw error.response.data?.message || "Login failed.";
@@ -64,8 +66,6 @@ export async function changePassword(data: ChangePasswordPayload): Promise<strin
     }
 }
 export async function fetchUserProfile() {
-    // const response = await apiClient.get("/api/Auth/user");
-    // return response.data;
     try {
         const response = await axios.get('/api/Auth/user', { withCredentials: true });
         return response.data;

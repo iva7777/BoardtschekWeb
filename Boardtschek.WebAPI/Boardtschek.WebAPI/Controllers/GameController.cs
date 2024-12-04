@@ -21,6 +21,23 @@ namespace Boardtschek.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
+        [Route("All")]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var games = await gameService.GetAllGames();
+                return Ok(games);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred while retrieving all games.", details = ex.Message });
+            }
+        }
+
+
+        [HttpGet]
         [Authorize(Roles = AdminRoleName)]
         [Route("Add")]
         public async Task<IActionResult> Add()
@@ -172,6 +189,7 @@ namespace Boardtschek.WebAPI.Controllers
             }
         }
 
+<<<<<<< HEAD
 
         [HttpPost]
         [Route("Rent/{id}")]
@@ -217,5 +235,34 @@ namespace Boardtschek.WebAPI.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred while deleting the game.", details = ex.Message });
             }
         }
+=======
+        [HttpGet]
+        [Authorize]
+        [Route("Search")]
+        public async Task<IActionResult> SearchGamesByName([FromQuery] string name)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(name))
+                {
+                    return BadRequest(new { message = "Search term cannot be empty." });
+                }
+
+                var games = await gameService.SearchGamesByName(name);
+
+                if (!games.Any())
+                {
+                    return NotFound(new { message = "No games found matching the search term." });
+                }
+
+                return Ok(games);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred while searching for games.", details = ex.Message });
+            }
+        }
+
+>>>>>>> origin/feature/rent
     }
 }
