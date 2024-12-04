@@ -1,0 +1,23 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Boardtschek.WebAPI.ViewModels.Rental
+{
+    public class RentGameFormViewModel
+    {
+        public string GameId { get; set; } = null!;
+
+        [Required]
+        public DateTime StartDate { get; set; }
+
+        [Required]
+        public DateTime EndDate { get; set; }
+
+        public TimeSpan StartTime { get; set; } // Start time on each rental day
+
+        public TimeSpan EndTime { get; set; }
+
+        [Required]
+        [Range(1,5)]
+        public int Quantity { get; set; }
+    }
+}

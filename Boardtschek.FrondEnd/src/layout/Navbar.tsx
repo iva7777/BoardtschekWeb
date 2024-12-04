@@ -12,7 +12,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 350) {
+      if (window.scrollY > 320) {
         setShowText(false);
         setShowSearchForm(true);
       } else {

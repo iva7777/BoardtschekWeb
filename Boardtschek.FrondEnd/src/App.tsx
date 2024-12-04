@@ -13,7 +13,7 @@ import GuestGuard from "./guards/GuestGuard";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
-
+import { Toaster } from "./components/ui/toaster";
 import "./App.css";
 import AllGamesPage from "./pages/AllGames";
 
@@ -24,6 +24,7 @@ function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <Toaster />
         {!hideLayout && <Navbar />}
         <Routes>
           <Route

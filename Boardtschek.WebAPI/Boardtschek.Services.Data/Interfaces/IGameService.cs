@@ -1,4 +1,6 @@
 ﻿using Boardtschek.WebAPI.ViewModels.Game;
+using Boardtschek.WebAPI.ViewModels.Rental;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Boardtschek.Services.Data.Interfaces
 {
@@ -13,6 +15,11 @@ namespace Boardtschek.Services.Data.Interfaces
         Task<GameEditViewModel> GetGameEditViewModelAsync(string id);
         Task EditGameAsync(GameEditViewModel model, string id);
         Task DeleteGameAsync(string id);
+<<<<<<< HEAD
+        Task<bool> IsGameAvailable(RentGameFormViewModel model);
+        Task RentGame(RentGameFormViewModel model, string userId);
+=======
         Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name);
+>>>>>>> origin/feature/rent
     }
 }

@@ -19,7 +19,6 @@ export function GameCard({
 }: GameCardProps) {
   return (
     <Card className="flex flex-col h-full transition-shadow duration-300 hover:shadow-lg">
-      {/* Image */}
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-lg">
         <img
           src={image}
@@ -27,13 +26,10 @@ export function GameCard({
           className="object-cover w-full h-full transition-transform duration-300 ease-in-out"
         />
       </div>
-
-      {/* Card Content */}
       <CardContent className="flex-grow p-4">
-        {/* Title */}
+
         <h3 className="text-lg font-semibold text-subtext mb-2">{title}</h3>
 
-        {/* Rating */}
         <div className="flex items-center mb-2">
           {[...Array(5)].map((_, i) => (
             <Star
@@ -50,31 +46,22 @@ export function GameCard({
           </span>
         </div>
 
-        {/* Availability */}
         {quantity > 0 ? (
           <p className="text-sm text-green-600 font-medium">
-            {quantity} available
+            {quantity} available for renting
           </p>
         ) : (
           <p className="text-sm text-orange-600 font-medium flex items-center">
             <Clock className="w-4 h-4 mr-1" />
-            Next available: {nextAvailable}
+            Next available: 12/12/2024{nextAvailable}
           </p>
         )}
       </CardContent>
 
-      {/* Card Footer */}
       <CardFooter className="p-4 pt-0">
         <div className="flex items-center justify-between w-full">
-          {/* Price */}
-
-          {/* Add to Cart Button */}
-          <Button
-            variant="default"
-            aria-label="Add to cart"
-            className="text-white"
-          >
-            Add to Cart
+          <Button variant="default" aria-label="rent" className="text-white">
+            Rent
           </Button>
         </div>
       </CardFooter>

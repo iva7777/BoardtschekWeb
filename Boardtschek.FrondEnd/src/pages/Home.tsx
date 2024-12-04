@@ -36,8 +36,7 @@ export default function HomePage() {
         <div
           className="inner pb-24"
           style={{
-            marginTop: "calc(100 / 2000 * 100vw)",
-            marginBottom: "calc(100 / 2000 * 100vw)",
+            marginTop: "calc(50 / 2000 * 100vw)",
           }}
         >
           <h1 className="mb-5 text-5xl text-background-text font-semibold uppercase text-center">
@@ -77,8 +76,8 @@ export default function HomePage() {
         <div
           className="inner"
           style={{
-            paddingTop: "calc(200 / 2000 * 100vw)",
-            paddingBottom: "calc(150 / 2000 * 100vw)",
+            paddingTop: "calc(100 / 2000 * 100vw)",
+            paddingBottom: "calc(100 / 2000 * 100vw)",
           }}
         >
           <h2
@@ -93,8 +92,8 @@ export default function HomePage() {
             <h3 className="text-xl font-medium mb-4 text-foreground-subtext">
               Highest Rated Games
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {(games ? games.highestRatedGames : Array(3).fill(null)).map(
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+              {(games ? games.highestRatedGames : Array(6).fill(null)).map(
                 (game, index) => (
                   <GameCard
                     key={game?.id || index}
@@ -115,7 +114,7 @@ export default function HomePage() {
               Most Borrowed Games
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {(games ? games.mostBorrowedGames : Array(3).fill(null)).map(
+              {(games ? games.mostBorrowedGames : Array(4).fill(null)).map(
                 (game, index) => (
                   <GameCard
                     key={game?.id || index}
