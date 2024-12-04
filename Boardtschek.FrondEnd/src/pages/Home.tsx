@@ -3,7 +3,6 @@ import axios from "@/api/axios";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { GameCard } from "@/components/GameCard";
-import { Input } from "@/components/ui/input";
 
 interface Game {
   id: string;
@@ -45,9 +44,11 @@ export default function HomePage() {
           <h1 className="mb-5 text-6xl text-background-text font-semibold uppercase text-center">
             Welcome to Boardtschek
           </h1>
+
           <div className="">
-            <p className="mb-3 text-lg text-background-text text-center">
-              Discover a world of fun and strategy with our exclusive collection
+            <p className="mb-3 text-lg text-background-subtext text-center">
+              Discover a world of fun and strategy with our exclusive collection{" "}
+              <br />
               of board games, available for all Nemetschek employees.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
@@ -63,32 +64,6 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Search Section */}
-      <section
-        className="absolute p-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full max-w-4xl bg-foreground shadow-lg rounded-lg"
-        aria-labelledby="search-heading"
-      >
-        <h2 id="search-heading" className="sr-only">
-          Search for Games
-        </h2>
-        <div className="flex w-full  items-center space-x-2">
-          <Input
-            type="search"
-            placeholder="Search..."
-            className="w-9/12 h-12 border border-subtext rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
-            aria-label="Search for board games"
-          />
-          <Button
-            variant={"default"}
-            size={"lg"}
-            className="w-3/12 h-12 rounded-lg transition-all duration-300"
-            type="submit"
-          >
-            Find Games
-          </Button>
         </div>
       </section>
 
