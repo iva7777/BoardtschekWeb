@@ -1,26 +1,24 @@
 import { useEffect, useState } from "react";
-import axios from "@/api/axios";
 import { GameCard } from "@/components/GameCard";
 import SearchForm from "@/components/SearchForm";
+import apiClient from "@/api/axios";
 
 interface Game {
   id: string;
   title: string;
   imageUrl: string;
-}
-
-interface HomePageGamesOverview {
-  highestRatedGames: Game[];
-  mostBorrowedGames: Game[];
+  rating: number; 
+  quantity: number; 
+  nextAvailable: string; 
 }
 
 export default function AllGamesPage() {
-  const [games, setGames] = useState<HomePageGamesOverview | null>(null);
+  const [games, setGames] = useState<Game[] | null>(null);
 
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await axios.get("/api/Home");
+        const response = await apiClient.get("/api/Game/All");
         setGames(response.data);
       } catch (error) {
         console.error("Error fetching games:", error);
@@ -73,18 +71,16 @@ export default function AllGamesPage() {
           {/* Highest Rated Games */}
           <div className="mb-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {(games ? games.highestRatedGames : Array(12).fill(null)).map(
-                (game, index) => (
-                  <GameCard
-                    key={game?.id || index}
-                    title={game?.title || "Loading..."}
-                    image={game?.imageUrl || "https://via.placeholder.com/150"}
-                    rating={game?.rating || 0}
-                    quantity={game?.quantity || 0}
-                    nextAvailable={game?.nextAvailable || ""}
-                  />
-                )
-              )}
+              {(games ? games : Array(12).fill(null)).map((game, index) => (
+                <GameCard
+                  key={game?.id || index}
+                  title={game?.title || "Loading..."}
+                  image={game?.imageUrl || "https://via.placeholder.com/150"}
+                  rating={game?.rating || 0}
+                  quantity={game?.quantity || 0}
+                  nextAvailable={game?.nextAvailable || ""}
+                />
+              ))}
             </div>
           </div>
         </div>
