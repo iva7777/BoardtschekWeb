@@ -14,7 +14,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import apiClient from "@/api/axios";
 
-
 enum DifficultyLevel {
   Easy = "Easy",
   Medium = "Medium",
@@ -93,7 +92,7 @@ export default function EditGamePage() {
           ...response.data,
           difficultyLevel:
             DifficultyLevel[
-            response.data.difficultyLevel as keyof typeof DifficultyLevel
+              response.data.difficultyLevel as keyof typeof DifficultyLevel
             ],
         };
 
@@ -128,9 +127,13 @@ export default function EditGamePage() {
 
       console.log("Backend data:", backendData);
 
-      const response = await apiClient.post(`api/Game/Edit/${id}`, backendData, {
-        withCredentials: true,
-      });
+      const response = await apiClient.post(
+        `api/Game/Edit/${id}`,
+        backendData,
+        {
+          withCredentials: true,
+        }
+      );
 
       if (response.status === 200) {
         alert("Game updated successfully!");
@@ -144,7 +147,6 @@ export default function EditGamePage() {
       alert(errorMessage);
     }
   };
-
 
   if (error) return <p className="text-red-500">{error}</p>;
 
@@ -263,7 +265,12 @@ export default function EditGamePage() {
               )}
             />
             <div className="flex justify-between">
-              <Button type="button" variant="outlinePrimary" onClick={() => navigate("/games")} size="lg">
+              <Button
+                type="button"
+                variant="outlinePrimary"
+                onClick={() => navigate("/games")}
+                size="lg"
+              >
                 Cancel
               </Button>
               <Button type="submit" variant="default" size="lg">
