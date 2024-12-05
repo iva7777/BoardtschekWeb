@@ -162,9 +162,9 @@ namespace Boardtschek.Services.Data
             return topBorrowedGames;
         }
 
-        public async Task<bool> IsGameAvailable(RentGameFormViewModel model)
+        public async Task<bool> IsGameAvailable(RentGameFormViewModel model, string gameId)
         {
-            var game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == model.GameId);
+            var game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == gameId);
 
             // Check availability for each date in the rental period
             var rentalDates = Enumerable
@@ -176,7 +176,7 @@ namespace Boardtschek.Services.Data
             {
                 // Calculate total reserved quantity for the same game on this date
                 var reservedQuantity = await dbContext.Rentals
-                    .Where(r => r.GameId.ToString() == model.GameId &&
+                    .Where(r => r.GameId.ToString() == gameId &&
                         r.RentalDate.Date <= date.Date && // Rental started on or before the current date
                         (
                             r.ActualReturnDate == null || // Not yet returned
@@ -210,12 +210,12 @@ namespace Boardtschek.Services.Data
         }
 
 
-        public async Task RentGame(RentGameFormViewModel model, string userId)
+        public async Task RentGame(RentGameFormViewModel model, string userId, string gameId)
         {
             var rental = new Rental
             {
                 UserId = Guid.Parse(userId),
-                GameId = Guid.Parse(model.GameId),
+                GameId = Guid.Parse(gameId),
                 RentalDate = model.StartDate.Add(model.StartTime), // Combine RequestedRentDate and StartTime
                 ExpectedReturnDate = model.EndDate.Add(model.EndTime),
                 ActualReturnDate = null
@@ -269,7 +269,7 @@ namespace Boardtschek.Services.Data
                     Title = rg.Game.Title,
                     ImageUrl = rg.Game.ImageUrl,
                     StartDate = rg.RentalDate,
-                    EndTime = rg.ExpectedReturnDate
+                    EndDate = rg.ExpectedReturnDate
                 }).ToListAsync();
 
             return rentedGames;
@@ -286,10 +286,65 @@ namespace Boardtschek.Services.Data
                     Title = rg.Game.Title,
                     ImageUrl = rg.Game.ImageUrl,
                     StartDate = rg.RentalDate,
-                    EndTime = rg.ExpectedReturnDate
+                    EndDate = rg.ExpectedReturnDate
                 }).ToListAsync();
 
             return rentedGames;
+        }
+        public async Task<bool> IsGameAlreadyLikedByUserAsync(string gameId, string userId)
+        {
+            bool result = await dbContext.LikedGames.AnyAsync(lg => lg.GameId.ToString() == gameId && lg.UserId.ToString() == userId);
+            return result;
+        }
+        public async Task LikeGameAsync(string gameId, string userId)
+        {
+            LikedGame likedGame = new()
+            {
+                UserId = Guid.Parse(userId),
+                GameId = Guid.Parse(gameId)
+            };
+
+            await dbContext.LikedGames.AddAsync(likedGame);
+            await dbContext.SaveChangesAsync();
+        }
+        public async Task<bool> IsGameAlreadyRatedByUserAsync(string gameId, string userId)
+        {
+            bool result = await dbContext.Ratings.AnyAsync(r => r.UserId.ToString() == userId && r.GameId.ToString() == gameId);
+            return result;
+        }
+        public async Task RateGame(GameRatingFormViewModel model, string gameId, string userId)
+        {
+            Rating rating = new()
+            {
+                GameId = Guid.Parse(gameId),
+                UserId = Guid.Parse(userId),
+                Score = model.Score,
+                Comment = model.Comment,
+                RatingDate = DateTime.UtcNow
+            };
+
+            await dbContext.Ratings.AddAsync(rating);
+            await dbContext.SaveChangesAsync();
+        }
+        public async Task<GameDetailsViewModel> GetGameDetailsAsync(string gameId, string userId)
+        {
+            AppUser user = await dbContext.Users.FirstAsync(u => u.Id.ToString() == userId);
+
+            Game game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == gameId);
+            GameDetailsViewModel model = new();
+            model.Title = game.Title;
+            model.Description = game.Description;
+            model.Difficulty = game.DifficultyLevel.ToString();
+            model.Id = game.Id;
+            model.Ratings = await dbContext.Ratings.Where(r => r.GameId.ToString() == gameId).Select(r => new RatingViewModel
+            {
+                Username = user.UserName,
+                Score = r.Score,
+                Comment = r.Comment,
+                DateCreated = DateTime.UtcNow.ToShortDateString()
+            }).ToListAsync();
+
+            return model;
         }
     }
 }

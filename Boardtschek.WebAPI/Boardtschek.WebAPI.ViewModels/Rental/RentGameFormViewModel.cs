@@ -4,8 +4,6 @@ namespace Boardtschek.WebAPI.ViewModels.Rental
 {
     public class RentGameFormViewModel
     {
-        public string GameId { get; set; } = null!;
-
         [Required]
         public DateTime StartDate { get; set; }
 

@@ -9,9 +9,8 @@ const apiClient = axios.create({
     },
 });
 
-// Request Interceptor: Add JWT token to every request
 apiClient.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token'); // Get token
+    const token = localStorage.getItem('token');
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }
@@ -20,14 +19,12 @@ apiClient.interceptors.request.use((config) => {
     return Promise.reject(error);
 });
 
-// Response Interceptor: Handle errors globally
 apiClient.interceptors.response.use(
     (response) => response,
     (error) => {
         console.log("Full error", error);
-        console.error('Axios Response Error:', error.response); //undefined
+        console.error('Axios Response Error:', error.response); 
         if (error.response?.status === 401) {
-            // Unauthorized: Redirect to login
             window.location.href = '/login';
         }
         return Promise.reject(error);

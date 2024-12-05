@@ -1,12 +1,12 @@
 import * as z from "zod";
 
 const rentalSchema = z.object({
-  gameId: z.string().uuid(), // UUID
-  startDate: z.string(), // yyyy-MM-dd
-  startTime: z.string(), // HH:mm:ss
-  endDate: z.string(), // yyyy-MM-dd
-  endTime: z.string(), // HH:mm:ss
-  quantity: z.number().min(1), // Quantity must be at least 1
+  gameId: z.string().uuid(), 
+  startDate: z.string(), 
+  startTime: z.string(),
+  endDate: z.string(), 
+  endTime: z.string(), 
+  quantity: z.number().min(1), 
 });
 
 export type RentalFormData = z.infer<typeof rentalSchema>;

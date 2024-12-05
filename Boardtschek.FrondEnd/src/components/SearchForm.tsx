@@ -27,7 +27,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      navigate(`/game/${encodeURIComponent(query)}`);
+      navigate(`/search/${encodeURIComponent(query)}`);
     }
   };
 

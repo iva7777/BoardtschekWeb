@@ -26,6 +26,8 @@
         public static class Rating
         {
             public const int CommentMaxLength = 255;
+            public const int ScoreMinValue = 1;
+            public const int ScoreMaxValue = 5;
         }
 
         public static class AppUser

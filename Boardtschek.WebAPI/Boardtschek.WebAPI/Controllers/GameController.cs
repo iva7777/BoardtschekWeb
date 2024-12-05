@@ -216,5 +216,84 @@ namespace Boardtschek.WebAPI.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred while searching for games.", details = ex.Message });
             }
         }
+        [HttpPost]
+        [Authorize]
+        [Route("Like")]
+        public async Task<IActionResult> LikeGame(string gameId)
+        {
+            try
+            {
+                bool isGameValid = await gameService.DoesGameExistAsync(gameId);
+
+                if (!isGameValid)
+                {
+                    return NotFound(new { message = "The game you are trying to like does not exist." });
+                }
+
+                string userId = User.GetId();
+
+                bool isGameAlreadyLiked = await gameService.IsGameAlreadyLikedByUserAsync(gameId, userId);
+
+                if (isGameAlreadyLiked)
+                {
+                    return BadRequest(new { message = "You have already liked this game!" });
+                }
+
+                await gameService.LikeGameAsync(gameId, userId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred while deleting the game.", details = ex.Message });
+            }
+        }
+        [HttpPost]
+        [Authorize]
+        [Route("Details")]
+        public async Task<IActionResult> Details(string gameId)
+        {
+            bool isGameValid = await gameService.DoesGameExistAsync(gameId);
+
+            if (!isGameValid)
+            {
+                return NotFound(new { message = "The game you are trying to like does not exist." });
+            }
+
+            string userId = User.GetId();
+
+            GameDetailsViewModel model = await gameService.GetGameDetailsAsync(gameId, userId);
+            return Ok(model);
+        }
+        [HttpPost]
+        [Authorize]
+        [Route("Rate")]
+        public async Task<IActionResult> Rate(GameRatingFormViewModel model, string gameId)
+        {
+            try
+            {
+                bool isGameValid = await gameService.DoesGameExistAsync(gameId);
+
+                if (!isGameValid)
+                {
+                    return NotFound(new { message = "The game you are trying to like does not exist." });
+                }
+
+                string userId = User.GetId();
+
+                bool isGameAlreadyRated = await gameService.IsGameAlreadyRatedByUserAsync(gameId, userId);
+
+                if (isGameAlreadyRated)
+                {
+                    return BadRequest(new { message = "You have already rated this game!" });
+                }
+
+                await gameService.RateGame(model, gameId, userId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred while deleting the game.", details = ex.Message });
+            }
+        }
     }
 }

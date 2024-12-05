@@ -23,12 +23,12 @@ namespace Boardtschek.WebAPI.Controllers
 
         [HttpPost]
         [Route("Rent/{id}")]
-        public async Task<IActionResult> Rent(RentGameFormViewModel model)
+        public async Task<IActionResult> Rent(RentGameFormViewModel model, string id)
         {
             try
             {
                 // Validate if the game exists
-                bool isGameValid = await gameService.DoesGameExistAsync(model.GameId);
+                bool isGameValid = await gameService.DoesGameExistAsync(id);
 
                 if (!isGameValid)
                 {
@@ -54,7 +54,7 @@ namespace Boardtschek.WebAPI.Controllers
                 }
 
                 // Check if the game is available for the requested period and quantity
-                bool isGameAvailable = await gameService.IsGameAvailable(model);
+                bool isGameAvailable = await gameService.IsGameAvailable(model, id);
 
                 if (!isGameAvailable)
                 {
@@ -65,7 +65,7 @@ namespace Boardtschek.WebAPI.Controllers
                 string userId = User.GetId();
 
                 // Rent the game (this will include updating the rental records in the database)
-                await gameService.RentGame(model, userId);
+                await gameService.RentGame(model, userId, id);
 
                 return Ok(new { message = "Game rented successfully!" });
             }
