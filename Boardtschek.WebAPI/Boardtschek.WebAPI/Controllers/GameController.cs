@@ -189,7 +189,7 @@ namespace Boardtschek.WebAPI.Controllers
             }
         }
 
-        
+
         [HttpGet]
         [Authorize]
         [Route("Search")]

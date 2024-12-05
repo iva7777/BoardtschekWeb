@@ -1,6 +1,5 @@
 ﻿using Boardtschek.WebAPI.ViewModels.Game;
 using Boardtschek.WebAPI.ViewModels.Rental;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Boardtschek.Services.Data.Interfaces
 {
@@ -18,5 +17,8 @@ namespace Boardtschek.Services.Data.Interfaces
         Task<bool> IsGameAvailable(RentGameFormViewModel model);
         Task RentGame(RentGameFormViewModel model, string userId);
         Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name);
+        Task<IEnumerable<GameListViewModel>> GetLikedGamesByUserID(string userId);
+        Task<IEnumerable<RentedGameListViewModel>> GetActiveRentedGamesByUserId(string userId);
+        Task<IEnumerable<RentedGameListViewModel>> GetOverdueGamesByUserId(string userId);
     }
 }
