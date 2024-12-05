@@ -189,36 +189,39 @@ namespace Boardtschek.WebAPI.Controllers
             }
         }
 
-<<<<<<< HEAD
-
         [HttpPost]
         [Route("Rent/{id}")]
         public async Task<IActionResult> Rent(RentGameFormViewModel model)
         {
             try
             {
+                // Validate if the game exists
                 bool isGameValid = await gameService.DoesGameExistAsync(model.GameId);
 
                 if (!isGameValid)
                 {
-                    return NotFound(new { message = "The game you are trying to delete does not exist." });
+                    return NotFound(new { message = "The game you are trying to rent does not exist." });
                 }
 
+                // Check that the rental start date is not in the past
                 if (model.StartDate < DateTime.UtcNow)
                 {
-                    return BadRequest(new { message = "ExpectedRentDate cannot be in the past" });
+                    return BadRequest(new { message = "Start date cannot be in the past" });
                 }
 
-                if (model.EndDate <= model.StartDate)
+                // Check that the return date is after the rental start date
+                if (model.EndDate < model.StartDate)
                 {
-                    return BadRequest(new { message = "ExpectedReturnDate must be after ExpectedRentDate" });
+                    return BadRequest(new { message = "End date must be after start date" });
                 }
 
-                if (model.StartTime >= model.EndTime)
+                // Ensure the start time is before the end time
+                if (model.StartTime >= model.EndTime && model.EndDate == model.StartDate)
                 {
-                    return BadRequest(new { message = "Invalid time range: ExpectedStartTime must be before ExpectedEndTime." });
+                    return BadRequest(new { message = "Start time must be before end time on the same day." });
                 }
 
+                // Check if the game is available for the requested period and quantity
                 bool isGameAvailable = await gameService.IsGameAvailable(model);
 
                 if (!isGameAvailable)
@@ -226,16 +229,19 @@ namespace Boardtschek.WebAPI.Controllers
                     return BadRequest(new { message = "The game is not available for the requested period and quantity." });
                 }
 
+                // Get the user ID (assuming you have a method for that)
                 string userId = User.GetId();
+
+                // Rent the game (this will include updating the rental records in the database)
                 await gameService.RentGame(model, userId);
-                return Ok();
+
+                return Ok(new { message = "Game rented successfully!" });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "An unexpected error occurred while deleting the game.", details = ex.Message });
+                return StatusCode(500, new { message = "An unexpected error occurred while renting the game.", details = ex.Message });
             }
         }
-=======
         [HttpGet]
         [Authorize]
         [Route("Search")]
@@ -262,7 +268,5 @@ namespace Boardtschek.WebAPI.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred while searching for games.", details = ex.Message });
             }
         }
-
->>>>>>> origin/feature/rent
     }
 }

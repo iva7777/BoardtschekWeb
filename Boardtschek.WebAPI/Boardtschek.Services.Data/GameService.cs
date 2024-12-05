@@ -150,52 +150,53 @@ namespace Boardtschek.Services.Data
 
             return topBorrowedGames;
         }
-
-<<<<<<< HEAD
         public async Task<bool> IsGameAvailable(RentGameFormViewModel model)
         {
             var game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == model.GameId);
 
             // Check availability for each date in the rental period
             var rentalDates = Enumerable
-                .Range(0, (model.EndTime - model.StartTime).Days + 1)
+                .Range(0, (model.EndDate - model.StartDate).Days + 1) // Loop through each day in the requested rental period
                 .Select(offset => model.StartDate.AddDays(offset))
                 .ToList();
 
             foreach (var date in rentalDates)
             {
-                // Calculate total reserved quantity for the same game, date, and time
+                // Calculate total reserved quantity for the same game on this date
                 var reservedQuantity = await dbContext.Rentals
-                .Where(r => r.GameId.ToString() == model.GameId &&
-                r.RentalDate.Date <= date.Date && // Rental started on or before the current date
-                (
-                    r.ActualReturnDate == null || // Not yet returned
-                    (
-                        r.ActualReturnDate.Value.Date > date.Date || // Returned after the current date
-                        (r.ActualReturnDate.Value.Date == date.Date && r.ActualReturnDate.Value.TimeOfDay > model.StartTime) // Returned on the same date but after the requested time
+                    .Where(r => r.GameId.ToString() == model.GameId &&
+                        r.RentalDate.Date <= date.Date && // Rental started on or before the current date
+                        (
+                            r.ActualReturnDate == null || // Not yet returned
+                            (
+                                r.ActualReturnDate.Value.Date > date.Date || // Returned after the current date
+                                (r.ActualReturnDate.Value.Date == date.Date && r.ActualReturnDate.Value.TimeOfDay > model.StartTime) // Returned on the same date but after the requested time
+                            )
+                        ) &&
+                        (
+                            // Start of requested range overlaps
+                            (model.StartTime >= r.RentalDate.TimeOfDay && model.StartTime < r.ExpectedReturnDate.TimeOfDay) ||
+                            // End of requested range overlaps
+                            (model.EndTime > r.RentalDate.TimeOfDay && model.EndTime <= r.ExpectedReturnDate.TimeOfDay) ||
+                            // Requested range fully encompasses existing range
+                            (model.StartTime <= r.RentalDate.TimeOfDay && model.EndTime >= r.ExpectedReturnDate.TimeOfDay)
+                        )
                     )
-                ) &&
-                (
-                    // Start of requested range overlaps
-                    (model.StartTime >= r.RentalDate.TimeOfDay && model.StartTime < r.ExpectedReturnDate.TimeOfDay) ||
-                    // End of requested range overlaps
-                    (model.EndTime > r.RentalDate.TimeOfDay && model.EndTime <= r.ExpectedReturnDate.TimeOfDay) ||
-                    // Requested range fully encompasses existing range
-                    (model.StartTime <= r.RentalDate.TimeOfDay && model.EndTime >= r.ExpectedReturnDate.TimeOfDay)
-                ))
-                 .CountAsync();
+                    .CountAsync();
 
-
+                // Calculate available quantity for this date
                 var availableQuantity = game.TotalQuantity - reservedQuantity;
 
+                // Check if there are enough available games
                 if (availableQuantity < model.Quantity)
                 {
                     return false; // Not enough copies available for this date
                 }
             }
 
-            return true;
+            return true; 
         }
+
 
         public async Task RentGame(RentGameFormViewModel model, string userId)
         {
@@ -212,7 +213,6 @@ namespace Boardtschek.Services.Data
             await dbContext.Rentals.AddAsync(rental);
             await dbContext.SaveChangesAsync();
         }
-=======
         public async Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -232,6 +232,5 @@ namespace Boardtschek.Services.Data
             });
         }
 
->>>>>>> origin/feature/rent
     }
 }

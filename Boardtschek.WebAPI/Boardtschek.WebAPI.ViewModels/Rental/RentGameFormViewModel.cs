@@ -12,7 +12,7 @@ namespace Boardtschek.WebAPI.ViewModels.Rental
         [Required]
         public DateTime EndDate { get; set; }
 
-        public TimeSpan StartTime { get; set; } // Start time on each rental day
+        public TimeSpan StartTime { get; set; }
 
         public TimeSpan EndTime { get; set; }
 

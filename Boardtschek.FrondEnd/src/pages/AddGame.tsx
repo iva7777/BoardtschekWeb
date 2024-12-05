@@ -57,7 +57,7 @@ export default function AddGamePage() {
       description: "",
       imageUrl: "",
       minPlayers: 1,
-      maxPlayers: 1,
+      maxPlayers: 2,
       difficultyLevel: "Easy",
       totalQuantity: 1,
     },
