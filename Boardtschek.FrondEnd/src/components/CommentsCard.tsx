@@ -4,7 +4,7 @@ interface Comment {
   username: string;
   time: string;
   comment: string;
-  rating?: number; 
+  score?: number; 
 }
 
 interface CommentsCardProps {
@@ -22,9 +22,9 @@ const CommentsCard: React.FC<CommentsCardProps> = ({ comments }) => {
           </div>
           <div className="mt-2 text-gray-700">{comment.comment}</div>
           <div className="mt-2 flex space-x-1">
-            {comment.rating != null ? (
+            {comment.score != null ? (
               <StarRating
-                rating={comment.rating}
+                rating={comment.score}
                 onChange={() => {}}
                 size="md"
                 readonly={true}
