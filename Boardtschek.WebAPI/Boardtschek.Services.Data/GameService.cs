@@ -33,20 +33,31 @@ namespace Boardtschek.Services.Data
 
         public async Task AddGameAsync(GameFormViewModel model)
         {
-            Game game = new()
-            { 
-                Title = model.Title,
-                Description = model.Description,
-                ImageUrl = model.ImageUrl,
-                MinPlayers = model.MinPlayers,
-                MaxPlayers = model.MaxPlayers,
-                DifficultyLevel = (Difficulty) model.DifficultyLevel,
-                TotalQuantity = model.TotalQuantity,
-                AvailableQuantity = model.TotalQuantity
-            };
+            Game? existingGame = await dbContext.Games.FirstOrDefaultAsync(g => g.Title == model.Title);
 
-            await dbContext.Games.AddAsync(game);
-            await dbContext.SaveChangesAsync();
+
+            if (existingGame != null)
+            {
+                existingGame.TotalQuantity += 1;
+                await dbContext.SaveChangesAsync();
+            }
+            else
+            {
+                Game game = new()
+                {
+                    Title = model.Title,
+                    Description = model.Description,
+                    ImageUrl = model.ImageUrl,
+                    MinPlayers = model.MinPlayers,
+                    MaxPlayers = model.MaxPlayers,
+                    DifficultyLevel = (Difficulty)model.DifficultyLevel,
+                    TotalQuantity = model.TotalQuantity,
+                    AvailableQuantity = model.TotalQuantity
+                };
+
+                await dbContext.Games.AddAsync(game);
+                await dbContext.SaveChangesAsync();
+            }
         }
 
         public async Task DeleteGameAsync(string id)
@@ -150,6 +161,10 @@ namespace Boardtschek.Services.Data
 
             return topBorrowedGames;
         }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         public async Task<bool> IsGameAvailable(RentGameFormViewModel model)
         {
             var game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == model.GameId);
@@ -213,6 +228,10 @@ namespace Boardtschek.Services.Data
             await dbContext.Rentals.AddAsync(rental);
             await dbContext.SaveChangesAsync();
         }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         public async Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -232,5 +251,54 @@ namespace Boardtschek.Services.Data
             });
         }
 
+<<<<<<< Updated upstream
+=======
+        public async Task<IEnumerable<GameListViewModel>> GetLikedGamesByUserID(string userId)
+        {
+            IEnumerable<GameListViewModel> games = await dbContext.LikedGames.Where(lk => lk.UserId.ToString() == userId)
+                .Select(lk => new GameListViewModel
+                { 
+                    Id= lk.Game.Id.ToString(),
+                    Title= lk.Game.Title,
+                    ImageUrl= lk.Game.ImageUrl
+                }).ToListAsync();       
+
+            return games;
+        }
+
+        public async Task<IEnumerable<RentedGameListViewModel>> GetActiveRentedGamesByUserId(string userId)
+        {
+            IEnumerable<RentedGameListViewModel> rentedGames = await dbContext.Rentals
+                .Where(rg => rg.UserId.ToString() == userId &&
+                rg.ActualReturnDate == null && rg.ExpectedReturnDate < DateTime.UtcNow)
+                .Select(rg => new RentedGameListViewModel
+                {
+                    Id = rg.Game.Id.ToString(),
+                    Title = rg.Game.Title,
+                    ImageUrl = rg.Game.ImageUrl,
+                    StartDate = rg.RentalDate,
+                    EndTime = rg.ExpectedReturnDate
+                }).ToListAsync();
+
+            return rentedGames;
+        }
+
+        public async Task<IEnumerable<RentedGameListViewModel>> GetOverdueGamesByUserId(string userId)
+        {
+            IEnumerable<RentedGameListViewModel> rentedGames = await dbContext.Rentals
+                .Where(rg => rg.UserId.ToString() == userId &&
+                rg.ActualReturnDate == null && rg.ExpectedReturnDate >= DateTime.UtcNow)
+                .Select(rg => new RentedGameListViewModel
+                {
+                    Id = rg.Game.Id.ToString(),
+                    Title = rg.Game.Title,
+                    ImageUrl = rg.Game.ImageUrl,
+                    StartDate = rg.RentalDate,
+                    EndTime = rg.ExpectedReturnDate
+                }).ToListAsync();
+
+            return rentedGames;
+        }
+>>>>>>> Stashed changes
     }
 }

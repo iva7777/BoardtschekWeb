@@ -46,6 +46,7 @@ namespace Boardtschek.WebAPI
             builder.Services.AddScoped<IGameService, GameService>();
             builder.Services.AddScoped<IRatingService, RatingService>();
             builder.Services.AddScoped<IRentalService, RentalService>();
+            builder.Services.AddScoped<IUserService, UserService>();
 
             builder.Services.AddCors(options =>
             {

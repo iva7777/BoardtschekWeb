@@ -1,6 +1,8 @@
 using System.Data;
 using System.Security.Claims;
 using Boardtschek.Data.Models;
+using Boardtschek.Services.Data.Interfaces;
+using Boardtschek.WebAPI.Infrastructure.Extensions;
 using Boardtschek.WebAPI.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -14,12 +16,12 @@ namespace Boardtschek.WebAPI.Controllers
     public class AuthController : ControllerBase
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly IUserService userService;
 
-
-        public AuthController(UserManager<AppUser> userManager)
+        public AuthController(UserManager<AppUser> userManager, IUserService userService)
         {
             _userManager = userManager;
- 
+            this.userService = userService;
         }
 
         [HttpPost]
@@ -73,54 +75,16 @@ namespace Boardtschek.WebAPI.Controllers
 
             return Ok("Password changed successfully.");
         }
+
         [HttpGet("user")]
         [Authorize] 
         public async Task<IActionResult> GetUserProfile()
         {
             try
             {
-               
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (userId == null)
-                {
-                    return Unauthorized("User not authenticated.");
-                }
-
-                
-                var user = await _userManager.FindByIdAsync(userId);
-                if (user == null)
-                {
-                    return NotFound("User not found.");
-                }
-
-                
-                var userProfile = new
-                {
-                    Avatar = user.ImageUrl,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Email = user.Email,
-                    LikedGames = user.LikedGames.Select(g => new
-                    {
-                        g.Game?.Title, 
-                    }),
-                    Rentals = user.Rentals.Select(r => new
-                    {
-                       
-                        r.Game?.Title,
-                        r.RentalDate,  
-                        r.ActualReturnDate
-                    }),
-                    Ratings = user.Ratings.Select(r => new
-                    {
-                        r.Score,
-                        r.Comment,
-                        r.RatingDate,
-                        r.Game?.Title
-                    })
-                };
-
-                return Ok(userProfile);
+                string userId = User.GetId();
+                UserProfileViewModel model = await userService.GetUserProfileInformation(userId);
+                return Ok(model);
             }
             catch (Exception ex)
             {
