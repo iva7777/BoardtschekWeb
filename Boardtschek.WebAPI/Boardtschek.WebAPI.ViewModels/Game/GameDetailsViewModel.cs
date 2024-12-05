@@ -9,15 +9,18 @@
 
         public IEnumerable<RatingViewModel> Ratings { get; set; } = new HashSet<RatingViewModel>();
 
-        public double AverageRating()
+        public double AverageRating
         {
-            if (Ratings.Any())
+            get
             {
-                return Ratings.Average(r => r.Score);
-            }
-            else
-            {
-                return 0;
+                if (Ratings.Any())
+                {
+                    return Ratings.Average(r => r.Score);
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 

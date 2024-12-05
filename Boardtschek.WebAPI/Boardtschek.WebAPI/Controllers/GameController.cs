@@ -247,9 +247,9 @@ namespace Boardtschek.WebAPI.Controllers
                 return StatusCode(500, new { message = "An unexpected error occurred while deleting the game.", details = ex.Message });
             }
         }
-        [HttpPost]
+        [HttpGet]
         [Authorize]
-        [Route("Details")]
+        [Route("Details/{gameId}")]
         public async Task<IActionResult> Details(string gameId)
         {
             bool isGameValid = await gameService.DoesGameExistAsync(gameId);
@@ -266,7 +266,7 @@ namespace Boardtschek.WebAPI.Controllers
         }
         [HttpPost]
         [Authorize]
-        [Route("Rate")]
+        [Route("Rate/{gameId}")]
         public async Task<IActionResult> Rate(GameRatingFormViewModel model, string gameId)
         {
             try
