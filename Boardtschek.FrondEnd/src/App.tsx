@@ -5,7 +5,6 @@ import SettingsPage from "./pages/Setting";
 import HomePage from "./pages/Home";
 import AddGamePage from "./pages/AddGame";
 import SearchResultsPage from "./pages/SearchResultsPage";
-import EditGamePage from "./pages/EditGame";
 import EditGameByIdPage from "./pages/EditGame/[id]";
 import GameDetails from "./pages/Game/[id]";
 import MyRentedGamesPage from "./pages/MyRentedGames/Rented";
@@ -65,14 +64,6 @@ function App() {
             element={
               <AuthGuard>
                 <AddGamePage />
-              </AuthGuard>
-            }
-          />
-          <Route
-            path="/edit-game"
-            element={
-              <AuthGuard>
-                <EditGamePage />
               </AuthGuard>
             }
           />

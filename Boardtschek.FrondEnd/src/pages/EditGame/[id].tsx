@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "@/api/axios";
 import {
   Form,
   FormControl,
@@ -13,13 +12,24 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import apiClient from "@/api/axios";
 
-// Define DifficultyLevel Enum
+
 enum DifficultyLevel {
   Easy = "Easy",
   Medium = "Medium",
   Hard = "Hard",
 }
+
+const difficultyLevelMap = {
+  [DifficultyLevel.Easy]: 0,
+  [DifficultyLevel.Medium]: 1,
+  [DifficultyLevel.Hard]: 2,
+};
+
+const getDifficultyLevelInt = (difficulty: DifficultyLevel): number => {
+  return difficultyLevelMap[difficulty];
+};
 
 // Define the Game type
 interface Game {
@@ -57,7 +67,6 @@ type GameFormValues = z.infer<typeof gameSchema>;
 export default function EditGamePage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>("");
 
   const form = useForm<GameFormValues>({
@@ -74,38 +83,36 @@ export default function EditGamePage() {
     },
   });
 
-  // Fetch game details for the form
   useEffect(() => {
     const fetchGameDetails = async () => {
       try {
-        const response = await axios.get(`/Game/Edit/${id}`, {
+        const response = await apiClient.get(`api/Game/Edit/${id}`, {
           withCredentials: true,
         });
         const gameData: Game = {
           ...response.data,
           difficultyLevel:
             DifficultyLevel[
-              response.data.difficultyLevel as keyof typeof DifficultyLevel
+            response.data.difficultyLevel as keyof typeof DifficultyLevel
             ],
         };
 
-        form.reset(gameData); // Populate form with game data
-        setLoading(false);
+        form.reset(gameData);
       } catch (error: unknown) {
         const errorMessage =
           error instanceof Error
             ? error.message
             : "Failed to load game details.";
         setError(errorMessage);
-        setLoading(false);
       }
     };
 
     if (id) fetchGameDetails();
-  }, [id, form]); // Add 'form' to the dependency array
+  }, [id, form]);
 
-  // Handle form submission
   const onSubmit = async (data: GameFormValues) => {
+    console.log("Form data being sent to the backend:", data);
+
     if (!id) {
       alert("Game ID is missing.");
       return;
@@ -114,13 +121,23 @@ export default function EditGamePage() {
     try {
       const backendData = {
         ...data,
-        difficultyLevel:
-          DifficultyLevel[data.difficultyLevel as keyof typeof DifficultyLevel],
+        difficultyLevel: getDifficultyLevelInt(data.difficultyLevel),
+        id,
+        model: "requiredModel",
       };
 
-      const message = await axios.put(`/Game/Edit/${id}`, backendData);
-      alert(message || "Game updated successfully!");
-      navigate("/games");
+      console.log("Backend data:", backendData);
+
+      const response = await apiClient.post(`api/Game/Edit/${id}`, backendData, {
+        withCredentials: true,
+      });
+
+      if (response.status === 200) {
+        alert("Game updated successfully!");
+        navigate("/games");
+      } else {
+        alert("Failed to update game. Please try again.");
+      }
     } catch (error: unknown) {
       const errorMessage =
         error instanceof Error ? error.message : "Failed to update game.";
@@ -128,7 +145,7 @@ export default function EditGamePage() {
     }
   };
 
-  if (loading) return <p>Loading game details...</p>;
+
   if (error) return <p className="text-red-500">{error}</p>;
 
   return (
@@ -245,9 +262,14 @@ export default function EditGamePage() {
                 </FormItem>
               )}
             />
-            <Button type="submit" variant="default" size="lg">
-              Save Changes
-            </Button>
+            <div className="flex justify-between">
+              <Button type="button" variant="outlinePrimary" onClick={() => navigate("/games")} size="lg">
+                Cancel
+              </Button>
+              <Button type="submit" variant="default" size="lg">
+                Save Changes
+              </Button>
+            </div>
           </form>
         </div>
       </Form>
