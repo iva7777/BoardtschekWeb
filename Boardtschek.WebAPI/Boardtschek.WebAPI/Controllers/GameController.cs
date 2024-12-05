@@ -189,56 +189,7 @@ namespace Boardtschek.WebAPI.Controllers
             }
         }
 
-<<<<<<< Updated upstream
-        
-=======
 
-        [HttpPost]
-        [Route("Rent/{id}")]
-        public async Task<IActionResult> Rent(RentGameFormViewModel model)
-        {
-            try
-            {
-                bool isGameValid = await gameService.DoesGameExistAsync(model.GameId);
-
-                if (!isGameValid)
-                {
-                    return NotFound(new { message = "The game you are trying to delete does not exist." });
-                }
-
-                if (model.StartDate < DateTime.UtcNow)
-                {
-                    return BadRequest(new { message = "ExpectedRentDate cannot be in the past" });
-                }
-
-                if (model.EndDate <= model.StartDate)
-                {
-                    return BadRequest(new { message = "ExpectedReturnDate must be after ExpectedRentDate" });
-                }
-
-                if (model.StartTime >= model.EndTime)
-                {
-                    return BadRequest(new { message = "Invalid time range: ExpectedStartTime must be before ExpectedEndTime." });
-                }
-
-                bool isGameAvailable = await gameService.IsGameAvailable(model);
-
-                if (!isGameAvailable)
-                {
-                    return BadRequest(new { message = "The game is not available for the requested period and quantity." });
-                }
-
-                string userId = User.GetId();
-                await gameService.RentGame(model, userId);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { message = "An unexpected error occurred while deleting the game.", details = ex.Message });
-            }
-        }
-
->>>>>>> Stashed changes
         [HttpGet]
         [Authorize]
         [Route("Search")]

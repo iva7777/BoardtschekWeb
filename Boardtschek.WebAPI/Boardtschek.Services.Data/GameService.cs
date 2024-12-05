@@ -161,10 +161,7 @@ namespace Boardtschek.Services.Data
 
             return topBorrowedGames;
         }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
         public async Task<bool> IsGameAvailable(RentGameFormViewModel model)
         {
             var game = await dbContext.Games.FirstAsync(g => g.Id.ToString() == model.GameId);
@@ -228,10 +225,7 @@ namespace Boardtschek.Services.Data
             await dbContext.Rentals.AddAsync(rental);
             await dbContext.SaveChangesAsync();
         }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
         public async Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -251,8 +245,6 @@ namespace Boardtschek.Services.Data
             });
         }
 
-<<<<<<< Updated upstream
-=======
         public async Task<IEnumerable<GameListViewModel>> GetLikedGamesByUserID(string userId)
         {
             IEnumerable<GameListViewModel> games = await dbContext.LikedGames.Where(lk => lk.UserId.ToString() == userId)
@@ -299,6 +291,5 @@ namespace Boardtschek.Services.Data
 
             return rentedGames;
         }
->>>>>>> Stashed changes
     }
 }

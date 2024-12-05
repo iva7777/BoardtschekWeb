@@ -17,11 +17,8 @@ namespace Boardtschek.Services.Data.Interfaces
         Task<bool> IsGameAvailable(RentGameFormViewModel model);
         Task RentGame(RentGameFormViewModel model, string userId);
         Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name);
-<<<<<<< Updated upstream
-=======
         Task<IEnumerable<GameListViewModel>> GetLikedGamesByUserID(string userId);
         Task<IEnumerable<RentedGameListViewModel>> GetActiveRentedGamesByUserId(string userId);
         Task<IEnumerable<RentedGameListViewModel>> GetOverdueGamesByUserId(string userId);
->>>>>>> Stashed changes
     }
 }
