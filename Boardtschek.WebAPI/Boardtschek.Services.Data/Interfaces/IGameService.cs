@@ -14,11 +14,16 @@ namespace Boardtschek.Services.Data.Interfaces
         Task<GameEditViewModel> GetGameEditViewModelAsync(string id);
         Task EditGameAsync(GameEditViewModel model, string id);
         Task DeleteGameAsync(string id);
-        Task<bool> IsGameAvailable(RentGameFormViewModel model);
-        Task RentGame(RentGameFormViewModel model, string userId);
+        Task<bool> IsGameAvailable(RentGameFormViewModel model, string gameId);
+        Task RentGame(RentGameFormViewModel model, string userId, string gameId);
         Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name);
         Task<IEnumerable<GameListViewModel>> GetLikedGamesByUserID(string userId);
         Task<IEnumerable<RentedGameListViewModel>> GetActiveRentedGamesByUserId(string userId);
         Task<IEnumerable<RentedGameListViewModel>> GetOverdueGamesByUserId(string userId);
+        Task<bool> IsGameAlreadyLikedByUserAsync(string gameId, string userId);
+        Task LikeGameAsync(string gameId, string userId); 
+        Task<bool> IsGameAlreadyRatedByUserAsync(string gameId, string userId);
+        Task RateGame(GameRatingFormViewModel model, string gameId, string userId);
+        Task<GameDetailsViewModel> GetGameDetailsAsync(string gameId, string userId);
     }
 }

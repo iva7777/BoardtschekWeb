@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -44,7 +42,7 @@ export const StarRating: React.FC<StarRatingProps> = ({
   };
 
   const wholeStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.5; 
+  const hasHalfStar = rating % 1 >= 0.5;
 
   return (
     <div

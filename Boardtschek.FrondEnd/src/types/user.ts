@@ -2,25 +2,25 @@ export interface LikedGame {
     title: string;
 }
 
-export interface Rental {
+export interface LikedGames {
+    id: string;
     title: string;
-    rentalDate: string;
-    actualReturnDate: string | null;
-}
-
-export interface Rating {
-    score: number;
-    comment: string;
-    ratingDate: string;
+    imageUrl: string;
+  }
+  
+  export interface RentedGame {
+    id: string;
     title: string;
-}
-
-export interface ProfileData {
-    avatar: string;
+    imageUrl: string;
+    startDate: string;
+    dueDate: string;
+  }
+  
+  export interface User {
     firstName: string;
     lastName: string;
-    email: string;
-    likedGames: LikedGame[];
-    rentals: Rental[];
-    ratings: Rating[];
-}
+    imageUrl: string;
+    activeRentedGames: RentedGame[];
+    overdueRentedGames: RentedGame[];
+    likedGames: LikedGames[];
+  }

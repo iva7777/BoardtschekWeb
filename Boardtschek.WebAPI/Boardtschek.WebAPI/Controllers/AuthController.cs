@@ -75,22 +75,6 @@ namespace Boardtschek.WebAPI.Controllers
 
             return Ok("Password changed successfully.");
         }
-
-        [HttpGet("user")]
-        [Authorize] 
-        public async Task<IActionResult> GetUserProfile()
-        {
-            try
-            {
-                string userId = User.GetId();
-                UserProfileViewModel model = await userService.GetUserProfileInformation(userId);
-                return Ok(model);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
     }
 
 }

@@ -4,10 +4,10 @@ import CreateAccountPage from "./pages/Signup";
 import SettingsPage from "./pages/Setting";
 import HomePage from "./pages/Home";
 import AddGamePage from "./pages/AddGame";
-import SearchResultsPage from "./pages/SearchResultsPage";
+import SearchResultsPage from "./pages/SearchResults";
 import EditGameByIdPage from "./pages/EditGame/[id]";
 import GameDetails from "./pages/Game/[id]";
-import MyRentedGamesPage from "./pages/MyRentedGames/Rented";
+// import MyRentedGamesPage from "./pages/Settings/Rented";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -59,6 +59,14 @@ function App() {
               </AuthGuard>
             }
           />
+          {/* <Route
+            path="/settings/rents"
+            element={
+              <AuthGuard>
+                <MyRentedGamesPage />
+              </AuthGuard>
+            }
+          /> */}
           <Route
             path="/add-game"
             element={
@@ -97,14 +105,6 @@ function App() {
             element={
               <AuthGuard>
                 <SearchResultsPage />
-              </AuthGuard>
-            }
-          />
-          <Route
-            path="/my-rented-games"
-            element={
-              <AuthGuard>
-                <MyRentedGamesPage />
               </AuthGuard>
             }
           />

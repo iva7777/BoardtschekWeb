@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "@/api/axios";
 import { GameCard } from "@/components/GameCard";
+import apiClient from "@/api/axios";
 interface Game {
   id: string;
   title: string;
@@ -18,7 +18,8 @@ export default function HomePage() {
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await axios.get("/api/Home");
+        const response = await apiClient.get("/api/Home");
+        console.log(response);
         setGames(response.data);
       } catch (error) {
         console.error("Error fetching games:", error);
@@ -65,7 +66,7 @@ export default function HomePage() {
 
       {/* Top Games Section */}
       <section
-        className="section-ranks bg-gray-200"
+        className="section-ranks bg-foreground"
         aria-labelledby="top-games-heading"
       >
         <div
