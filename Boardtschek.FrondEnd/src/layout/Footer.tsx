@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
             <Logo color="light" />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center pt-4 border-t border-white/10">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-4 border-t border-foreground-subtext">
           <p className="text-sm text-foreground-subtext">
             © {new Date().getFullYear()} Boardtschek. All rights reserved.
           </p>
