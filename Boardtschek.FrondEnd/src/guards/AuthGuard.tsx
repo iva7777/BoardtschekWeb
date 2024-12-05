@@ -1,37 +1,25 @@
-// import React from 'react';
-// // import { Navigate } from 'react-router-dom';
-// // import {getToken} from "@/lib/utils.ts";
-//
-//
-// const AuthGuard: React.FC<{ children: JSX.Element }> = ({ children }) => {
-//     // const token = getToken(); // Check token existence
-//     // return token ? children : <Navigate to="/login" replace />;
-//     return children;
-// };
-//
-// export default AuthGuard;
-
 import React from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 interface Props {
   children: JSX.Element;
+  requiredRole?: string;
 }
 
-const AuthGuard: React.FC<Props> = ({ children }) => {
-  const location = useLocation();
-  const isAuthenticated = !!localStorage.getItem("token");
+const AuthGuard: React.FC<Props> = ({ children, requiredRole }) => {
+  const token = localStorage.getItem("token");
+  const isAuthenticated = !!token;
+  const userRole = localStorage.getItem("role");
 
-  if (!isAuthenticated && location.pathname !== "/create-account") {
+  if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
 
-  return (
-    <>
-      {}
-      {children}
-    </>
-  );
+  if (requiredRole && userRole !== requiredRole) {
+    return <Navigate to="/home" replace />;
+  }
+
+  return <>{children}</>;
 };
 
 export default AuthGuard;

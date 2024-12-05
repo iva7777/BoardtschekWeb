@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchUsers } from "@/api/user";
 import { User } from "@/types/user";
+import { ActiveRentalCard } from "@/components/rental-cards/active";
+import { OverdueRentalCard } from "@/components/rental-cards/overdue";
 import axios from "axios";
 
 export default function SettingsPage() {
@@ -32,98 +34,109 @@ export default function SettingsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-4xl mx-auto shadow rounded-lg p-6">
-        <h1 className="text-3xl font-bold mb-6">My Account</h1>
+    <main id="content" className="min-h-[100dvh]" tabIndex={-1}>
+      <section className="" data-sublocation="Hero" aria-hidden="false">
+        <div
+          className="inner"
+          style={{
+            marginTop: "calc(100 / 2000 * 100vw)",
+            marginBottom: "calc(100 / 2000 * 100vw)",
+          }}
+        >
+          <h1 className="mb-5 text-5xl text-background-text font-semibold">
+            Hey {user.firstName} 👋
+          </h1>
+          <div className="">
+            <p className="mb-10 text-2xl text-background-subtext">
+              Welcome back! Here's what's new while you were away.
+            </p>
+            {/* <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <Link to="/rent">
+                <Button className="mt-4" variant={"default"} size={"lg"}>
+                  Start Renting Now
+                </Button>
+              </Link>
+              <Link to="/rent">
+                <Button className="mt-4" variant={"outlinePrimary"} size={"lg"}>
+                  Browse Rentals
+                </Button>
+              </Link>
+            </div> */}
+          </div>
+        </div>
+      </section>
+      <section className="bg-foreground">
+        <div className="min-h-screen p-8">
+          <div className="mx-auto shadow rounded-lg bg-background p-14">
+            {/* Profile Details */}
 
-        {/* Profile Details */}
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-4">Basic Information</h2>
-          <div className="flex space-x-4 items-center">
-            <img
-              src={user.imageUrl || "https://via.placeholder.com/100"}
-              alt="Avatar"
-              className="w-24 h-24 rounded-full border"
-            />
-            <div>
-              <h3 className="text-lg font-medium">
-                {user.firstName} {user.lastName}
-              </h3>
+            {/* Liked Games */}
+            <div className="mb-6">
+              <h2 className="text-lg font-semibold mb-4">Liked Games</h2>
+              <ul className="list-disc">
+                {user.likedGames && user.likedGames.length > 0 ? (
+                  user.likedGames.map((game, index) => (
+                    <h3 key={index}>
+                      {game.title || "Unknown Game"} -{" "}
+                      <img
+                        src={game.imageUrl}
+                        alt={game.title}
+                        className="w-12 h-12"
+                      />
+                    </h3>
+                  ))
+                ) : (
+                  <p>No liked games yet</p>
+                )}
+              </ul>
+            </div>
+
+            {/* Active Rentals */}
+            <div className="mb-6">
+              <h2 className="text-lg font-semibold mb-4">Active Rentals</h2>
+              <ul className="list-disc">
+                {user.overdueRentedGames &&
+                user.overdueRentedGames.length > 0 ? (
+                  user.overdueRentedGames.map((rental, index) => (
+                    <ActiveRentalCard
+                      key={index}
+                      id={rental.id}
+                      name={rental.title}
+                      image={rental.imageUrl}
+                      rentalDate={rental.startDate}
+                      dueDate={rental.dueDate}
+                    />
+                  ))
+                ) : (
+                  <p>No active rentals yet.</p>
+                )}
+              </ul>
+            </div>
+
+            {/* Overdue Rentals */}
+            <div className="mb-6">
+              <h2 className="text-lg font-semibold mb-4">Overdue Rentals</h2>
+              <ul className="list-disc">
+                {user.overdueRentedGames &&
+                user.overdueRentedGames.length > 0 ? (
+                  user.overdueRentedGames.map((rental, index) => (
+                    <OverdueRentalCard
+                      key={index}
+                      id={rental.id}
+                      name={rental.title}
+                      image={rental.imageUrl}
+                      rentalDate={rental.startDate}
+                      dueDate={rental.dueDate}
+                    />
+                  ))
+                ) : (
+                  <p>No overdue rentals.</p>
+                )}
+              </ul>
             </div>
           </div>
         </div>
-
-        {/* Liked Games */}
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold mb-4">Liked Games</h2>
-          <ul className="list-disc pl-6">
-            {user.likedGames && user.likedGames.length > 0 ? (
-              user.likedGames.map((game, index) => (
-                <h3 key={index}>
-                  {game.title || "Unknown Game"} -{" "}
-                  <img
-                    src={game.imageUrl}
-                    alt={game.title}
-                    className="w-12 h-12"
-                  />
-                </h3>
-              ))
-            ) : (
-              <p>No liked games yet</p>
-            )}
-          </ul>
-        </div>
-
-        {/* Active Rentals */}
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold mb-4">Active Rentals</h2>
-          <ul className="list-disc pl-6">
-            {user.activeRentedGames && user.activeRentedGames.length > 0 ? (
-              user.activeRentedGames.map((rental, index) => (
-                <h3 key={index}>
-                  {rental.title || "Unknown Game"} - Rented on{" "}
-                  {rental.startDate
-                    ? new Date(rental.startDate).toLocaleDateString()
-                    : "Unknown Date"}
-                  <br />
-                  <img
-                    src={rental.imageUrl}
-                    alt={rental.title}
-                    className="w-12 h-12"
-                  />
-                </h3>
-              ))
-            ) : (
-              <p>No active rentals yet.</p>
-            )}
-          </ul>
-        </div>
-
-        {/* Overdue Rentals */}
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold mb-4">Overdue Rentals</h2>
-          <ul className="list-disc pl-6">
-            {user.overdueRentedGames && user.overdueRentedGames.length > 0 ? (
-              user.overdueRentedGames.map((rental, index) => (
-                <h3 key={index}>
-                  {rental.title || "Unknown Game"} - Due on{" "}
-                  {rental.dueDate
-                    ? new Date(rental.dueDate).toLocaleDateString()
-                    : "Unknown Date"}
-                  <br />
-                  <img
-                    src={rental.imageUrl}
-                    alt={rental.title}
-                    className="w-12 h-12"
-                  />
-                </h3>
-              ))
-            ) : (
-              <p>No overdue rentals.</p>
-            )}
-          </ul>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

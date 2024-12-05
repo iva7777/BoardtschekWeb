@@ -81,4 +81,17 @@ export async function deleteGame(id: string): Promise<ApiResponse> {
     }
 }
 
-
+export async function fetchGamesDetails(): Promise<GameEditForm[]> {
+    try {
+        const response = await apiClient.get("/api/Game/Details");
+        return response.data; 
+    } catch (error) {
+        console.error("Error fetching games:", error);
+        if (axios.isAxiosError(error)) {
+            const errorMessage = error.response?.data?.message || "Failed to fetch games.";
+            throw new Error(errorMessage);
+        } else {
+            throw new Error("Unexpected error occurred.");
+        }
+    }
+}

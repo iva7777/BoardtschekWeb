@@ -70,7 +70,7 @@ export default function HomePage() {
         aria-labelledby="top-games-heading"
       >
         <div
-          className="inner"
+          className="inner pl-36 pr-36"
           style={{
             paddingTop: "calc(100 / 2000 * 100vw)",
             paddingBottom: "calc(100 / 2000 * 100vw)",

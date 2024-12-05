@@ -60,8 +60,8 @@ export default function AllGamesPage() {
         <div
           className="inner"
           style={{
-            paddingTop: "calc(200 / 2000 * 100vw)",
-            paddingBottom: "calc(150 / 2000 * 100vw)",
+            paddingTop: "calc(100 / 2000 * 100vw)",
+            paddingBottom: "calc(100 / 2000 * 100vw)",
           }}
         >
           {/* Highest Rated Games */}
