@@ -8,6 +8,7 @@ import SearchResultsPage from "./pages/SearchResultsPage";
 import EditGamePage from "./pages/EditGame";
 import EditGameByIdPage from "./pages/EditGame/[id]";
 import GameDetails from "./pages/Game/[id]";
+import MyRentedGamesPage from "./pages/MyRentedGames/Rented";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -105,6 +106,14 @@ function App() {
             element={
               <AuthGuard>
                 <SearchResultsPage />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/my-rented-games"
+            element={
+              <AuthGuard>
+                <MyRentedGamesPage />
               </AuthGuard>
             }
           />

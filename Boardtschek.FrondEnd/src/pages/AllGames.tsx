@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { GameCard } from "@/components/GameCard";
-import SearchForm from "@/components/SearchForm";
 import apiClient from "@/api/axios";
 
 interface Game {
   id: string;
   title: string;
   imageUrl: string;
-  rating: number; 
-  quantity: number; 
-  nextAvailable: string; 
+  rating: number;
+  quantity: number;
+  nextAvailable: string;
 }
 
 export default function AllGamesPage() {
@@ -32,7 +31,7 @@ export default function AllGamesPage() {
     <main id="content" className="min-h-[100dvh]" tabIndex={-1}>
       <section className="" data-sublocation="Hero" aria-hidden="false">
         <div
-          className="inner pb-24"
+          className="inner"
           style={{
             marginTop: "calc(100 / 2000 * 100vw)",
             marginBottom: "calc(100 / 2000 * 100vw)",
@@ -50,9 +49,6 @@ export default function AllGamesPage() {
               <br />
               of board games, available for all Nemetschek employees.
             </p>
-            <div className="flex flex-col justify-center sm:flex-row">
-              <SearchForm size="large" />
-            </div>
           </div>
         </div>
       </section>

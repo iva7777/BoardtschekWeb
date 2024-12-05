@@ -37,7 +37,7 @@ export async function rentGame(data: Omit<RentalFormData, "gameId">) {
 
   try {
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    const response = await fetch(`http://localhost:5050/api/Game/Rent/${gameId}`, {
+    const response = await fetch(`http://localhost:5050/api/Rental/Rent/${gameId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
