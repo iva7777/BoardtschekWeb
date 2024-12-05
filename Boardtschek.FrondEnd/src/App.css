@@ -8,10 +8,10 @@
     --background-tone: #eae6e6;
     --foreground: #212529;
     --text: #000000;
-    --subtext: #374151;
+    --subtext: #1f242c;
     --context: #606f88;
     --foreground-text: #ffffff;
-    --foreground-subtext: #dfdfdf;
+    --foreground-subtext: #e8e8e8;
     --foreground-context: #dfdfdf;
     --card: #ffffff;
     --card-foreground: #212529;
@@ -55,7 +55,7 @@
     --card-foreground: #f7f7f7;
     --popover: #343a40;
     --popover-foreground: #f7f7f7;
-    --primary: #583415;
+    --primary: #f58220;
     --primary-foreground: #212529;
     --primary-hover: #f39c12;
     --secondary: #6c757d;

@@ -30,7 +30,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/settings/rents"
+                  to="/settings"
                   className="text-background-subtext hover:text-background-text transition-colors"
                 >
                   My Rented Games

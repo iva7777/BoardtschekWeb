@@ -336,6 +336,7 @@ namespace Boardtschek.Services.Data
             model.Description = game.Description;
             model.Difficulty = game.DifficultyLevel.ToString();
             model.Id = game.Id;
+            model.ImageUrl = game.ImageUrl;
             model.Ratings = await dbContext.Ratings.Where(r => r.GameId.ToString() == gameId).Select(r => new RatingViewModel
             {
                 Username = user.UserName,

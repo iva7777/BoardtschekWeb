@@ -122,7 +122,7 @@ export default function AddGamePage() {
     }
   };
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8">
+    <div className="flex items-center justify-center min-h-screen bg-background pt-8 pb-8">
       <Form {...form}>
         <div className="w-full max-w-md">
           {/* Headings */}
@@ -157,12 +157,6 @@ export default function AddGamePage() {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    {/* <textarea
-
-                      placeholder="Description"
-                      className="w-full p-2 border rounded resize-y min-h-[100px] max-h-[300px] placeholder-subtext"
-                      style={{ fontSize: "16px" }}
-                    /> */}
                     <Textarea
                       {...field}
                       placeholder="Type your message here."
@@ -241,11 +235,11 @@ export default function AddGamePage() {
               name="difficultyLevel"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Difficulty Level</FormLabel>
+                  <FormLabel>Difficulty Level </FormLabel>
                   <FormControl>
                     <select
                       {...field}
-                      className="border border-subtext rounded px-2 py-1"
+                      className="border border-subtext rounded px-2 py-1 bg-primary"
                     >
                       <option value="Easy">Easy</option>
                       <option value="Medium">Medium</option>

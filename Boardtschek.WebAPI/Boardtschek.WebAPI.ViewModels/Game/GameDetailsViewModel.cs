@@ -6,6 +6,7 @@
         public string Title { get; set; } = null!;
         public string Description { get; set; } = null!;
         public string Difficulty { get; set; } = null!;
+        public string ImageUrl { get; set; } = null!;
 
         public IEnumerable<RatingViewModel> Ratings { get; set; } = new HashSet<RatingViewModel>();
 

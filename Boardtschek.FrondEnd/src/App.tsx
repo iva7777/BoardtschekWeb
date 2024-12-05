@@ -7,7 +7,7 @@ import AddGamePage from "./pages/AddGame";
 import SearchResultsPage from "./pages/SearchResults";
 import EditGameByIdPage from "./pages/EditGame/[id]";
 import GameDetails from "./pages/Game/[id]";
-// import MyRentedGamesPage from "./pages/Settings/Rented";
+import MyRentedGamesPage from "./pages/Settings/Rented";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -59,18 +59,18 @@ function App() {
               </AuthGuard>
             }
           />
-          {/* <Route
+          <Route
             path="/settings/rents"
             element={
               <AuthGuard>
                 <MyRentedGamesPage />
               </AuthGuard>
             }
-          /> */}
+          />
           <Route
             path="/add-game"
             element={
-              <AuthGuard>
+              <AuthGuard requiredRole="admin">
                 <AddGamePage />
               </AuthGuard>
             }
@@ -78,7 +78,7 @@ function App() {
           <Route
             path="/edit-game/:id"
             element={
-              <AuthGuard>
+              <AuthGuard requiredRole="admin">
                 <EditGameByIdPage />
               </AuthGuard>
             }
