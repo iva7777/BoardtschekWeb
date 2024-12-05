@@ -84,7 +84,7 @@ function App() {
             }
           />
           <Route
-            path="/game/:id"
+            path="/game/:gameId"
             element={
               <AuthGuard>
                 <GameDetails />

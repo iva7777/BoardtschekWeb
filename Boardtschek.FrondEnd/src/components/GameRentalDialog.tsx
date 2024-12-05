@@ -31,15 +31,40 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { rentGame, RentalFormData } from "@/actions/rent-game";
+import { useParams } from "react-router-dom";
 
-const formSchema = z.object({
-  startDate: z.date(),
-  startTime: z.string(),
-  endDate: z.date(),
-  endTime: z.string(),
-  quantity: z.string(),
-});
-
+const formSchema = z
+  .object({
+    startDate: z.date().min(new Date(), "Start date cannot be in the past."),
+    startTime: z.string(),
+    endDate: z.date(),
+    endTime: z.string(),
+    quantity: z
+      .string()
+      .refine(
+        (val) => parseInt(val) > 0 && parseInt(val) <= 5,
+        "Quantity must be between 1 and 5."
+      ),
+  })
+  .superRefine((data, ctx) => {
+    if (data.endDate < data.startDate) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["endDate"],
+        message: "End date must be after start date.",
+      });
+    }
+    if (
+      isSameDay(data.startDate, data.endDate) &&
+      parseInt(data.endTime) <= parseInt(data.startTime)
+    ) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["endTime"],
+        message: "End time must be after start time on the same day.",
+      });
+    }
+  });
 type FormData = z.infer<typeof formSchema>;
 
 export default function GameRentalDialog() {
@@ -48,6 +73,7 @@ export default function GameRentalDialog() {
     success: boolean;
     message: string;
   } | null>(null);
+  const { gameId } = useParams<{ gameId: string }>();
 
   const { control, handleSubmit, watch, setValue } = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -68,22 +94,48 @@ export default function GameRentalDialog() {
   const { toast } = useToast();
 
   const onSubmit = async (data: FormData) => {
-    console.log("Form Data Submitted:", data);
+    if (!gameId) {
+      toast({
+        title: "Error",
+        description: "Game ID is {missing} or invalid.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const formattedStartTime = `${data.startTime}:00:00`;
+    const formattedEndTime = `${data.endTime}:00:00`;
+    const formattedStartDate = `${format(
+      data.startDate,
+      "yyyy-MM-dd"
+    )}T00:00:00`;
+    const formattedEndDate = `${format(data.endDate, "yyyy-MM-dd")}T00:00:00`;
 
     const formData: RentalFormData = {
-      startDate: format(data.startDate, "yyyy-MM-dd"),
-      startTime: data.startTime,
-      endDate: format(data.endDate, "yyyy-MM-dd"),
-      endTime: data.endTime,
-      quantity: data.quantity,
+      gameId,
+      startDate: formattedStartDate,
+      startTime: formattedStartTime,
+      endDate: formattedEndDate,
+      endTime: formattedEndTime,
+      quantity: parseInt(data.quantity, 10),
     };
-
-    console.log("Formatted Rental Data:", formData);
-
+    console.log(formData);
     const result = await rentGame(formData);
     setSubmissionState(result);
+    console.log(result);
     if (result.success) {
+      toast({
+        title: "Success!",
+        description: `Your rental for Game ID: ${gameId} has been successfully submitted!`,
+        variant: "default",
+      });
       setIsOpen(false);
+    } else {
+      toast({
+        title: "Error:",
+        description: result.message,
+        variant: "destructive",
+      });
     }
   };
 

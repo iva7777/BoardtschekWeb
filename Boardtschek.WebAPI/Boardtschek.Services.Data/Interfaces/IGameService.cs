@@ -15,11 +15,8 @@ namespace Boardtschek.Services.Data.Interfaces
         Task<GameEditViewModel> GetGameEditViewModelAsync(string id);
         Task EditGameAsync(GameEditViewModel model, string id);
         Task DeleteGameAsync(string id);
-<<<<<<< HEAD
         Task<bool> IsGameAvailable(RentGameFormViewModel model);
         Task RentGame(RentGameFormViewModel model, string userId);
-=======
         Task<IEnumerable<GameListViewModel>> SearchGamesByName(string name);
->>>>>>> origin/feature/rent
     }
 }

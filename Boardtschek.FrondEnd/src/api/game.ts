@@ -42,6 +42,7 @@ export async function fetchGames(): Promise<GameEditForm[]> {
 // Add a new game (POST)
 export async function addGame(game: GameForm): Promise<ApiResponse> {
     try {
+        console.log(game);
         const response = await apiClient.post("http://localhost:5050/api/Game/Add", game);
         return response.data;  // Assumes response contains { message, status }
     } catch (error) {
