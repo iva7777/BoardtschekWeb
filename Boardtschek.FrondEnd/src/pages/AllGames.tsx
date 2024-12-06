@@ -72,9 +72,7 @@ export default function AllGamesPage() {
                   key={game?.id || index}
                   title={game?.title || "Loading..."}
                   image={game?.imageUrl || "https://via.placeholder.com/150"}
-                  rating={game?.rating || 0}
-                  quantity={game?.quantity || 0}
-                  nextAvailable={game?.nextAvailable || ""}
+                  id={game?.id || index}
                 />
               ))}
             </div>

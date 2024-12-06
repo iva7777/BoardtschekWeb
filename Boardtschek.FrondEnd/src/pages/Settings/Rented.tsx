@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ActiveRentalCard } from "@/components/rental-cards/active";
+import { ActiveRentalCard } from "@/components/rentals/active";
 // import { OverdueRentalCard } from "@/components/rental-cards/overdue";
 // import { RentalHistoryCard } from "@/components/rental-cards/history";
 import { fetchUsers } from "@/api/user";

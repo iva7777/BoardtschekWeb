@@ -24,7 +24,7 @@ namespace Boardtschek.Services.Data
                 {
                     Id = g.Id.ToString(),
                     Title = g.Title,
-                    ImageUrl = g.ImageUrl
+                    ImageUrl = g.ImageUrl,
                 })
                 .ToListAsync();
 
@@ -346,6 +346,18 @@ namespace Boardtschek.Services.Data
             }).ToListAsync();
 
             return model;
+        }
+        public async Task RemoveGameFromLikesAsync(string gameId, string userId)
+        {
+
+            var likedGame = await dbContext.LikedGames
+                .FirstOrDefaultAsync(g => g.GameId.ToString() == gameId && g.UserId.ToString() == userId);
+
+            if (likedGame != null)
+            {
+                dbContext.LikedGames.Remove(likedGame);
+                await dbContext.SaveChangesAsync();
+            }
         }
     }
 }

@@ -236,15 +236,19 @@ namespace Boardtschek.WebAPI.Controllers
 
                 if (isGameAlreadyLiked)
                 {
-                    return BadRequest(new { message = "You have already liked this game!" });
+                    await gameService.RemoveGameFromLikesAsync(gameId, userId);
+                    return Ok(new { message = "Game unliked successfully." });
                 }
-
-                await gameService.LikeGameAsync(gameId, userId);
-                return Ok();
+                else
+                {
+                    // If the game is not liked, we will like it (add to likes)
+                    await gameService.LikeGameAsync(gameId, userId);
+                    return Ok(new { message = "Game liked successfully." });
+                }
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "An unexpected error occurred while deleting the game.", details = ex.Message });
+                return StatusCode(500, new { message = "An unexpected error occurred while processing the like/unlike action.", details = ex.Message });
             }
         }
         [HttpGet]

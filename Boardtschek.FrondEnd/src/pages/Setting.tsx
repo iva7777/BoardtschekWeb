@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchUsers } from "@/api/user";
 import { User } from "@/types/user";
-import { ActiveRentalCard } from "@/components/rental-cards/active";
-import { OverdueRentalCard } from "@/components/rental-cards/overdue";
+import { ActiveRentalCard } from "@/components/rentals/active";
+import { OverdueRentalCard } from "@/components/rentals/overdue";
 import axios from "axios";
+import { GameCard } from "@/components/GameCard";
 
 export default function SettingsPage() {
   const [user, setUser] = useState<User>({
@@ -50,21 +51,10 @@ export default function SettingsPage() {
             <p className="mb-10 text-2xl text-background-subtext">
               Welcome back! Here's what's new while you were away.
             </p>
-            {/* <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link to="/rent">
-                <Button className="mt-4" variant={"default"} size={"lg"}>
-                  Start Renting Now
-                </Button>
-              </Link>
-              <Link to="/rent">
-                <Button className="mt-4" variant={"outlinePrimary"} size={"lg"}>
-                  Browse Rentals
-                </Button>
-              </Link>
-            </div> */}
           </div>
         </div>
       </section>
+
       <section className="bg-foreground">
         <div className="min-h-screen p-8">
           <div className="mx-auto shadow rounded-lg bg-background p-14">
@@ -73,66 +63,71 @@ export default function SettingsPage() {
             {/* Liked Games */}
             <div className="mb-6">
               <h2 className="text-lg font-semibold mb-4">Liked Games</h2>
-              <ul className="list-disc">
+              <div className="flex flex-wrap gap-6">
                 {user.likedGames && user.likedGames.length > 0 ? (
                   user.likedGames.map((game, index) => (
-                    <h3 key={index}>
-                      {game.title || "Unknown Game"} -{" "}
-                      <img
-                        src={game.imageUrl}
-                        alt={game.title}
-                        className="w-12 h-12"
+                    <div
+                      key={game?.id || index}
+                      className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+                    >
+                      <GameCard
+                        title={game?.title || "Loading..."}
+                        image={
+                          game?.imageUrl || "https://via.placeholder.com/150"
+                        }
+                        id={String(game?.id || index)} // Ensure id is a string
                       />
-                    </h3>
+                    </div>
                   ))
                 ) : (
                   <p>No liked games yet</p>
                 )}
-              </ul>
+              </div>
             </div>
 
             {/* Active Rentals */}
             <div className="mb-6">
               <h2 className="text-lg font-semibold mb-4">Active Rentals</h2>
-              <ul className="list-disc">
-                {user.overdueRentedGames &&
-                user.overdueRentedGames.length > 0 ? (
-                  user.overdueRentedGames.map((rental, index) => (
-                    <ActiveRentalCard
-                      key={index}
-                      id={rental.id}
-                      name={rental.title}
-                      image={rental.imageUrl}
-                      rentalDate={rental.startDate}
-                      dueDate={rental.dueDate}
-                    />
+              <div className="flex flex-wrap gap-6">
+                {user.activeRentedGames && user.activeRentedGames.length > 0 ? (
+                  user.activeRentedGames.map((rental, index) => (
+                    <div key={index} className="w-full sm:w-1/2 lg:w-1/3">
+                      <ActiveRentalCard
+                        id={rental.id}
+                        name={rental.title}
+                        image={rental.imageUrl}
+                        rentalDate={rental.startDate}
+                        dueDate={rental.dueDate}
+                      />
+                    </div>
                   ))
                 ) : (
                   <p>No active rentals yet.</p>
                 )}
-              </ul>
+              </div>
             </div>
 
             {/* Overdue Rentals */}
             <div className="mb-6">
               <h2 className="text-lg font-semibold mb-4">Overdue Rentals</h2>
-              <ul className="list-disc">
+              <div className="flex flex-wrap gap-6">
                 {user.overdueRentedGames &&
                 user.overdueRentedGames.length > 0 ? (
                   user.overdueRentedGames.map((rental, index) => (
-                    <OverdueRentalCard
-                      key={index}
-                      id={rental.id}
-                      name={rental.title}
-                      image={rental.imageUrl}
-                      rentalDate={rental.startDate}
-                      dueDate={rental.dueDate}
-                    />
+                    <div key={index} className="w-full sm:w-1/2 lg:w-1/3">
+                      <OverdueRentalCard
+                        id={rental.id}
+                        name={rental.title}
+                        image={rental.imageUrl}
+                        rentalDate={rental.startDate}
+                        dueDate={rental.dueDate}
+                      />
+                    </div>
                   ))
                 ) : (
                   <p>No overdue rentals.</p>
                 )}
-              </ul>
+              </div>
             </div>
           </div>
         </div>

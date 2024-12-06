@@ -5,6 +5,7 @@ interface Game {
   id: string;
   title: string;
   imageUrl: string;
+  rating: number;
 }
 
 interface HomePageGamesOverview {
@@ -19,7 +20,9 @@ export default function HomePage() {
     const fetchGames = async () => {
       try {
         const response = await apiClient.get("/api/Home");
-        console.log(response);
+        console.log("Full response:", response);
+        console.log("Fetched games data:", response.data);
+
         setGames(response.data);
       } catch (error) {
         console.error("Error fetching games:", error);
@@ -95,9 +98,7 @@ export default function HomePage() {
                     key={game?.id || index}
                     title={game?.title || "Loading..."}
                     image={game?.imageUrl || "https://via.placeholder.com/150"}
-                    rating={game?.rating || 0}
-                    quantity={game?.quantity || 0}
-                    nextAvailable={game?.nextAvailable || ""}
+                    id={game?.id || index}
                   />
                 )
               )}
@@ -116,9 +117,7 @@ export default function HomePage() {
                     key={game?.id || index}
                     title={game?.title || "Loading..."}
                     image={game?.imageUrl || "https://via.placeholder.com/150"}
-                    rating={game?.rating || 0}
-                    quantity={game?.quantity || 0}
-                    nextAvailable={game?.nextAvailable || ""}
+                    id={game?.id || index}
                   />
                 )
               )}
