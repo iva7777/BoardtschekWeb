@@ -10,7 +10,7 @@ import GameDetails from "./pages/Game/[id]";
 import MyRentedGamesPage from "./pages/Settings/Rented";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/theme-provider/ThemeProvider";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import { Toaster } from "./components/ui/toaster";

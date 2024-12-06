@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
 import AccountMenu from "@/components/AccountMenu";
-import { ModeToggle } from "@/components/ModeToggle";
+import { ModeToggle } from "@/components/theme-provider/ModeToggle";
 import SearchForm from "@/components/SearchForm";
 import "../App.css";
 
@@ -34,6 +34,14 @@ export default function Navbar() {
                   className="text-background-subtext hover:text-background-text transition-colors"
                 >
                   My Rented Games
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/add-game"
+                  className="text-background-subtext hover:text-background-text transition-colors"
+                >
+                  Add Game
                 </Link>
               </li>
             </ul>

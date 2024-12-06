@@ -25,5 +25,6 @@ namespace Boardtschek.Services.Data.Interfaces
         Task<bool> IsGameAlreadyRatedByUserAsync(string gameId, string userId);
         Task RateGame(GameRatingFormViewModel model, string gameId, string userId);
         Task<GameDetailsViewModel> GetGameDetailsAsync(string gameId, string userId);
+        Task RemoveGameFromLikesAsync(string gameId, string userId);
     }
 }

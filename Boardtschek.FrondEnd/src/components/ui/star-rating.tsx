@@ -68,7 +68,7 @@ export const StarRating: React.FC<StarRatingProps> = ({
           />
           {/* Add half-star logic for readonly */}
           {readonly && hasHalfStar && starIndex === wholeStars + 1 && (
-            <div className="absolute inset-0 overflow-hidden w-1/2">
+            <div className="absolute inset-0 overflow-hidden w-2">
               <Star
                 className={cn(
                   starSizes[size],
