@@ -1,5 +1,7 @@
 
 # Boardtschek 🎲
+![Project Logo](https://github.com/iva7777/BoardtschekWeb/blob/main/Logo.svg?raw=true)
+
 
 Boardtschek is a full-stack web application for renting and managing board games. It offers a seamless experience for users and administrators to explore, rent, and interact with a wide range of games.
 
